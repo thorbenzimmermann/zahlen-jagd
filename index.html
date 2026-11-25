@@ -1,139 +1,29 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
+<!-- ... existing code ... -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Zahlen-Jagd" />
+  <meta name="theme-color" content="#cde0a3" />
   <title>Zahlen-Jagd – Rechen-Lern-App</title>
 
+  <!-- Mathe-Dino App-Icon (SVG Favicon + dynamisches PNG für Startbildschirm) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='28' fill='%23d5e5b5'/%3E%3Ccircle cx='64' cy='64' r='54' fill='%23ffffff'/%3E%3Cpath d='M36 46l-6-8 10 2M44 37l-4-9 10 4M55 32l-1-9 8 6' stroke='%235b8226' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='%238ab848'/%3E%3Cpath d='M42 96c-4-14-4-34 6-46 7-9 20-14 33-12 12 2 20 10 20 20 0 9-7 15-17 16l-6 1c1 7 2 14 1 21H42z' fill='%237cc242' stroke='%233f6212' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M44 96c2-11 8-18 17-18 8 0 13 6 14 18H44z' fill='%23dcfce7'/%3E%3Ccircle cx='71' cy='53' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='88' cy='54' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Cline x1='79' y1='53' x2='80' y2='54' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='72' cy='53' r='3' fill='%231e293b'/%3E%3Ccircle cx='89' cy='54' r='3' fill='%231e293b'/%3E%3Cpath d='M75 66c5 3 11 3 15-1' stroke='%233f6212' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3Crect x='20' y='74' width='32' height='24' rx='5' fill='%231e293b' stroke='%23f59e0b' stroke-width='3'/%3E%3Ctext x='36' y='90' text-anchor='middle' font-family='sans-serif' font-size='12' font-weight='bold' fill='%23fef08a'%3E+%C3%97%C3%B7%3C/text%3E%3C/svg%3E" />
+  <link id="apple-touch-icon-link" rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='28' fill='%23d5e5b5'/%3E%3Ccircle cx='64' cy='64' r='54' fill='%23ffffff'/%3E%3Cpath d='M42 96c-4-14-4-34 6-46 7-9 20-14 33-12 12 2 20 10 20 20 0 9-7 15-17 16l-6 1c1 7 2 14 1 21H42z' fill='%237cc242' stroke='%233f6212' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='71' cy='53' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='88' cy='54' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='72' cy='53' r='3' fill='%231e293b'/%3E%3Ccircle cx='89' cy='54' r='3' fill='%231e293b'/%3E%3C/svg%3E" />
+
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Kindgerechte Google Fonts (Fredoka & Nunito) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
-
+<!-- ... existing code ... -->
   <style>
     :root {
-      --bg-green: #d7e5b3;
+      --bg-green: #d5e5b5;
       --accent-green: #8ab848;
       --accent-green-dark: #6d9832;
       --table-green: #d7e5b3;
     }
-
-    body {
-      background-color: var(--bg-green);
-      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #1e293b;
-      overflow-x: hidden;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    h1, h2, h3, .font-display {
-      font-family: 'Fredoka', 'Nunito', sans-serif;
-    }
-
-    /* Sanfte Einblend-Animation */
-    @keyframes fadeSlideUp {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-slide {
-      animation: fadeSlideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    @keyframes popIn {
-      0% { transform: scale(0.85); opacity: 0; }
-      70% { transform: scale(1.05); }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .animate-pop {
-      animation: popIn 0.35s ease-out forwards;
-    }
-
-    /* Sanftes Wackeln bei falscher Eingabe */
-    @keyframes gentleShake {
-      0%, 100% { transform: translateX(0); }
-      20% { transform: translateX(-5px); }
-      40% { transform: translateX(5px); }
-      60% { transform: translateX(-4px); }
-      80% { transform: translateX(4px); }
-    }
-
-    .animate-shake {
-      animation: gentleShake 0.36s ease-in-out;
-    }
-
-    /* Eingabefeld-Styling ohne Pfeile */
-    input[type="text"], input[type="number"] {
-      -moz-appearance: textfield;
-      appearance: textfield;
-    }
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    /* Fokus-Ring für Kinder gut sichtbar */
-    .math-input {
-      transition: border-color 0.2s, background-color 0.2s, transform 0.15s, box-shadow 0.2s;
-    }
-    .math-input:focus {
-      outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.22);
-      transform: scale(1.02);
-    }
-
-    .input-correct {
-      border-color: #22c55e !important;
-      background-color: #f0fdf4 !important;
-      color: #15803d !important;
-    }
-
-    .input-wrong {
-      border-color: #ef4444 !important;
-      background-color: #fef2f2 !important;
-      color: #b91c1c !important;
-    }
-
-    /* Interaktiver Zahlenstrahl */
-    #numberline-container {
-      touch-action: none;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-
-    /* Konfetti Canvas */
-    #confetti-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 100;
-    }
-  </style>
-</head>
-<body class="min-h-screen py-3 px-2 sm:py-6 sm:px-5 flex flex-col items-center">
-
-  <!-- Konfetti-Ebene -->
-  <canvas id="confetti-canvas"></canvas>
-
+<!-- ... existing code ... -->
   <!-- Obere Steuerungsleiste -->
   <header class="w-full max-w-4xl mb-3 sm:mb-4 flex flex-col gap-2.5 bg-white/85 backdrop-blur-sm rounded-2xl p-2.5 sm:p-3.5 shadow-sm border border-white/60">
-    <!-- 6 Modus-Umschalter -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 bg-[#edf4da] p-1.5 rounded-xl gap-1.5 w-full" role="group" aria-label="Rechenmodus wählen">
+    <!-- 8 Modus-Umschalter (2 Reihen à 4 auf Tablet/Desktop, 4 Reihen à 2 auf Smartphone) -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 bg-[#edf4da] p-1.5 rounded-xl gap-1.5 w-full" role="group" aria-label="Rechenmodus wählen">
       <button id="btn-mode-mul100" onclick="switchMode('mul100')"
         class="mode-btn px-2.5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer text-center">
         × bis 100
@@ -154,845 +44,90 @@
         class="mode-btn px-2.5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer text-center">
         + / − bis 100
       </button>
+      <button id="btn-mode-addsub1000" onclick="switchMode('addsub1000')"
+        class="mode-btn px-2.5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer text-center">
+        + / − bis 1000
+      </button>
       <button id="btn-mode-mix100" onclick="switchMode('mix100')"
         class="mode-btn px-2.5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer text-center">
         🎲 Mix bis 100
       </button>
+      <button id="btn-mode-mix1000" onclick="switchMode('mix1000')"
+        class="mode-btn px-2.5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer text-center">
+        🎲 Mix bis 1000
+      </button>
     </div>
 
     <!-- Belohnungs-Anzeige & Punkteliste -->
-    <div class="flex items-center justify-between gap-2 w-full flex-wrap">
-      <div class="flex items-center gap-2 flex-wrap">
-        <div class="flex items-center gap-1.5 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-amber-900">
-          <span id="reward-progress-text" title="Alle 8 richtigen Blätter bekommst du eine Hilfe">⭐ Fortschritt bis zur nächsten Hilfe: 0 / 8</span>
-        </div>
-        <div class="flex items-center gap-1.5 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold text-sky-900">
-          <span>💡 Hilfen:</span>
-          <span id="hints-count" class="text-base font-extrabold text-sky-700">0</span>
-        </div>
-      </div>
-      <div class="flex items-center gap-2 ml-auto">
-        <button id="btn-sound-toggle" onclick="toggleSound()"
-          class="flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-700 font-bold px-3 py-2 rounded-xl text-xs sm:text-sm border border-slate-200 shadow-xs transition-all cursor-pointer"
-          aria-label="Ton ein- oder ausschalten" title="Ton ein- oder ausschalten">
-          <span id="sound-toggle-icon" class="text-base leading-none">🔊</span>
-          <span id="sound-toggle-label" class="hidden sm:inline">Ton an</span>
-        </button>
-        <button onclick="openStatsModal()"
-          class="flex items-center gap-1.5 bg-[#8ab848] hover:bg-[#76a139] active:scale-95 text-white font-bold px-3.5 py-2 rounded-xl text-xs sm:text-sm shadow-sm transition-all cursor-pointer">
-          <span>📅 Punkteliste</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
+<!-- ... existing code ... -->
   <!-- Haupt-Arbeitsblatt-Karte -->
   <main class="w-full max-w-4xl bg-white rounded-[2rem] shadow-lg border-2 border-white/80 p-4 sm:p-7 md:p-8 relative">
 
-    <!-- Titel: Zahlen-Jagd + Lupe -->
-    <div class="flex items-center justify-center gap-3 mb-5 sm:mb-6">
+    <!-- Titel: Mathe-Dino + Zahlen-Jagd + Lupe -->
+    <div class="flex items-center justify-center gap-2.5 sm:gap-4 mb-5 sm:mb-6">
+      <!-- Süßer Mathe-Dino (Dino-Klasse) -->
+      <svg id="math-dino-svg" class="w-14 h-14 sm:w-16 sm:h-16 shrink-0 drop-shadow-sm" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Mathe-Dino">
+        <circle cx="64" cy="64" r="60" fill="#eef6dc" stroke="#c6da94" stroke-width="4"/>
+        <!-- Kleine Rückenzacken -->
+        <path d="M36 46L30 37L41 39M45 36L41 26L52 31M57 31L56 21L65 28" fill="#8ab848" stroke="#4d7c0f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Dino-Körper & Kopf -->
+        <path d="M42 100C38 85 38 62 49 49C57 39 71 34 85 37C98 39 106 48 106 59C106 69 98 76 87 77L80 78C81 85 82 93 81 100H42Z" fill="#7cc242" stroke="#3f6212" stroke-width="4" stroke-linejoin="round"/>
+        <!-- Heller Bauch -->
+        <path d="M46 100C48 88 54 81 64 81C72 81 77 87 78 100H46Z" fill="#dcfce7"/>
+        <!-- Süße Wangenröte -->
+        <ellipse cx="94" cy="65" rx="4.5" ry="2.8" fill="#fca5a5" opacity="0.8"/>
+        <!-- Runde Mathe-Brille -->
+        <circle cx="72" cy="54" r="9" fill="#ffffff" stroke="#1e293b" stroke-width="3.2"/>
+        <circle cx="91" cy="55" r="9" fill="#ffffff" stroke="#1e293b" stroke-width="3.2"/>
+        <line x1="81" y1="54" x2="82" y2="55" stroke="#1e293b" stroke-width="3.2"/>
+        <line x1="63" y1="53" x2="55" y2="51" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
+        <!-- Augen -->
+        <circle cx="73.5" cy="54" r="3.4" fill="#1e293b"/>
+        <circle cx="92.5" cy="55" r="3.4" fill="#1e293b"/>
+        <circle cx="74.8" cy="52.6" r="1.2" fill="#ffffff"/>
+        <circle cx="93.8" cy="53.6" r="1.2" fill="#ffffff"/>
+        <!-- Freundliches Lächeln -->
+        <path d="M77 68C82 72 89 71 94 67" stroke="#3f6212" stroke-width="3.2" stroke-linecap="round"/>
+        <!-- Kleine Rechentafel in der Pfote -->
+        <rect x="17" y="74" width="38" height="27" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="3.2"/>
+        <text x="36" y="92" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="14" font-weight="700" fill="#fef08a">+×÷</text>
+      </svg>
+
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-800 flex items-center gap-1">
         <span>Zahlen-</span><span class="text-[#6d9832] italic">Jagd</span>
       </h1>
       <!-- Liebevolles Lupen-SVG -->
       <svg class="w-11 h-11 sm:w-14 sm:h-14 shrink-0 drop-shadow-sm -rotate-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="42" y="42" width="18" height="8" rx="4" transform="rotate(45 42 42)" fill="#475569" stroke="#1e293b" stroke-width="2.5"/>
-        <circle cx="26" cy="26" r="18" fill="#dbeafe" stroke="#64748b" stroke-width="4.5"/>
-        <circle cx="26" cy="26" r="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
-        <path d="M18 20C20 16.5 24 15 28 15.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
-      </svg>
-    </div>
-
-    <!-- Belohnungs-Banner (erscheint bei jedem 8. Blatt) -->
-    <div id="reward-banner" class="hidden mb-5 bg-gradient-to-r from-amber-100 via-yellow-100 to-amber-100 border-2 border-amber-300 rounded-2xl p-4 text-center animate-pop">
-      <p class="text-lg sm:text-xl font-display font-bold text-amber-900">
-        🎉 Super gemacht! Du hast 8 Blätter geschafft und 1 neue Hilfe 💡 gewonnen!
-      </p>
-    </div>
-
-    <!-- ========================================================= -->
-    <!-- SCHRITT 1: 1x1 Aufgabe & Stellenwerttafel                 -->
-    <!-- ========================================================= -->
-    <section id="step1-section" class="bg-[#f8fbee] border-2 border-[#d7e5b3] rounded-3xl p-4 sm:p-6 mb-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-5">
-
-        <!-- Linke Seite: Die 1x1 Aufgabe -->
-        <div class="flex flex-col items-center justify-center text-center w-full md:w-5/12">
-          <span id="mode-badge" class="text-xs font-extrabold uppercase tracking-wider text-[#5b8226] bg-[#e3efc5] px-3 py-1 rounded-full mb-2">
-            Kleines 1×1
-          </span>
-          <div class="bg-white border-2 border-[#c6da94] rounded-2xl px-6 py-4 shadow-sm w-full max-w-xs">
-            <p class="text-sm font-bold text-slate-500 mb-1">Rechne aus:</p>
-            <div id="math-problem" class="font-display text-4xl sm:text-5xl font-bold text-slate-800 tracking-wide">
-              7 × 8 = ?
-            </div>
-          </div>
-
-          <!-- Hilfe-Button (nur sichtbar wenn Hilfen > 0 & Schritt 1 noch offen) -->
-          <div id="hint-controls" class="mt-3 w-full max-w-xs">
-            <button id="btn-use-hint" onclick="useHint()"
-              class="hidden w-full py-2.5 px-4 rounded-xl bg-sky-100 hover:bg-sky-200 active:scale-95 text-sky-900 font-bold text-sm border-2 border-sky-300 transition-all cursor-pointer flex items-center justify-center gap-2">
-              <span>💡 Hilfe nutzen (1 einsetzen)</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Rechte Seite: Stellenwerttafel -->
-        <div class="w-full md:w-7/12 flex flex-col items-center">
-          <h2 class="font-display text-xl sm:text-2xl font-bold text-slate-700 mb-2">
-            Stellenwerttafel
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-500 mb-3 text-center">
-            Trage das Ergebnis in die Spalten ein (leere Felder vorne sind erlaubt).
-          </p>
-
-          <!-- Tabelle T | H | Z | E -->
-          <div id="place-value-table" class="grid grid-cols-3 border-2 border-slate-700 rounded-2xl overflow-hidden bg-white shadow-sm w-full max-w-sm">
-            <!-- Tausender-Spalte (nur bei Ergebnis 1000 sichtbar) -->
-            <div id="col-t" class="hidden flex-col border-r-2 border-slate-700">
-              <div class="bg-[#e8f0d3] py-2 text-center font-display text-2xl sm:text-3xl font-bold text-slate-800 border-b-2 border-slate-700">T</div>
-              <div class="p-2 flex items-center justify-center">
-                <input id="input-t" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off"
-                  class="math-input w-full h-14 sm:h-16 text-center font-display text-3xl sm:text-4xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                  aria-label="Tausender" placeholder="·" />
-              </div>
-            </div>
-
-            <!-- Hunderter -->
-            <div class="flex flex-col border-r-2 border-slate-700">
-              <div class="bg-[#e8f0d3] py-2 text-center font-display text-2xl sm:text-3xl font-bold text-slate-800 border-b-2 border-slate-700">H</div>
-              <div class="p-2 flex items-center justify-center">
-                <input id="input-h" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off"
-                  class="math-input w-full h-14 sm:h-16 text-center font-display text-3xl sm:text-4xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                  aria-label="Hunderter" placeholder="·" />
-              </div>
-            </div>
-
-            <!-- Zehner -->
-            <div class="flex flex-col border-r-2 border-slate-700">
-              <div class="bg-[#e8f0d3] py-2 text-center font-display text-2xl sm:text-3xl font-bold text-slate-800 border-b-2 border-slate-700">Z</div>
-              <div class="p-2 flex items-center justify-center">
-                <input id="input-z" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off"
-                  class="math-input w-full h-14 sm:h-16 text-center font-display text-3xl sm:text-4xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                  aria-label="Zehner" placeholder="·" />
-              </div>
-            </div>
-
-            <!-- Einer -->
-            <div class="flex flex-col">
-              <div class="bg-[#e8f0d3] py-2 text-center font-display text-2xl sm:text-3xl font-bold text-slate-800 border-b-2 border-slate-700">E</div>
-              <div class="p-2 flex items-center justify-center">
-                <input id="input-e" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off"
-                  class="math-input w-full h-14 sm:h-16 text-center font-display text-3xl sm:text-4xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                  aria-label="Einer" placeholder="·" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Hilfe-Auswahlkärtchen (erscheinen nach Klick auf Hilfe) -->
-          <div id="hint-cards-container" class="hidden mt-4 w-full max-w-sm animate-pop">
-            <p class="text-xs font-bold text-sky-800 text-center mb-2">
-              💡 Eine dieser 3 Zahlen ist richtig – tippe sie an:
-            </p>
-            <div id="hint-cards" class="grid grid-cols-3 gap-2"></div>
-          </div>
-
-          <!-- Button Ergebnis prüfen -->
-          <div class="mt-4 w-full max-w-sm flex flex-col items-center">
-            <button id="btn-check-step1" onclick="checkStep1()"
-              class="w-full py-3.5 px-6 rounded-2xl bg-[#8ab848] hover:bg-[#76a139] active:scale-[0.98] text-white font-display text-xl font-bold shadow-md transition-all cursor-pointer">
-              Prüfen ✓
-            </button>
-            <div id="step1-feedback" class="mt-2.5 text-sm sm:text-base font-bold text-center min-h-[1.5rem]"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- SCHRITT 2: Folgefragen zur Zahl des Tages                 -->
-    <!-- ========================================================= -->
-    <section id="step2-section" class="hidden space-y-6 animate-fade-slide">
-
-      <!-- Trennlinie mit Lob -->
-      <div class="flex items-center gap-3">
-        <div class="h-0.5 bg-[#d7e5b3] flex-1 rounded-full"></div>
-        <span class="font-display text-lg sm:text-xl font-bold text-[#5b8226] bg-[#f1f7e2] px-4 py-1.5 rounded-full border border-[#d7e5b3]">
-          ✨ Jetzt erforschen wir die Zahl <span id="target-number-badge" class="underline decoration-2"></span>!
-        </span>
-        <div class="h-0.5 bg-[#d7e5b3] flex-1 rounded-full"></div>
-      </div>
-
-      <!-- Reihe 1: Gerade/Ungerade & Zahlzerlegung -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
-
-        <!-- 1. Die Zahl ist: gerade / ungerade -->
-        <div class="md:col-span-5 bg-slate-50 border-2 border-slate-200 rounded-3xl p-4 sm:p-5 flex flex-col justify-between">
-          <div>
-            <h3 class="font-display text-xl font-bold text-slate-800 mb-3 flex items-center justify-between">
-              <span>Die Zahl ist:</span>
-              <span id="fb-parity-icon" class="text-lg"></span>
-            </h3>
-            <div class="grid grid-cols-2 gap-3">
-              <button type="button" id="btn-even" onclick="selectParity('even')"
-                class="parity-btn py-4 px-3 rounded-2xl border-2 border-slate-300 bg-white font-display text-lg sm:text-xl font-bold text-slate-700 hover:border-blue-400 active:scale-95 transition-all cursor-pointer flex flex-col items-center gap-1">
-                <span class="w-5 h-5 rounded-full border-2 border-slate-400 flex items-center justify-center parity-dot"></span>
-                <span>gerade</span>
-              </button>
-              <button type="button" id="btn-odd" onclick="selectParity('odd')"
-                class="parity-btn py-4 px-3 rounded-2xl border-2 border-slate-300 bg-white font-display text-lg sm:text-xl font-bold text-slate-700 hover:border-blue-400 active:scale-95 transition-all cursor-pointer flex flex-col items-center gap-1">
-                <span class="w-5 h-5 rounded-full border-2 border-slate-400 flex items-center justify-center parity-dot"></span>
-                <span>ungerade</span>
-              </button>
-            </div>
-          </div>
-          <p id="fb-parity-msg" class="text-xs sm:text-sm font-bold mt-2.5 min-h-[1.25rem]"></p>
-        </div>
-
-        <!-- 3. Zahlzerlegung -->
-        <div class="md:col-span-7 bg-slate-50 border-2 border-slate-200 rounded-3xl p-4 sm:p-5 flex flex-col justify-between">
-          <div>
-            <h3 class="font-display text-xl font-bold text-slate-800 mb-1 flex items-center justify-between">
-              <span>Zahlzerlegung</span>
-              <span id="fb-decomp-icon" class="text-lg"></span>
-            </h3>
-            <p class="text-xs sm:text-sm text-slate-500 mb-3">
-              Trage die einzelnen Ziffern ein <span class="font-semibold text-slate-600">(z. B. 45 → 4 Z + 5 E = 45)</span>.
-            </p>
-
-            <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
-              <!-- Tausender (nur bei 1000) -->
-              <div id="decomp-t-wrap" class="hidden items-center gap-1.5">
-                <input id="decomp-t" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off"
-                  class="math-input w-12 sm:w-14 h-12 sm:h-14 text-center font-display text-xl sm:text-2xl font-bold rounded-xl border-2 border-slate-300 bg-white"
-                  aria-label="Tausender-Ziffer" placeholder="·" />
-                <span class="font-display text-lg sm:text-xl font-bold text-[#5b8226]">T</span>
-                <span class="font-display text-xl font-bold text-slate-500">+</span>
-              </div>
-
-              <!-- Hunderter -->
-              <div class="flex items-center gap-1">
-                <input id="decomp-h" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off"
-                  class="math-input w-12 sm:w-14 h-12 sm:h-14 text-center font-display text-xl sm:text-2xl font-bold rounded-xl border-2 border-slate-300 bg-white"
-                  aria-label="Hunderter-Ziffer" placeholder="·" />
-                <span class="font-display text-lg sm:text-xl font-bold text-[#5b8226]">H</span>
-              </div>
-
-              <span class="font-display text-xl font-bold text-slate-500">+</span>
-
-              <!-- Zehner -->
-              <div class="flex items-center gap-1">
-                <input id="decomp-z" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off"
-                  class="math-input w-12 sm:w-14 h-12 sm:h-14 text-center font-display text-xl sm:text-2xl font-bold rounded-xl border-2 border-slate-300 bg-white"
-                  aria-label="Zehner-Ziffer" placeholder="·" />
-                <span class="font-display text-lg sm:text-xl font-bold text-[#5b8226]">Z</span>
-              </div>
-
-              <span class="font-display text-xl font-bold text-slate-500">+</span>
-
-              <!-- Einer -->
-              <div class="flex items-center gap-1">
-                <input id="decomp-e" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off"
-                  class="math-input w-12 sm:w-14 h-12 sm:h-14 text-center font-display text-xl sm:text-2xl font-bold rounded-xl border-2 border-slate-300 bg-white"
-                  aria-label="Einer-Ziffer" placeholder="·" />
-                <span class="font-display text-lg sm:text-xl font-bold text-[#5b8226]">E</span>
-              </div>
-
+<!-- ... existing code ... -->
               <span class="font-display text-xl font-bold text-slate-500">=</span>
 
-              <!-- Gesamtzahl (Eingabefeld) -->
-              <input id="decomp-total" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
-                class="math-input w-20 sm:w-24 h-12 sm:h-14 text-center font-display text-xl sm:text-2xl font-bold rounded-xl border-2 border-[#b7d17a] bg-[#f7fbea] text-slate-800"
-                aria-label="Vollständige Zahl" placeholder="?" />
+              <!-- Gesamtzahl (fest vorgegeben, kein Eingabefeld) -->
+              <div id="decomp-total-display"
+                class="min-w-[4.5rem] sm:min-w-[5.5rem] h-12 sm:h-14 px-3 flex items-center justify-center font-display text-2xl sm:text-3xl font-bold rounded-xl border-2 border-[#b7d17a] bg-[#f4f9e8] text-[#4a6b1d]"
+                aria-label="Gesuchte Zahl">
+                56
+              </div>
             </div>
           </div>
           <p id="fb-decomp-msg" class="text-xs sm:text-sm font-bold mt-2.5 min-h-[1.25rem] text-center sm:text-left"></p>
         </div>
       </div>
-
-      <!-- 2. Vorgänger / Nachfolger & Nachbarzahlen -->
-      <div class="bg-slate-50 border-2 border-slate-200 rounded-3xl p-4 sm:p-5">
-        <h3 class="font-display text-xl font-bold text-slate-800 mb-3 flex items-center justify-between">
-          <span>Vorgänger / Nachfolger &amp; Nachbarzahlen</span>
-          <span id="fb-neighbors-icon" class="text-lg"></span>
-        </h3>
-
-        <!-- Responsive Tabellen-Container -->
-        <div class="overflow-x-auto pb-1">
-          <div class="min-w-[560px] grid grid-cols-7 border-2 border-slate-700 rounded-2xl overflow-hidden bg-white shadow-sm">
-            <!-- Kopfzeile -->
-            <div class="bg-[#d7e5b3] py-2.5 text-center font-display text-base sm:text-lg font-bold text-slate-800 border-r border-b-2 border-slate-700">NH</div>
-            <div class="bg-[#d7e5b3] py-2.5 text-center font-display text-base sm:text-lg font-bold text-slate-800 border-r border-b-2 border-slate-700">NZ</div>
-            <div class="bg-[#d7e5b3] py-2.5 text-center font-display text-base sm:text-lg font-bold text-slate-800 border-r border-b-2 border-slate-700">V</div>
-            <div class="bg-[#b7d17a] py-2.5 text-center font-display text-base sm:text-lg font-bold text-slate-900 border-r border-b-2 border-slate-700">Z</div>
-            <div class="bg-[#d7e5b3] py-2.5 text-center font-display text-base sm:text-lg font-bold text-slate-800 border-r border-b-2 border-slate-700">N</div>
-            <div class="bg-[#d7e5b3] py-2.5 text-center font-display text-base sm:text-lg font-bold text-slate-800 border-r border-b-2 border-slate-700">NZ</div>
-            <div class="bg-[#d7e5b3] py-2.5 text-center font-display text-base sm:text-lg font-bold text-slate-800 border-b-2 border-slate-700">NH</div>
-
-            <!-- Eingabezeile -->
-            <div class="p-1.5 sm:p-2 border-r border-slate-300 flex items-center justify-center">
-              <input id="nb-nh-left" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
-                class="math-input w-full h-12 sm:h-14 text-center font-display text-lg sm:text-xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                aria-label="Linker Nachbarhunderter" />
-            </div>
-            <div class="p-1.5 sm:p-2 border-r border-slate-300 flex items-center justify-center">
-              <input id="nb-nz-left" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
-                class="math-input w-full h-12 sm:h-14 text-center font-display text-lg sm:text-xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                aria-label="Linker Nachbarzehner" />
-            </div>
-            <div class="p-1.5 sm:p-2 border-r border-slate-300 flex items-center justify-center">
-              <input id="nb-v" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
-                class="math-input w-full h-12 sm:h-14 text-center font-display text-lg sm:text-xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                aria-label="Vorgänger" />
-            </div>
-            <div class="p-1.5 sm:p-2 border-r border-slate-300 bg-[#f4f9e8] flex items-center justify-center">
-              <div id="nb-center" class="w-full h-12 sm:h-14 flex items-center justify-center font-display text-xl sm:text-2xl font-bold text-[#4a6b1d]">
-                56
-              </div>
-            </div>
-            <div class="p-1.5 sm:p-2 border-r border-slate-300 flex items-center justify-center">
-              <input id="nb-n" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
-                class="math-input w-full h-12 sm:h-14 text-center font-display text-lg sm:text-xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                aria-label="Nachfolger" />
-            </div>
-            <div class="p-1.5 sm:p-2 border-r border-slate-300 flex items-center justify-center">
-              <input id="nb-nz-right" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
-                class="math-input w-full h-12 sm:h-14 text-center font-display text-lg sm:text-xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                aria-label="Rechter Nachbarzehner" />
-            </div>
-            <div class="p-1.5 sm:p-2 flex items-center justify-center">
-              <input id="nb-nh-right" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
-                class="math-input w-full h-12 sm:h-14 text-center font-display text-lg sm:text-xl font-bold rounded-xl border-2 border-slate-200 bg-slate-50"
-                aria-label="Rechter Nachbarhunderter" />
-            </div>
-          </div>
-        </div>
-
-        <!-- Legende -->
-        <p class="text-xs text-slate-500 mt-2.5 text-center leading-relaxed">
-          <strong>NH</strong> = Nachbarhunderter &nbsp;·&nbsp;
-          <strong>NZ</strong> = Nachbarzehner &nbsp;·&nbsp;
-          <strong>V</strong> = Vorgänger &nbsp;·&nbsp;
-          <strong>Z</strong> = Zahl &nbsp;·&nbsp;
-          <strong>N</strong> = Nachfolger
-        </p>
-        <p id="fb-neighbors-msg" class="text-xs sm:text-sm font-bold mt-1.5 text-center min-h-[1.25rem]"></p>
-      </div>
-
-      <!-- 4. Interaktiver Zahlenstrahl -->
-      <div class="bg-slate-50 border-2 border-slate-200 rounded-3xl p-4 sm:p-5">
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-          <h3 class="font-display text-xl font-bold text-slate-800">
-            Zahlenstrahl
-          </h3>
-          <span id="fb-numberline-icon" class="text-lg"></span>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-500 mb-4">
-          Tippe auf den Zahlenstrahl oder ziehe den Marker an die Stelle deiner Zahl!
-        </p>
-
-        <!-- Zahlenstrahl-Fläche -->
-        <div id="numberline-container" class="relative w-full py-6 px-2 sm:px-4 bg-white rounded-2xl border-2 border-slate-200 cursor-pointer">
-          <!-- SVG wird per JavaScript sauber gezeichnet -->
-          <svg id="numberline-svg" class="w-full h-24 sm:h-28 overflow-visible" preserveAspectRatio="none"></svg>
-        </div>
-
-        <p id="fb-numberline-msg" class="text-xs sm:text-sm font-bold mt-2.5 text-center min-h-[1.25rem]"></p>
-      </div>
-
-      <!-- Aktionsbereich unten: Alles prüfen / Nächste Aufgabe -->
-      <div class="pt-2 flex flex-col items-center gap-3">
-        <button id="btn-check-step2" onclick="checkStep2()"
-          class="w-full sm:w-auto min-w-[260px] py-4 px-8 rounded-2xl bg-[#8ab848] hover:bg-[#76a139] active:scale-[0.98] text-white font-display text-xl sm:text-2xl font-bold shadow-md transition-all cursor-pointer">
-          Alles prüfen ✓
-        </button>
-
-        <div id="step2-overall-feedback" class="text-base sm:text-lg font-bold text-center min-h-[1.5rem]"></div>
-
-        <!-- Erscheint erst wenn ALLES richtig ist -->
-        <button id="btn-next-task" onclick="startNewTask()"
-          class="hidden w-full sm:w-auto min-w-[280px] py-4 px-8 rounded-2xl bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 active:scale-[0.98] text-white font-display text-xl sm:text-2xl font-bold shadow-lg shadow-orange-200 transition-all cursor-pointer animate-pop">
-          Nächste Aufgabe ➜
-        </button>
-      </div>
-    </section>
-  </main>
-
-  <!-- Kleiner Fußzeilen-Hinweis -->
-  <footer class="mt-4 mb-2 text-xs text-slate-600/80 text-center">
-    Fortschritt wird automatisch auf diesem Gerät gespeichert.
-  </footer>
-
-  <!-- ========================================================= -->
-  <!-- MODAL: Punkteliste (nach Datum sortiert)                  -->
-  <!-- ========================================================= -->
-  <div id="stats-modal" class="hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4" onclick="closeStatsOnBackdrop(event)">
-    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden animate-pop border-2 border-[#d7e5b3]">
-      <!-- Modal Header -->
-      <div class="bg-[#edf4da] px-6 py-4 flex items-center justify-between border-b border-[#d7e5b3]">
-        <h2 class="font-display text-2xl font-bold text-slate-800 flex items-center gap-2">
-          <span>📅</span>
-          <span>Meine Punkteliste</span>
-        </h2>
-        <button onclick="closeStatsModal()"
-          class="w-9 h-9 rounded-full bg-white hover:bg-slate-100 text-slate-600 font-bold text-xl flex items-center justify-center shadow-xs cursor-pointer"
-          aria-label="Schließen">
-          ✕
-        </button>
-      </div>
-
-      <!-- Modal Inhalt -->
-      <div class="p-5 sm:p-6">
-        <!-- Zusammenfassung -->
-        <div class="grid grid-cols-2 gap-3 mb-5">
-          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3 text-center">
-            <div class="text-xs font-bold text-amber-800 uppercase">Gesamt gelöst</div>
-            <div id="stats-total" class="font-display text-3xl font-bold text-amber-900 mt-0.5">0</div>
-          </div>
-          <div class="bg-sky-50 border border-sky-200 rounded-2xl p-3 text-center">
-            <div class="text-xs font-bold text-sky-800 uppercase">Verfügbare Hilfen</div>
-            <div id="stats-hints" class="font-display text-3xl font-bold text-sky-900 mt-0.5">0</div>
-          </div>
-        </div>
-
-        <!-- Tabelle nach Datum -->
-        <div class="max-h-64 overflow-y-auto rounded-2xl border border-slate-200">
-          <table class="w-full text-left border-collapse">
-            <thead class="bg-slate-100 sticky top-0">
-              <tr>
-                <th class="py-2.5 px-4 text-xs font-extrabold uppercase text-slate-600">Datum</th>
-                <th class="py-2.5 px-4 text-xs font-extrabold uppercase text-slate-600 text-right">Erledigte Blätter</th>
-              </tr>
-            </thead>
-            <tbody id="stats-table-body" class="divide-y divide-slate-100 text-sm sm:text-base">
-              <!-- Wird per JS befüllt -->
-            </tbody>
-          </table>
-        </div>
-
-        <button onclick="closeStatsModal()"
-          class="mt-5 w-full py-3 rounded-2xl bg-[#8ab848] hover:bg-[#76a139] text-white font-display text-lg font-bold transition-all cursor-pointer">
-          Weiter üben!
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    /* =====================================================================
-       ZUSTAND & LOCALSTORAGE
-    ===================================================================== */
-    const STORAGE_KEY = 'zahl_des_tages_1x1_v1';
-
+<!-- ... existing code ... -->
     const MODE_CONFIG = {
-      mul100:    { label: '× bis 100',     badge: 'Kleines 1×1 (bis 100)',         maxRange: 100 },
-      mul1000:   { label: '× bis 1000',    badge: 'Zehner-1×1 (bis 1000)',         maxRange: 1000 },
-      div100:    { label: '÷ bis 100',     badge: 'Geteilt-Aufgaben (bis 100)',    maxRange: 100 },
-      div1000:   { label: '÷ bis 1000',    badge: 'Geteilt-Aufgaben (bis 1000)',   maxRange: 1000 },
-      addsub100: { label: '+ / − bis 100', badge: 'Plus & Minus (bis 100)',        maxRange: 100 },
-      mix100:    { label: '🎲 Mix bis 100', badge: 'Bunter Rechen-Mix (bis 100)',  maxRange: 100 }
+      mul100:     { label: '× bis 100',       badge: 'Kleines 1×1 (bis 100)',         maxRange: 100 },
+      mul1000:    { label: '× bis 1000',      badge: 'Zehner-1×1 (bis 1000)',         maxRange: 1000 },
+      div100:     { label: '÷ bis 100',       badge: 'Geteilt-Aufgaben (bis 100)',    maxRange: 100 },
+      div1000:    { label: '÷ bis 1000',      badge: 'Geteilt-Aufgaben (bis 1000)',   maxRange: 1000 },
+      addsub100:  { label: '+ / − bis 100',   badge: 'Plus & Minus (bis 100)',        maxRange: 100 },
+      addsub1000: { label: '+ / − bis 1000',  badge: 'Plus & Minus (bis 1000)',       maxRange: 1000 },
+      mix100:     { label: '🎲 Mix bis 100',  badge: 'Bunter Rechen-Mix (bis 100)',   maxRange: 100 },
+      mix1000:    { label: '🎲 Mix bis 1000', badge: 'Bunter Rechen-Mix (bis 1000)',  maxRange: 1000 }
     };
 
     let appState = {
-      mode: 'mul100',     // mul100 | mul1000 | div100 | div1000 | addsub100 | mix100
+      mode: 'mul100',     // mul100 | mul1000 | div100 | div1000 | addsub100 | addsub1000 | mix100 | mix1000
       maxRange: 100,      // 100 oder 1000 (steuert Zahlenstrahl & Toleranz)
-      currentOp: 'mul',   // mul | div | add | sub
-      operandA: 7,
-      operandB: 8,
-      problemText: '7 × 8',
-      target: 56,
-      step1Solved: false,
-      step2Solved: false,
-      hintUsedThisTask: false,
-      selectedParity: null,      // 'even' | 'odd'
-      numberlineValue: null,     // Zahl auf dem Zahlenstrahl (float)
-      lastProblemKey: ''
-    };
-
-    let userProgress = {
-      daily: {},          // { "YYYY-MM-DD": count }
-      totalSolved: 0,
-      hints: 0,
-      soundEnabled: true  // Standardmäßig eingeschaltet
-    };
-
-    /** Lädt den gespeicherten Fortschritt sicher aus localStorage */
-    function loadProgress() {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (raw) {
-          const parsed = JSON.parse(raw);
-          userProgress.daily = parsed.daily && typeof parsed.daily === 'object' ? parsed.daily : {};
-          userProgress.totalSolved = Number(parsed.totalSolved) || 0;
-          userProgress.hints = Number(parsed.hints) || 0;
-          userProgress.soundEnabled = parsed.soundEnabled !== false;
-        }
-      } catch (e) {
-        console.warn('Konnte Fortschritt nicht laden:', e);
-      }
-      updateHeaderUI();
-    }
-
-    /** Speichert den Fortschritt sicher in localStorage */
-    function saveProgress() {
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(userProgress));
-      } catch (e) {
-        console.warn('Konnte Fortschritt nicht speichern:', e);
-      }
-      updateHeaderUI();
-    }
-
-    /** Liefert das heutige Datum im Format YYYY-MM-DD (lokale Zeitzone) */
-    function getTodayKey() {
-      const d = new Date();
-      const y = d.getFullYear();
-      const m = String(d.getMonth() + 1).padStart(2, '0');
-      const day = String(d.getDate()).padStart(2, '0');
-      return `${y}-${m}-${day}`;
-    }
-
-    /** Formatiert YYYY-MM-DD zu DD.MM.YYYY */
-    function formatDateDE(isoDate) {
-      const parts = isoDate.split('-');
-      if (parts.length !== 3) return isoDate;
-      return `${parts[2]}.${parts[1]}.${parts[0]}`;
-    }
-
-    /** Aktualisiert die Kopfzeile (Modus, Fortschritt bis zur Hilfe, Hilfen) */
-    function updateHeaderUI() {
-      Object.keys(MODE_CONFIG).forEach(modeKey => {
-        const btn = document.getElementById(`btn-mode-${modeKey}`);
-        if (!btn) return;
-        if (appState.mode === modeKey) {
-          btn.className = 'mode-btn px-2.5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer text-center bg-[#8ab848] text-white shadow-xs';
-        } else {
-          btn.className = 'mode-btn px-2.5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer text-center text-slate-700 hover:bg-white/70';
-        }
-      });
-
-      const mod8 = userProgress.totalSolved % 8;
-      document.getElementById('reward-progress-text').textContent = `⭐ Fortschritt bis zur nächsten Hilfe: ${mod8} / 8`;
-      document.getElementById('hints-count').textContent = userProgress.hints;
-
-      // Ton-Schalter aktualisieren
-      const soundBtn = document.getElementById('btn-sound-toggle');
-      const soundIcon = document.getElementById('sound-toggle-icon');
-      const soundLabel = document.getElementById('sound-toggle-label');
-      if (soundBtn && soundIcon && soundLabel) {
-        if (userProgress.soundEnabled) {
-          soundIcon.textContent = '🔊';
-          soundLabel.textContent = 'Ton an';
-          soundBtn.className = 'flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 active:scale-95 text-emerald-800 font-bold px-3 py-2 rounded-xl text-xs sm:text-sm border border-emerald-200 shadow-xs transition-all cursor-pointer';
-        } else {
-          soundIcon.textContent = '🔇';
-          soundLabel.textContent = 'Ton aus';
-          soundBtn.className = 'flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-500 font-bold px-3 py-2 rounded-xl text-xs sm:text-sm border border-slate-200 shadow-xs transition-all cursor-pointer';
-        }
-      }
-
-      updateHintButtonVisibility();
-    }
-
-    function updateHintButtonVisibility() {
-      const btnHint = document.getElementById('btn-use-hint');
-      if (!appState.step1Solved && !appState.hintUsedThisTask && userProgress.hints > 0) {
-        btnHint.classList.remove('hidden');
-      } else {
-        btnHint.classList.add('hidden');
-      }
-    }
-
-    /* =====================================================================
-       KINDGERECHTE SOUND-EFFEKTE (Web Audio API, Android-optimiert)
-    ===================================================================== */
-    let sharedAudioCtx = null;
-
-    /** Initialisiert und entsperrt den AudioContext zuverlässig (auch auf Android Chrome / Safari) */
-    function getAudioContext() {
-      try {
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        if (!AudioCtx) return null;
-        if (!sharedAudioCtx) {
-          sharedAudioCtx = new AudioCtx();
-        }
-        if (sharedAudioCtx.state === 'suspended') {
-          sharedAudioCtx.resume();
-        }
-        return sharedAudioCtx;
-      } catch (e) {
-        return null;
-      }
-    }
-
-    /** Schaltet die Sound-Effekte an oder aus und speichert den Zustand */
-    function toggleSound() {
-      userProgress.soundEnabled = !userProgress.soundEnabled;
-      saveProgress();
-      if (userProgress.soundEnabled) {
-        playStep1SuccessSound();
-      }
-    }
-
-    /** Löst ein kurzes, freundliches Wackeln auf einem Element aus */
-    function triggerShake(el) {
-      if (!el) return;
-      el.classList.remove('animate-shake');
-      void el.offsetWidth; // Reflow erzwingen, damit die Animation erneut startet
-      el.classList.add('animate-shake');
-    }
-
-    /**
-     * Süßer, sanfter Fehler-Sound ("Womp-womp / Boing")
-     * Warm, freundlich und nicht erschreckend.
-     */
-    function playErrorSound() {
-      if (!userProgress.soundEnabled) return;
-      const ctx = getAudioContext();
-      if (!ctx) return;
-
-      try {
-        const now = ctx.currentTime;
-
-        const playBoingNote = (startTime, startFreq, endFreq, duration, peakGain) => {
-          const osc = ctx.createOscillator();
-          const filter = ctx.createBiquadFilter();
-          const gain = ctx.createGain();
-
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(startFreq, startTime);
-          osc.frequency.exponentialRampToValueAtTime(endFreq, startTime + duration);
-
-          filter.type = 'lowpass';
-          filter.frequency.setValueAtTime(900, startTime);
-
-          gain.gain.setValueAtTime(0.0001, startTime);
-          gain.gain.linearRampToValueAtTime(peakGain, startTime + 0.025);
-          gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
-
-          osc.connect(filter);
-          filter.connect(gain);
-          gain.connect(ctx.destination);
-
-          osc.start(startTime);
-          osc.stop(startTime + duration + 0.02);
-        };
-
-        // Zwei sanfte absteigende "Womp-womp"-Töne
-        playBoingNote(now, 330, 275, 0.17, 0.14);
-        playBoingNote(now + 0.16, 265, 195, 0.28, 0.15);
-      } catch (e) {
-        // Audio optional – Fehler still ignorieren
-      }
-    }
-
-    /**
-     * Kurzer, süßer Erfolgs-Sound für Schritt 1 (fröhlicher Dreiklang / Pling)
-     */
-    function playStep1SuccessSound() {
-      if (!userProgress.soundEnabled) return;
-      const ctx = getAudioContext();
-      if (!ctx) return;
-
-      try {
-        const now = ctx.currentTime;
-        const notes = [523.25, 659.25, 783.99, 1046.5]; // C5 - E5 - G5 - C6
-
-        notes.forEach((freq, i) => {
-          const start = now + i * 0.075;
-          const dur = i === notes.length - 1 ? 0.35 : 0.2;
-
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          osc.type = i === notes.length - 1 ? 'triangle' : 'sine';
-          osc.frequency.setValueAtTime(freq, start);
-
-          gain.gain.setValueAtTime(0.0001, start);
-          gain.gain.linearRampToValueAtTime(0.11, start + 0.018);
-          gain.gain.exponentialRampToValueAtTime(0.0001, start + dur);
-
-          osc.connect(gain);
-          gain.connect(ctx.destination);
-
-          osc.start(start);
-          osc.stop(start + dur + 0.02);
-        });
-      } catch (e) {
-        // Audio optional
-      }
-    }
-
-    /**
-     * Fröhliche Party-Tröte / kleine Fanfare für ein komplett gelöstes Blatt!
-     * Ta-da-da-DAAA mit warmem Blechbläser-Klang, sanftem Vibrato & Glitzer-Pling.
-     */
-    function playTrumpetWinSound(extraSparkle = false) {
-      if (!userProgress.soundEnabled) return;
-      const ctx = getAudioContext();
-      if (!ctx) return;
-
-      try {
-        const now = ctx.currentTime;
-
-        // Einzelne Tröten-Note mit Sawtooth + Triangle, warmem Tiefpassfilter & optionalem Vibrato
-        const playHornNote = (start, freq, dur, peakGain, withVibrato = false) => {
-          const oscSaw = ctx.createOscillator();
-          const oscTri = ctx.createOscillator();
-          const filter = ctx.createBiquadFilter();
-          const gain = ctx.createGain();
-
-          oscSaw.type = 'sawtooth';
-          oscTri.type = 'triangle';
-          oscSaw.frequency.setValueAtTime(freq, start);
-          oscTri.frequency.setValueAtTime(freq, start);
-
-          // Kleiner fröhlicher Einschwing-Slide bei der langen Zielnote
-          if (withVibrato) {
-            oscSaw.frequency.setValueAtTime(freq * 0.97, start);
-            oscSaw.frequency.exponentialRampToValueAtTime(freq, start + 0.045);
-            oscTri.frequency.setValueAtTime(freq * 0.97, start);
-            oscTri.frequency.exponentialRampToValueAtTime(freq, start + 0.045);
-
-            // Sanftes Vibrato (LFO)
-            const lfo = ctx.createOscillator();
-            const lfoGain = ctx.createGain();
-            lfo.type = 'sine';
-            lfo.frequency.setValueAtTime(6.2, start + 0.08);
-            lfoGain.gain.setValueAtTime(4.5, start + 0.08);
-            lfo.connect(lfoGain);
-            lfoGain.connect(oscSaw.frequency);
-            lfoGain.connect(oscTri.frequency);
-            lfo.start(start + 0.08);
-            lfo.stop(start + dur + 0.05);
-          }
-
-          // Warmer Tiefpassfilter mit leichter Bläser-Hüllkurve
-          filter.type = 'lowpass';
-          filter.Q.setValueAtTime(2.2, start);
-          filter.frequency.setValueAtTime(900, start);
-          filter.frequency.exponentialRampToValueAtTime(2200, start + 0.05);
-          filter.frequency.exponentialRampToValueAtTime(1400, start + dur);
-
-          // Weiche Lautstärke-Hüllkurve (kein Knacksen, kein Clipping)
-          gain.gain.setValueAtTime(0.0001, start);
-          gain.gain.linearRampToValueAtTime(peakGain, start + 0.025);
-          gain.gain.setValueAtTime(peakGain * 0.85, start + Math.max(0.03, dur - 0.08));
-          gain.gain.exponentialRampToValueAtTime(0.0001, start + dur);
-
-          const sawMix = ctx.createGain();
-          const triMix = ctx.createGain();
-          sawMix.gain.setValueAtTime(0.42, start);
-          triMix.gain.setValueAtTime(0.58, start);
-
-          oscSaw.connect(sawMix);
-          oscTri.connect(triMix);
-          sawMix.connect(filter);
-          triMix.connect(filter);
-          filter.connect(gain);
-          gain.connect(ctx.destination);
-
-          oscSaw.start(start);
-          oscTri.start(start);
-          oscSaw.stop(start + dur + 0.04);
-          oscTri.stop(start + dur + 0.04);
-        };
-
-        // Fanfaren-Melodie: ta - da - da - DAAA! (C5 - E5 - G5 - C6)
-        playHornNote(now + 0.00, 523.25, 0.12, 0.12, false);
-        playHornNote(now + 0.13, 659.25, 0.12, 0.12, false);
-        playHornNote(now + 0.26, 783.99, 0.12, 0.13, false);
-        // Langer Schlusston als fröhlicher Zweiklang (C6 + E5/G5 Begleitung)
-        playHornNote(now + 0.40, 1046.50, 0.58, 0.14, true);
-        playHornNote(now + 0.40, 659.25, 0.55, 0.06, false);
-
-        // Süßer Glitzer-Pling am Ende
-        const sparkles = extraSparkle
-          ? [1318.5, 1567.98, 2093.0, 2637.0]
-          : [1318.5, 1567.98, 2093.0];
-
-        sparkles.forEach((freq, idx) => {
-          const sTime = now + 0.56 + idx * 0.065;
-          const osc = ctx.createOscillator();
-          const g = ctx.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, sTime);
-          g.gain.setValueAtTime(0.0001, sTime);
-          g.gain.linearRampToValueAtTime(0.075, sTime + 0.012);
-          g.gain.exponentialRampToValueAtTime(0.0001, sTime + 0.28);
-          osc.connect(g);
-          g.connect(ctx.destination);
-          osc.start(sTime);
-          osc.stop(sTime + 0.3);
-        });
-      } catch (e) {
-        // Audio optional
-      }
-    }
-
-    /* =====================================================================
-       AUFGABEN-GENERATOR & MODUSWECHSEL
-    ===================================================================== */
-    function switchMode(newMode) {
-      if (!MODE_CONFIG[newMode] || appState.mode === newMode) return;
-      appState.mode = newMode;
-      appState.maxRange = MODE_CONFIG[newMode].maxRange;
-      updateHeaderUI();
-      startNewTask();
-    }
-
-    function randInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    function buildSingleTask(taskType) {
-      if (taskType === 'mul100') {
-        const a = randInt(1, 10);
-        const b = randInt(1, 10);
-        return { op: 'mul', a, b, target: a * b, text: `${a} × ${b}` };
-      }
-
-      if (taskType === 'mul1000') {
-        const baseA = randInt(1, 10);
-        const baseB = randInt(1, 10);
-        const a = Math.random() < 0.5 ? baseA * 10 : baseA;
-        const b = a === baseA * 10 ? baseB : baseB * 10;
-        return { op: 'mul', a, b, target: a * b, text: `${a} × ${b}` };
-      }
-
-      if (taskType === 'div100') {
-        const divisor = randInt(1, 10);
-        const quotient = randInt(1, 10);
-        const dividend = divisor * quotient; // 1..100, immer ohne Rest
-        return { op: 'div', a: dividend, b: divisor, target: quotient, text: `${dividend} : ${divisor}` };
-      }
-
-      if (taskType === 'div1000') {
-        // Umkehrung des Zehner-1x1 (z. B. 420 : 6 = 70 oder 420 : 70 = 6) sowie Hunderter-Division
-        const variant = Math.random();
-        if (variant < 0.5) {
-          const divisor = randInt(1, 10);
-          const quotient = randInt(1, 10) * 10; // 10..100
-          const dividend = divisor * quotient;  // 10..1000
-          return { op: 'div', a: dividend, b: divisor, target: quotient, text: `${dividend} : ${divisor}` };
-        } else if (variant < 0.85) {
-          const divisor = randInt(1, 10) * 10;  // 10..100
-          const quotient = randInt(1, 10);      // 1..10
-          const dividend = divisor * quotient;  // 10..1000
-          return { op: 'div', a: dividend, b: divisor, target: quotient, text: `${dividend} : ${divisor}` };
-        } else {
-          const hundredPairs = [
-            [200, 2], [400, 2], [600, 2], [800, 2], [1000, 2],
-            [300, 3], [600, 3], [900, 3],
-            [400, 4], [800, 4],
-            [500, 5], [1000, 5],
-            [600, 6], [700, 7], [800, 8], [900, 9], [1000, 10]
-          ];
-          const [dividend, divisor] = hundredPairs[randInt(0, hundredPairs.length - 1)];
-          const quotient = dividend / divisor;
-          return { op: 'div', a: dividend, b: divisor, target: quotient, text: `${dividend} : ${divisor}` };
-        }
-      }
-
+// ... existing code ...
       if (taskType === 'add100') {
         const target = randInt(2, 100);
         const a = randInt(1, target - 1);
@@ -1000,10 +135,57 @@
         return { op: 'add', a, b, target, text: `${a} + ${b}` };
       }
 
-      // sub100
-      const a = randInt(2, 100);
-      const b = randInt(1, a - 1);
-      const target = a - b; // immer 1..99
+      if (taskType === 'sub100') {
+        const a = randInt(2, 100);
+        const b = randInt(1, a - 1);
+        const target = a - b; // immer 1..99
+        return { op: 'sub', a, b, target, text: `${a} − ${b}` };
+      }
+
+      if (taskType === 'add1000') {
+        // Abwechslungsreiche Plus-Aufgaben bis 1000 für 8-Jährige (Ergebnis 10..1000)
+        const style = Math.random();
+        let a, b, target;
+        if (style < 0.45) {
+          // Glatte Zehnerzahlen (z. B. 240 + 130)
+          target = randInt(2, 100) * 10;
+          a = randInt(1, target / 10 - 1) * 10;
+          b = target - a;
+        } else if (style < 0.75) {
+          // Dreistellige Zahl + glatter Zehner/Hunderter (z. B. 345 + 200 oder 418 + 50)
+          const step = Math.random() < 0.5 ? randInt(1, 5) * 100 : randInt(1, 9) * 10;
+          a = randInt(10, 1000 - step);
+          b = step;
+          target = a + b;
+        } else {
+          // Freie Aufgaben im 1000er-Raum
+          target = randInt(20, 1000);
+          a = randInt(10, target - 10);
+          b = target - a;
+        }
+        return { op: 'add', a, b, target, text: `${a} + ${b}` };
+      }
+
+      // sub1000: Abwechslungsreiche Minus-Aufgaben bis 1000 (Ergebnis 10..990)
+      const style = Math.random();
+      let a, b, target;
+      if (style < 0.45) {
+        // Glatte Zehnerzahlen (z. B. 650 - 230)
+        a = randInt(2, 100) * 10;
+        b = randInt(1, a / 10 - 1) * 10;
+        target = a - b;
+      } else if (style < 0.75) {
+        // Zahl minus glatter Zehner/Hunderter (z. B. 742 - 300 oder 564 - 40)
+        const step = Math.random() < 0.5 ? randInt(1, 5) * 100 : randInt(1, 9) * 10;
+        target = randInt(10, 1000 - step);
+        a = target + step;
+        b = step;
+      } else {
+        // Freie Aufgaben im 1000er-Raum
+        a = randInt(30, 1000);
+        b = randInt(10, a - 10);
+        target = a - b;
+      }
       return { op: 'sub', a, b, target, text: `${a} − ${b}` };
     }
 
@@ -1015,513 +197,57 @@
         let effectiveType = appState.mode;
         if (appState.mode === 'addsub100') {
           effectiveType = Math.random() < 0.5 ? 'add100' : 'sub100';
+        } else if (appState.mode === 'addsub1000') {
+          effectiveType = Math.random() < 0.5 ? 'add1000' : 'sub1000';
         } else if (appState.mode === 'mix100') {
           const mixTypes = ['mul100', 'div100', 'add100', 'sub100'];
+          effectiveType = mixTypes[randInt(0, mixTypes.length - 1)];
+        } else if (appState.mode === 'mix1000') {
+          const mixTypes = ['mul1000', 'div1000', 'add1000', 'sub1000'];
           effectiveType = mixTypes[randInt(0, mixTypes.length - 1)];
         }
         generated = buildSingleTask(effectiveType);
         attempts++;
       } while (generated.text === appState.lastProblemKey && attempts < 12);
-
-      appState.maxRange = MODE_CONFIG[appState.mode].maxRange;
-      appState.currentOp = generated.op;
-      appState.operandA = generated.a;
-      appState.operandB = generated.b;
-      appState.problemText = generated.text;
-      appState.target = generated.target;
-      appState.lastProblemKey = generated.text;
-    }
-
-    function startNewTask() {
-      generateTask();
-
-      appState.step1Solved = false;
-      appState.step2Solved = false;
-      appState.hintUsedThisTask = false;
-      appState.selectedParity = null;
-      appState.numberlineValue = null;
-
-      // Belohnungsbanner ausblenden
-      document.getElementById('reward-banner').classList.add('hidden');
-
-      // Aufgaben-Anzeige
-      document.getElementById('mode-badge').textContent = MODE_CONFIG[appState.mode].badge;
-      document.getElementById('math-problem').textContent = `${appState.problemText} = ?`;
-
-      // Stellenwerttafel konfigurieren (T-Spalte nur bei 1000)
-      const isThousand = appState.target === 1000;
-      const pvTable = document.getElementById('place-value-table');
-      const colT = document.getElementById('col-t');
-
-      if (isThousand) {
-        colT.classList.remove('hidden');
-        colT.classList.add('flex');
-        pvTable.classList.remove('grid-cols-3');
-        pvTable.classList.add('grid-cols-4');
-      } else {
-        colT.classList.add('hidden');
-        colT.classList.remove('flex');
-        pvTable.classList.remove('grid-cols-4');
-        pvTable.classList.add('grid-cols-3');
-      }
-
-      // Schritt-1-Felder zurücksetzen
-      ['input-t', 'input-h', 'input-z', 'input-e'].forEach(id => {
+// ... existing code ...
+      ['decomp-t', 'decomp-h', 'decomp-z', 'decomp-e'].forEach(id => {
         const el = document.getElementById(id);
         el.value = '';
         el.disabled = false;
         el.classList.remove('input-correct', 'input-wrong');
       });
-
-      document.getElementById('step1-feedback').textContent = '';
-      document.getElementById('btn-check-step1').classList.remove('hidden');
-      document.getElementById('hint-cards-container').classList.add('hidden');
-      document.getElementById('hint-cards').innerHTML = '';
-
-      // Schritt 2 ausblenden und zurücksetzen
-      document.getElementById('step2-section').classList.add('hidden');
-      document.getElementById('btn-next-task').classList.add('hidden');
-      document.getElementById('btn-check-step2').classList.remove('hidden');
-      document.getElementById('step2-overall-feedback').textContent = '';
-
-      resetStep2Fields();
-      updateHintButtonVisibility();
-
-      // Sanft nach oben scrollen
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function resetStep2Fields() {
-      // Gerade / Ungerade
-      document.querySelectorAll('.parity-btn').forEach(btn => {
-        btn.className = 'parity-btn py-4 px-3 rounded-2xl border-2 border-slate-300 bg-white font-display text-lg sm:text-xl font-bold text-slate-700 hover:border-blue-400 active:scale-95 transition-all cursor-pointer flex flex-col items-center gap-1';
-        btn.disabled = false;
-        const dot = btn.querySelector('.parity-dot');
-        dot.innerHTML = '';
-        dot.className = 'w-5 h-5 rounded-full border-2 border-slate-400 flex items-center justify-center parity-dot';
-      });
-      document.getElementById('fb-parity-icon').textContent = '';
-      document.getElementById('fb-parity-msg').textContent = '';
-
-      // Zahlzerlegung
-      const decompTWrap = document.getElementById('decomp-t-wrap');
-      if (appState.target === 1000) {
-        decompTWrap.classList.remove('hidden');
-        decompTWrap.classList.add('flex');
-      } else {
-        decompTWrap.classList.add('hidden');
-        decompTWrap.classList.remove('flex');
-      }
-
-      ['decomp-t', 'decomp-h', 'decomp-z', 'decomp-e', 'decomp-total'].forEach(id => {
-        const el = document.getElementById(id);
-        el.value = '';
-        el.disabled = false;
-        el.classList.remove('input-correct', 'input-wrong');
-      });
+      document.getElementById('decomp-total-display').textContent = appState.target;
       document.getElementById('fb-decomp-icon').textContent = '';
       document.getElementById('fb-decomp-msg').textContent = '';
-
-      // Nachbarzahlen
-      ['nb-nh-left', 'nb-nz-left', 'nb-v', 'nb-n', 'nb-nz-right', 'nb-nh-right'].forEach(id => {
-        const el = document.getElementById(id);
-        el.value = '';
-        el.disabled = false;
-        el.classList.remove('input-correct', 'input-wrong');
-      });
-      document.getElementById('fb-neighbors-icon').textContent = '';
-      document.getElementById('fb-neighbors-msg').textContent = '';
-
-      // Zahlenstrahl
-      document.getElementById('fb-numberline-icon').textContent = '';
-      document.getElementById('fb-numberline-msg').textContent = '';
-      const nlBox = document.getElementById('numberline-container');
-      nlBox.classList.remove('border-green-500', 'bg-green-50/40', 'border-red-400', 'bg-red-50/40');
-      nlBox.classList.add('border-slate-200', 'bg-white');
-    }
-
-    /* =====================================================================
-       BELOHNUNGSSYSTEM: HILFESTELLUNG (3 AUSWAHLKÄRTCHEN)
-    ===================================================================== */
-    function useHint() {
-      if (userProgress.hints <= 0 || appState.hintUsedThisTask || appState.step1Solved) return;
-
-      userProgress.hints -= 1;
-      appState.hintUsedThisTask = true;
-      saveProgress();
-
-      const correct = appState.target;
-      const options = new Set([correct]);
-      const candidates = [];
-      const maxR = appState.maxRange;
-
-      if (appState.currentOp === 'mul') {
-        const a = appState.operandA;
-        const b = appState.operandB;
-        const step = maxR === 100 ? 1 : 10;
-        if (a > step) candidates.push((a - step) * b);
-        candidates.push((a + step) * b);
-        if (b > step) candidates.push(a * (b - step));
-        candidates.push(a * (b + step));
-        candidates.push(correct + step, correct - step, correct + 2 * step, correct - 2 * step);
-      } else if (appState.currentOp === 'div') {
-        const step = (maxR === 100 || correct <= 10) ? 1 : 10;
-        candidates.push(correct + step, correct - step, correct + 2 * step, correct - 2 * step);
-        if (maxR === 1000 && correct > 10) {
-          candidates.push(correct + 100, correct - 100, correct + 50, correct - 50);
+// ... existing code ...
+      } else {
+        // Addition / Subtraktion: typische Zehner-, Hunderter- oder Einer-Rechenfehler
+        if (maxR === 1000) {
+          candidates.push(correct + 10, correct - 10, correct + 100, correct - 100, correct + 20, correct - 20, correct + 1, correct - 1);
+        } else {
+          candidates.push(correct + 1, correct - 1, correct + 2, correct - 2, correct + 10, correct - 10);
         }
-      } else {
-        // Addition / Subtraktion bis 100: typische Zehner- oder Einer-Rechenfehler
-        candidates.push(correct + 1, correct - 1, correct + 2, correct - 2, correct + 10, correct - 10);
       }
-
-      // Filtern: positiv, im sinnvollen Bereich, ungleich Lösung
-      const upperLimit = (appState.currentOp === 'div' && maxR === 100) ? 10 : maxR;
-      const validCandidates = candidates
-        .filter(n => Number.isInteger(n) && n >= 1 && n <= upperLimit && n !== correct);
-
-      // Zufällig mischen
-      validCandidates.sort(() => Math.random() - 0.5);
-
-      for (const c of validCandidates) {
-        if (options.size < 3) options.add(c);
-      }
-
-      // Fallback falls noch weniger als 3
-      const fallbackStep = maxR === 100 ? 1 : 10;
-      let offset = fallbackStep;
-      while (options.size < 3) {
-        const cand = correct + offset;
-        if (cand >= 1 && cand <= upperLimit) options.add(cand);
-        const candNeg = correct - offset;
-        if (options.size < 3 && candNeg >= 1) options.add(candNeg);
-        offset += fallbackStep;
-      }
-
-      const shuffled = Array.from(options).sort(() => Math.random() - 0.5);
-
-      const container = document.getElementById('hint-cards');
-      container.innerHTML = '';
-
-      shuffled.forEach(num => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'hint-card py-3 px-2 rounded-xl border-2 border-sky-300 bg-white hover:bg-sky-50 active:scale-95 font-display text-2xl font-bold text-sky-900 shadow-xs transition-all cursor-pointer';
-        btn.textContent = num;
-        btn.onclick = () => selectHintCard(num, btn);
-        container.appendChild(btn);
-      });
-
-      document.getElementById('hint-cards-container').classList.remove('hidden');
-    }
-
-    /** Übernimmt die angetippte Hilfe-Zahl direkt in die Stellenwerttafel */
-    function selectHintCard(num, clickedBtn) {
-      document.querySelectorAll('.hint-card').forEach(b => {
-        b.classList.remove('ring-4', 'ring-sky-300', 'bg-sky-100', 'border-sky-500');
-      });
-      clickedBtn.classList.add('ring-4', 'ring-sky-300', 'bg-sky-100', 'border-sky-500');
-
-      const t = Math.floor(num / 1000);
-      const h = Math.floor((num % 1000) / 100);
-      const z = Math.floor((num % 100) / 10);
-      const e = num % 10;
-
-      if (appState.target === 1000) {
-        document.getElementById('input-t').value = t > 0 ? String(t) : '';
-        document.getElementById('input-h').value = (t > 0 || h > 0) ? String(h) : '';
-        document.getElementById('input-z').value = (t > 0 || h > 0 || z > 0) ? String(z) : '';
-        document.getElementById('input-e').value = String(e);
-      } else {
-        document.getElementById('input-h').value = h > 0 ? String(h) : '';
-        document.getElementById('input-z').value = (h > 0 || z > 0) ? String(z) : '';
-        document.getElementById('input-e').value = String(e);
-      }
-    }
-
-    /* =====================================================================
-       SCHRITT 1 PRÜFEN
-    ===================================================================== */
-    function sanitizeDigit(str) {
-      return str.replace(/[^0-9]/g, '');
-    }
-
-    function checkStep1() {
-      const target = appState.target;
-      const isThousand = target === 1000;
-
-      const elT = document.getElementById('input-t');
-      const elH = document.getElementById('input-h');
-      const elZ = document.getElementById('input-z');
-      const elE = document.getElementById('input-e');
-
-      const rawT = sanitizeDigit(elT.value);
-      const rawH = sanitizeDigit(elH.value);
-      const rawZ = sanitizeDigit(elZ.value);
-      const rawE = sanitizeDigit(elE.value);
-
-      const fb = document.getElementById('step1-feedback');
-
-      if (!rawT && !rawH && !rawZ && !rawE) {
-        fb.textContent = 'Trage zuerst deine Zahl in die Stellenwerttafel ein!';
-        fb.className = 'mt-2.5 text-sm sm:text-base font-bold text-center text-amber-700';
-        triggerShake(document.getElementById('place-value-table'));
-        playErrorSound();
-        return;
-      }
-
-      const expT = Math.floor(target / 1000);
-      const expH = Math.floor((target % 1000) / 100);
-      const expZ = Math.floor((target % 100) / 10);
-      const expE = target % 10;
-
-      // Führende Nullen dürfen leer ODER "0" sein; mittlere/hintere Nullen müssen "0" sein (z. B. bei 40 muss E="0")
-      const checkT = !isThousand || (rawT === String(expT));
-      const checkH = target >= 100 ? (rawH === String(expH)) : (rawH === '' || rawH === '0');
-      const checkZ = target >= 10 ? (rawZ === String(expZ)) : (rawZ === '' || rawZ === '0');
-      const checkE = rawE === String(expE);
-
-      const setStyle = (el, ok) => {
-        el.classList.remove('input-correct', 'input-wrong');
-        el.classList.add(ok ? 'input-correct' : 'input-wrong');
-        if (!ok) triggerShake(el);
-      };
-
-      if (isThousand) setStyle(elT, checkT);
-      setStyle(elH, checkH);
-      setStyle(elZ, checkZ);
-      setStyle(elE, checkE);
-
-      if (checkT && checkH && checkZ && checkE) {
-        appState.step1Solved = true;
-        playStep1SuccessSound();
-
-        // Sauber ausfüllen & sperren
-        if (isThousand) elT.disabled = true;
-        elH.disabled = true;
-        elZ.disabled = true;
-        elE.disabled = true;
-
-        document.getElementById('btn-check-step1').classList.add('hidden');
-        document.getElementById('hint-cards-container').classList.add('hidden');
-        updateHintButtonVisibility();
-
-        fb.textContent = `🎉 Klasse! ${appState.problemText} = ${target} ist genau richtig!`;
-        fb.className = 'mt-2.5 text-sm sm:text-base font-bold text-center text-green-700';
-
-        // Schritt 2 vorbereiten & einblenden
-        revealStep2();
-      } else {
-        fb.textContent = 'Fast! Schau dir die rot markierten Felder noch einmal genau an.';
-        fb.className = 'mt-2.5 text-sm sm:text-base font-bold text-center text-red-600';
-        playErrorSound();
-      }
-    }
-
+// ... existing code ...
     function revealStep2() {
       const target = appState.target;
       document.getElementById('target-number-badge').textContent = target;
       document.getElementById('nb-center').textContent = target;
+      document.getElementById('decomp-total-display').textContent = target;
 
       const step2 = document.getElementById('step2-section');
       step2.classList.remove('hidden');
-
-      // Zahlenstrahl zeichnen (nachdem Container sichtbar ist)
-      drawNumberline();
-
-      // Sanft zu Schritt 2 scrollen
-      setTimeout(() => {
-        step2.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 150);
-    }
-
-    /* =====================================================================
-       SCHRITT 2: GERADE / UNGERADE
-    ===================================================================== */
-    function selectParity(choice) {
-      if (appState.step2Solved) return;
-      appState.selectedParity = choice;
-
-      const btnEven = document.getElementById('btn-even');
-      const btnOdd = document.getElementById('btn-odd');
-
-      [btnEven, btnOdd].forEach(btn => {
-        btn.classList.remove('border-blue-500', 'bg-blue-50', 'text-blue-900', 'border-red-400', 'bg-red-50', 'border-green-500', 'bg-green-50');
-        btn.classList.add('border-slate-300', 'bg-white', 'text-slate-700');
-        const dot = btn.querySelector('.parity-dot');
-        dot.innerHTML = '';
-        dot.classList.remove('border-blue-500', 'bg-blue-500');
-        dot.classList.add('border-slate-400');
-      });
-
-      const activeBtn = choice === 'even' ? btnEven : btnOdd;
-      activeBtn.classList.remove('border-slate-300', 'bg-white', 'text-slate-700');
-      activeBtn.classList.add('border-blue-500', 'bg-blue-50', 'text-blue-900');
-      const activeDot = activeBtn.querySelector('.parity-dot');
-      activeDot.classList.remove('border-slate-400');
-      activeDot.classList.add('border-blue-500', 'bg-blue-500');
-      activeDot.innerHTML = '<span class="w-2 h-2 rounded-full bg-white"></span>';
-    }
-
-    /* =====================================================================
-       SCHRITT 2: INTERAKTIVER ZAHLENSTRAHL (SVG + TOUCH/POINTER)
-    ===================================================================== */
-    function drawNumberline(feedbackState = null) {
-      const svg = document.getElementById('numberline-svg');
-      const maxVal = appState.maxRange; // 100 oder 1000
-      const majorStep = maxVal / 10; // 10 oder 100
-      const midStep = majorStep / 2; // 5 oder 50
-      const minorStep = majorStep / 10; // 1 oder 10
-
-      const vbWidth = 1000;
-      const vbHeight = 115;
-      const padX = 34;
-      const usableW = vbWidth - padX * 2;
-      const lineY = 66;
-
-      svg.setAttribute('viewBox', `0 0 ${vbWidth} ${vbHeight}`);
-
-      let html = '';
-
-      // Hauptlinie
-      html += `<line x1="${padX}" y1="${lineY}" x2="${vbWidth - padX}" y2="${lineY}" stroke="#475569" stroke-width="3" stroke-linecap="round" />`;
-
-      // Striche & Zahlen
-      for (let v = 0; v <= maxVal; v += minorStep) {
-        const x = padX + (v / maxVal) * usableW;
-        const isMajor = v % majorStep === 0;
-        const isMid = !isMajor && v % midStep === 0;
-
-        if (isMajor) {
-          html += `<line x1="${x}" y1="${lineY - 18}" x2="${x}" y2="${lineY + 18}" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />`;
-          html += `<text x="${x}" y="${lineY + 38}" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="18" font-weight="600" fill="#334155">${v}</text>`;
-        } else if (isMid) {
-          html += `<line x1="${x}" y1="${lineY - 13}" x2="${x}" y2="${lineY + 10}" stroke="#64748b" stroke-width="2" stroke-linecap="round" />`;
-        } else {
-          html += `<line x1="${x}" y1="${lineY - 8}" x2="${x}" y2="${lineY + 7}" stroke="#94a3b8" stroke-width="1.3" />`;
-        }
-      }
-
-      // Marker (Pin) mit Wertanzeige, wenn das Kind bereits getippt/gezogen hat
-      if (appState.numberlineValue !== null) {
-        const mx = padX + (appState.numberlineValue / maxVal) * usableW;
-        const displayVal = feedbackState === 'correct'
-          ? appState.target
-          : Math.round(appState.numberlineValue);
-
-        let pinColor = '#3b82f6'; // Blau beim Einstellen
-        if (feedbackState === 'correct') pinColor = '#16a34a';
-        if (feedbackState === 'wrong') pinColor = '#ef4444';
-
-        // Vertikale Zeigerlinie
-        html += `<line x1="${mx}" y1="${lineY - 34}" x2="${mx}" y2="${lineY + 4}" stroke="${pinColor}" stroke-width="4" stroke-linecap="round" />`;
-        // Pfeilspitze auf dem Strahl
-        html += `<polygon points="${mx},${lineY + 2} ${mx - 8},${lineY - 12} ${mx + 8},${lineY - 12}" fill="${pinColor}" />`;
-        // Gut sichtbares Wert-Schildchen über dem Pin
-        html += `<rect x="${mx - 28}" y="${lineY - 62}" width="56" height="28" rx="10" fill="${pinColor}" stroke="white" stroke-width="2.5" />`;
-        html += `<text x="${mx}" y="${lineY - 43}" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="16" font-weight="700" fill="white">${displayVal}</text>`;
-      }
-
-      svg.innerHTML = html;
-    }
-
-    // Touch- & Maus-Interaktion auf dem Zahlenstrahl
-    (function setupNumberlineEvents() {
-      const container = document.getElementById('numberline-container');
-      let isDragging = false;
-
-      function updateFromClientX(clientX) {
-        if (appState.step2Solved) return;
-        const svg = document.getElementById('numberline-svg');
-        const rect = svg.getBoundingClientRect();
-        if (rect.width <= 0) return;
-
-        // Entspricht padX = 34 bei viewBox 1000
-        const padPx = (34 / 1000) * rect.width;
-        const usablePx = rect.width - padPx * 2;
-        const relX = Math.max(0, Math.min(usablePx, clientX - rect.left - padPx));
-        const ratio = relX / usablePx;
-
-        appState.numberlineValue = ratio * appState.maxRange;
-        drawNumberline();
-      }
-
-      container.addEventListener('pointerdown', (e) => {
-        if (appState.step2Solved) return;
-        isDragging = true;
-        try { container.setPointerCapture(e.pointerId); } catch (_) {}
-        updateFromClientX(e.clientX);
-      });
-
-      container.addEventListener('pointermove', (e) => {
-        if (!isDragging || appState.step2Solved) return;
-        updateFromClientX(e.clientX);
-      });
-
-      const stopDrag = (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        try { container.releasePointerCapture(e.pointerId); } catch (_) {}
-      };
-
-      container.addEventListener('pointerup', stopDrag);
-      container.addEventListener('pointercancel', stopDrag);
-    })();
-
-    /* =====================================================================
-       SCHRITT 2 PRÜFEN (ALLE FOLGEFRAGEN)
-    ===================================================================== */
-    function checkStep2() {
-      const target = appState.target;
-      let allCorrect = true;
-
-      // 1. Gerade / Ungerade prüfen
-      const isEven = target % 2 === 0;
-      const expectedParity = isEven ? 'even' : 'odd';
-      const parityIcon = document.getElementById('fb-parity-icon');
-      const parityMsg = document.getElementById('fb-parity-msg');
-
-      if (!appState.selectedParity) {
-        allCorrect = false;
-        parityIcon.textContent = '❓';
-        parityMsg.textContent = 'Bitte wähle gerade oder ungerade aus.';
-        parityMsg.className = 'text-xs sm:text-sm font-bold mt-2.5 text-amber-700';
-      } else if (appState.selectedParity === expectedParity) {
-        parityIcon.textContent = '✅';
-        parityMsg.textContent = 'Genau richtig!';
-        parityMsg.className = 'text-xs sm:text-sm font-bold mt-2.5 text-green-700';
-        const btn = document.getElementById(expectedParity === 'even' ? 'btn-even' : 'btn-odd');
-        btn.classList.remove('border-blue-500', 'bg-blue-50');
-        btn.classList.add('border-green-500', 'bg-green-50', 'text-green-800');
-      } else {
-        allCorrect = false;
-        parityIcon.textContent = '❌';
-        parityMsg.textContent = 'Tipp: Schau auf die Einerstelle (0, 2, 4, 6, 8 sind gerade).';
-        parityMsg.className = 'text-xs sm:text-sm font-bold mt-2.5 text-red-600';
-        const btn = document.getElementById(appState.selectedParity === 'even' ? 'btn-even' : 'btn-odd');
-        btn.classList.remove('border-blue-500', 'bg-blue-50');
-        btn.classList.add('border-red-400', 'bg-red-50', 'text-red-700');
-      }
-
-      // 2. Zahlzerlegung prüfen
-      // 2. Zahlzerlegung prüfen (ziffernweise nach Stellenwerten: z. B. 45 -> 4 Z + 5 E = 45)
-      const expT = Math.floor(target / 1000);
-      const expH = Math.floor((target % 1000) / 100);
-      const expZ = Math.floor((target % 100) / 10);
-      const expE = target % 10;
-
+// ... existing code ...
       const rawDecompT = sanitizeDigit(document.getElementById('decomp-t').value);
       const rawDecompH = sanitizeDigit(document.getElementById('decomp-h').value);
       const rawDecompZ = sanitizeDigit(document.getElementById('decomp-z').value);
       const rawDecompE = sanitizeDigit(document.getElementById('decomp-e').value);
-      const rawDecompTotal = sanitizeDigit(document.getElementById('decomp-total').value);
 
       // Führende 0-Stellen dürfen leer ODER "0" sein
       const okT = target !== 1000 || rawDecompT === String(expT);
       const okH = target >= 100 ? (rawDecompH === String(expH)) : (rawDecompH === '' || rawDecompH === '0');
       const okZ = target >= 10 ? (rawDecompZ === String(expZ)) : (rawDecompZ === '' || rawDecompZ === '0');
       const okE = rawDecompE === String(expE);
-      const okTotal = rawDecompTotal !== '' && parseInt(rawDecompTotal, 10) === target;
 
       const markField = (id, ok) => {
         const el = document.getElementById(id);
@@ -1534,12 +260,11 @@
       markField('decomp-h', okH);
       markField('decomp-z', okZ);
       markField('decomp-e', okE);
-      markField('decomp-total', okTotal);
 
       const decompIcon = document.getElementById('fb-decomp-icon');
       const decompMsg = document.getElementById('fb-decomp-msg');
 
-      if (okT && okH && okZ && okE && okTotal) {
+      if (okT && okH && okZ && okE) {
         decompIcon.textContent = '✅';
         decompMsg.textContent = 'Super zerlegt!';
         decompMsg.className = 'text-xs sm:text-sm font-bold mt-2.5 text-green-700';
@@ -1549,282 +274,39 @@
         decompMsg.textContent = 'Tipp: Trage nur die einzelnen Ziffern ein (z. B. 45 → 4 Z + 5 E = 45).';
         decompMsg.className = 'text-xs sm:text-sm font-bold mt-2.5 text-red-600';
       }
-
-      // 3. Vorgänger / Nachfolger & Nachbarzahlen prüfen (Grundschul-Regel)
-      const expV = target - 1;
-      const expN = target + 1;
-      const expNZLeft = target % 10 === 0 ? Math.max(0, target - 10) : Math.floor(target / 10) * 10;
-      const expNZRight = target % 10 === 0 ? target + 10 : Math.ceil(target / 10) * 10;
-      const expNHLeft = target % 100 === 0 ? Math.max(0, target - 100) : Math.floor(target / 100) * 100;
-      const expNHRight = target % 100 === 0 ? target + 100 : Math.ceil(target / 100) * 100;
-
-      const neighborChecks = [
-        { id: 'nb-nh-left', expected: expNHLeft },
-        { id: 'nb-nz-left', expected: expNZLeft },
-        { id: 'nb-v', expected: expV },
-        { id: 'nb-n', expected: expN },
-        { id: 'nb-nz-right', expected: expNZRight },
-        { id: 'nb-nh-right', expected: expNHRight }
-      ];
-
-      let allNeighborsOk = true;
-      neighborChecks.forEach(item => {
-        const raw = sanitizeDigit(document.getElementById(item.id).value);
-        const ok = raw !== '' && parseInt(raw, 10) === item.expected;
-        markField(item.id, ok);
-        if (!ok) allNeighborsOk = false;
-      });
-
-      const nbIcon = document.getElementById('fb-neighbors-icon');
-      const nbMsg = document.getElementById('fb-neighbors-msg');
-
-      if (allNeighborsOk) {
-        nbIcon.textContent = '✅';
-        nbMsg.textContent = 'Alle Nachbarzahlen stimmen!';
-        nbMsg.className = 'text-xs sm:text-sm font-bold mt-1.5 text-center text-green-700';
-      } else {
-        allCorrect = false;
-        nbIcon.textContent = '❌';
-        nbMsg.textContent = 'Schau dir die roten Nachbarfelder nochmal an (bei glatten Zehnern/Hundertern springt man einen weiter).';
-        nbMsg.className = 'text-xs sm:text-sm font-bold mt-1.5 text-center text-red-600';
-      }
-
-      // 4. Zahlenstrahl prüfen (kindgerechte Toleranz: ±2 im 100er-Raum, ±20 im 1000er-Raum)
-      const nlIcon = document.getElementById('fb-numberline-icon');
-      const nlMsg = document.getElementById('fb-numberline-msg');
-      const nlBox = document.getElementById('numberline-container');
-      const tolerance = appState.maxRange === 100 ? 2 : 20;
-
-      nlBox.classList.remove('border-slate-200', 'bg-white', 'border-green-500', 'bg-green-50/40', 'border-red-400', 'bg-red-50/40');
-
-      if (appState.numberlineValue === null) {
-        allCorrect = false;
-        nlIcon.textContent = '❓';
-        nlMsg.textContent = 'Tippe auf den Zahlenstrahl, um deine Zahl zu markieren!';
-        nlMsg.className = 'text-xs sm:text-sm font-bold mt-2.5 text-center text-amber-700';
-        nlBox.classList.add('border-red-400', 'bg-red-50/40');
-        drawNumberline();
-      } else {
-        const diff = appState.numberlineValue - target;
-        if (Math.abs(diff) <= tolerance) {
-          nlIcon.textContent = '✅';
-          nlMsg.textContent = 'Volltreffer auf dem Zahlenstrahl!';
-          nlMsg.className = 'text-xs sm:text-sm font-bold mt-2.5 text-center text-green-700';
-          nlBox.classList.add('border-green-500', 'bg-green-50/40');
-          // Auf genaue Position einrasten für das Erfolgserlebnis
-          appState.numberlineValue = target;
-          drawNumberline('correct');
-        } else {
-          allCorrect = false;
-          nlIcon.textContent = '❌';
-          const dirTip = diff < 0 ? 'Etwas weiter nach rechts ➡️!' : 'Etwas weiter nach links ⬅️!';
-          nlMsg.textContent = `Fast getroffen! ${dirTip}`;
-          nlMsg.className = 'text-xs sm:text-sm font-bold mt-2.5 text-center text-red-600';
-          nlBox.classList.add('border-red-400', 'bg-red-50/40');
-          drawNumberline('wrong');
-        }
-      }
-
-      // Gesamtauswertung
-      const overallFb = document.getElementById('step2-overall-feedback');
-
-      if (allCorrect) {
-        completeWorksheet();
-      } else {
-        overallFb.textContent = 'Ein paar Kleinigkeiten fehlen noch – verbessere die roten Felder und prüfe nochmal!';
-        overallFb.className = 'text-sm sm:text-base font-bold text-center text-amber-700';
-        playErrorSound();
-      }
-    }
-
+// ... existing code ...
     /* =====================================================================
-       BLATT KOMPLETT GELÖST: KONFETTI, STATISTIK & 8ER-BELOHNUNG
+       START & PNG-APP-ICON GENERATOR (für Android/iOS Startbildschirm)
     ===================================================================== */
-    function completeWorksheet() {
-      if (appState.step2Solved) return;
-      appState.step2Solved = true;
+    function generateTouchIconPNG() {
+      try {
+        const svgEl = document.getElementById('math-dino-svg');
+        const linkEl = document.getElementById('apple-touch-icon-link');
+        if (!svgEl || !linkEl) return;
 
-      // Eingaben sperren
-      document.querySelectorAll('#step2-section input, #step2-section .parity-btn').forEach(el => {
-        el.disabled = true;
-      });
-
-      document.getElementById('btn-check-step2').classList.add('hidden');
-      const nextBtn = document.getElementById('btn-next-task');
-      nextBtn.classList.remove('hidden');
-
-      const overallFb = document.getElementById('step2-overall-feedback');
-      overallFb.textContent = '🌟 Fantastisch! Du hast das ganze Arbeitsblatt richtig gelöst!';
-      overallFb.className = 'text-lg sm:text-xl font-display font-bold text-center text-green-700 animate-pop';
-
-      // Statistik aktualisieren
-      const today = getTodayKey();
-      userProgress.daily[today] = (userProgress.daily[today] || 0) + 1;
-      userProgress.totalSolved += 1;
-
-      // Belohnungssystem: Alle 8 Blätter -> +1 Hilfe
-      let earnedHint = false;
-      if (userProgress.totalSolved % 8 === 0) {
-        userProgress.hints += 1;
-        earnedHint = true;
-        document.getElementById('reward-banner').classList.remove('hidden');
-      }
-
-      saveProgress();
-      playTrumpetWinSound(earnedHint);
-      launchConfetti(earnedHint ? 130 : 75);
-
-      setTimeout(() => {
-        nextBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 200);
+        const svgData = new XMLSerializer().serializeToString(svgEl);
+        const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(svgBlob);
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          canvas.width = 192;
+          canvas.height = 192;
+          const ctx = canvas.getContext('2d');
+          ctx.fillStyle = '#d5e5b5';
+          ctx.fillRect(0, 0, 192, 192);
+          ctx.drawImage(img, 8, 8, 176, 176);
+          linkEl.href = canvas.toDataURL('image/png');
+          URL.revokeObjectURL(url);
+        };
+        img.src = url;
+      } catch (_) {}
     }
 
-    /* =====================================================================
-       PUNKTELISTE MODAL
-    ===================================================================== */
-    function openStatsModal() {
-      document.getElementById('stats-total').textContent = userProgress.totalSolved;
-      document.getElementById('stats-hints').textContent = userProgress.hints;
-
-      const tbody = document.getElementById('stats-table-body');
-      tbody.innerHTML = '';
-
-      // Nach Datum absteigend (neuestes zuerst) sortieren
-      const dates = Object.keys(userProgress.daily).sort((a, b) => b.localeCompare(a));
-
-      if (dates.length === 0) {
-        tbody.innerHTML = `
-          <tr>
-            <td colspan="2" class="py-8 px-4 text-center text-slate-400 font-semibold">
-              Noch keine Blätter erledigt.<br>Löse deine erste 1×1-Aufgabe! 🌟
-            </td>
-          </tr>
-        `;
-      } else {
-        const today = getTodayKey();
-        dates.forEach(dateKey => {
-          const count = userProgress.daily[dateKey];
-          const isToday = dateKey === today;
-          const unitLabel = count === 1 ? 'Blatt' : 'Blätter';
-
-          const tr = document.createElement('tr');
-          tr.className = isToday ? 'bg-[#f4f9e8]' : 'hover:bg-slate-50';
-          tr.innerHTML = `
-            <td class="py-3 px-4 font-bold text-slate-700">
-              ${formatDateDE(dateKey)}
-              ${isToday ? '<span class="ml-1.5 text-[11px] bg-[#8ab848] text-white px-2 py-0.5 rounded-full">Heute</span>' : ''}
-            </td>
-            <td class="py-3 px-4 text-right font-display font-bold text-slate-800">
-              <span class="text-base sm:text-lg">${count} ${unitLabel} ⭐</span>
-            </td>
-          `;
-          tbody.appendChild(tr);
-        });
-      }
-
-      document.getElementById('stats-modal').classList.remove('hidden');
-    }
-
-    function closeStatsModal() {
-      document.getElementById('stats-modal').classList.add('hidden');
-    }
-
-    function closeStatsOnBackdrop(event) {
-      if (event.target.id === 'stats-modal') {
-        closeStatsModal();
-      }
-    }
-
-    /* =====================================================================
-       KONFETTI-ANIMATION (Canvas)
-    ===================================================================== */
-    function launchConfetti(particleCount = 80) {
-      const canvas = document.getElementById('confetti-canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      const colors = ['#8ab848', '#f59e0b', '#3b82f6', '#ec4899', '#10b981', '#f97316'];
-      const particles = [];
-
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: -20 - Math.random() * 140,
-          w: 7 + Math.random() * 7,
-          h: 5 + Math.random() * 6,
-          color: colors[Math.floor(Math.random() * colors.length)],
-          vx: (Math.random() - 0.5) * 4,
-          vy: 2.5 + Math.random() * 4.5,
-          rot: Math.random() * 360,
-          vrot: (Math.random() - 0.5) * 10,
-          alpha: 1
-        });
-      }
-
-      let frame = 0;
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        let alive = false;
-
-        particles.forEach(p => {
-          p.x += p.vx;
-          p.y += p.vy;
-          p.vy += 0.08; // Schwerkraft
-          p.rot += p.vrot;
-          if (frame > 90) p.alpha -= 0.02;
-
-          if (p.alpha > 0 && p.y < canvas.height + 30) {
-            alive = true;
-            ctx.save();
-            ctx.globalAlpha = Math.max(0, p.alpha);
-            ctx.translate(p.x, p.y);
-            ctx.rotate((p.rot * Math.PI) / 180);
-            ctx.fillStyle = p.color;
-            ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
-            ctx.restore();
-          }
-        });
-
-        frame++;
-        if (alive && frame < 180) {
-          requestAnimationFrame(animate);
-        } else {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-      }
-
-      animate();
-    }
-
-    /* =====================================================================
-       KOMFORT: AUTOMATISCHER FOKUSWECHSEL & ENTER-TASTE
-    ===================================================================== */
-    function setupKeyboardHelpers() {
-      // Nur Ziffern in Zahlenfeldern zulassen
-      document.querySelectorAll('input[inputmode="numeric"]').forEach(input => {
-        input.addEventListener('input', () => {
-          input.value = sanitizeDigit(input.value);
-          input.classList.remove('input-wrong');
-        });
-      });
-
-      // Enter in Schritt 1 prüft direkt
-      ['input-t', 'input-h', 'input-z', 'input-e'].forEach(id => {
-        document.getElementById(id).addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' && !appState.step1Solved) {
-            checkStep1();
-          }
-        });
-      });
-    }
-
-    /* =====================================================================
-       START
-    ===================================================================== */
     window.addEventListener('DOMContentLoaded', () => {
       loadProgress();
       setupKeyboardHelpers();
+      generateTouchIconPNG();
       startNewTask();
     });
   </script>
