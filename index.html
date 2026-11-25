@@ -9,42 +9,46 @@
   <meta name="theme-color" content="#d5e5b5" />
   <title>Zahlen-Jagd – Rechen-Lern-App</title>
 
-  <!-- Mathe-Dino SVG Favicon & App-Icons (werden per Canvas zusätzlich als PNG für Android/iOS gesetzt) -->
-  <link id="favicon-link" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='28' fill='%23d5e5b5'/%3E%3Ccircle cx='64' cy='64' r='54' fill='%23ffffff'/%3E%3Cpath d='M36 46l-6-8 10 2M44 37l-4-9 10 4M55 32l-1-9 8 6' stroke='%235b8226' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='%238ab848'/%3E%3Cpath d='M42 96c-4-14-4-34 6-46 7-9 20-14 33-12 12 2 20 10 20 20 0 9-7 15-17 16l-6 1c1 7 2 14 1 21H42z' fill='%237cc242' stroke='%233f6212' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M44 96c2-11 8-18 17-18 8 0 13 6 14 18H44z' fill='%23dcfce7'/%3E%3Ccircle cx='71' cy='53' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='88' cy='54' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Cline x1='79' y1='53' x2='80' y2='54' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='72' cy='53' r='3' fill='%231e293b'/%3E%3Ccircle cx='89' cy='54' r='3' fill='%231e293b'/%3E%3Cpath d='M75 66c5 3 11 3 15-1' stroke='%233f6212' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3Crect x='20' y='74' width='32' height='24' rx='5' fill='%231e293b' stroke='%23f59e0b' stroke-width='3'/%3E%3Ctext x='36' y='90' text-anchor='middle' font-family='sans-serif' font-size='12' font-weight='bold' fill='%23fef08a'%3E+%C3%97%C3%B7%3C/text%3E%3C/svg%3E" />
-  <link id="apple-touch-icon-link" rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='28' fill='%23d5e5b5'/%3E%3Ccircle cx='64' cy='64' r='54' fill='%23ffffff'/%3E%3Cpath d='M42 96c-4-14-4-34 6-46 7-9 20-14 33-12 12 2 20 10 20 20 0 9-7 15-17 16l-6 1c1 7 2 14 1 21H42z' fill='%237cc242' stroke='%233f6212' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='71' cy='53' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='88' cy='54' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='72' cy='53' r='3' fill='%231e293b'/%3E%3Ccircle cx='89' cy='54' r='3' fill='%231e293b'/%3E%3C/svg%3E" />
+  <!-- Inline-SVG Favicon (Mathe-Dino) – wird beim Laden zusätzlich als PNG-Touch-Icon generiert -->
+  <link id="favicon-link" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='28' fill='%23d5e5b5'/%3E%3Ccircle cx='64' cy='64' r='54' fill='%23ffffff'/%3E%3Cpath d='M36 46l-6-8 10 2M44 37l-4-9 10 4M55 32l-1-9 8 6' stroke='%234d7c0f' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='%238ab848'/%3E%3Cpath d='M42 98c-4-14-4-34 6-46 7-9 20-14 33-12 12 2 20 10 20 20 0 9-7 15-17 16l-6 1c1 7 2 14 1 21H42z' fill='%237cc242' stroke='%233f6212' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M45 98c2-11 8-18 17-18 8 0 13 6 14 18H45z' fill='%23dcfce7'/%3E%3Ccircle cx='71' cy='53' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='88' cy='54' r='8' fill='%23ffffff' stroke='%231e293b' stroke-width='3'/%3E%3Cline x1='79' y1='53' x2='80' y2='54' stroke='%231e293b' stroke-width='3'/%3E%3Ccircle cx='72' cy='53' r='3' fill='%231e293b'/%3E%3Ccircle cx='89' cy='54' r='3' fill='%231e293b'/%3E%3Cpath d='M75 66c5 3 11 3 15-1' stroke='%233f6212' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3Crect x='19' y='74' width='34' height='24' rx='5' fill='%231e293b' stroke='%23f59e0b' stroke-width='3'/%3E%3Ctext x='36' y='90' text-anchor='middle' font-family='sans-serif' font-size='12' font-weight='bold' fill='%23fef08a'%3E+%C3%97%C3%B7%3C/text%3E%3C/svg%3E" />
+  <link id="apple-touch-icon-link" rel="apple-touch-icon" href="" />
 
   <style>
     /* =====================================================================
-       BASIS-VARIABLEN & GRUNDSTILE (100 % eigenständig, ohne CDNs)
+       GRUNDSTYLING & DESIGN-TOKENS (100% eigenständig, ohne CDNs)
     ===================================================================== */
     :root {
-      --bg-sage: #d5e5b5;
-      --bg-sage-soft: #eef5df;
-      --bg-sage-card: #f5faea;
+      --bg-green: #d5e5b5;
+      --bg-green-soft: #eef6dc;
+      --table-green: #d7e5b3;
+      --border-green: #b7d17a;
       --accent-green: #7cb342;
-      --accent-green-dark: #5c8b28;
-      --accent-green-deep: #3f6212;
-      --table-header: #d7e5b3;
-      --border-soft: #cbd8ae;
+      --accent-green-dark: #5c8a28;
       --text-main: #1e293b;
-      --text-muted: #475569;
-      --ok-bg: #dcfce7;
-      --ok-border: #22c55e;
-      --ok-text: #15803d;
-      --err-bg: #fee2e2;
-      --err-border: #ef4444;
-      --err-text: #b91c1c;
-      --amber-bg: #fef3c7;
-      --amber-border: #f59e0b;
-      --amber-text: #92400e;
-      --badge100-bg: #e4f4d4;
-      --badge100-text: #3f6d18;
-      --badge100-border: #b8dc96;
-      --badge1000-bg: #e5edff;
-      --badge1000-text: #3730a3;
-      --badge1000-border: #c2d4ff;
-      --font-body: "Trebuchet MS", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-display: "Arial Rounded MT Bold", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --danger-border: #f87171;
+      --success: #15803d;
+      --success-bg: #f0fdf4;
+      --success-border: #4ade80;
+      --amber: #d97706;
+      --amber-bg: #fffbeb;
+      --amber-border: #fcd34d;
+      --r100-bg: #e7f6d5;
+      --r100-text: #3f6212;
+      --r100-border: #b7d982;
+      --r1000-bg: #e8e9ff;
+      --r1000-text: #4338ca;
+      --r1000-border: #a5b4fc;
+      --radius-lg: 28px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --shadow-card: 0 10px 28px rgba(63, 98, 18, 0.12);
+      --shadow-soft: 0 3px 10px rgba(30, 41, 59, 0.07);
+      --font-main: 'Nunito', 'Quicksand', 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+      --font-display: 'Fredoka', 'Comic Sans MS', 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
     }
 
     * {
@@ -55,27 +59,32 @@
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-      background-color: var(--bg-sage);
-      background-image:
-        radial-gradient(circle at 12% 10%, rgba(255,255,255,0.35) 0%, transparent 40%),
-        radial-gradient(circle at 88% 85%, rgba(255,255,255,0.28) 0%, transparent 45%);
+      min-height: 100%;
+      background-color: var(--bg-green);
+      background-image: radial-gradient(circle at 18% 12%, rgba(255,255,255,0.4) 0%, transparent 40%),
+                        radial-gradient(circle at 85% 88%, rgba(138,184,72,0.22) 0%, transparent 45%);
       color: var(--text-main);
-      font-family: var(--font-body);
+      font-family: var(--font-main);
       line-height: 1.4;
-      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 12px 10px 28px;
+      padding: 12px 10px 44px;
     }
 
-    button, input {
-      font-family: inherit;
+    @media (min-width: 640px) {
+      body {
+        padding: 18px 20px 56px;
+      }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
     }
 
     .hidden {
@@ -83,61 +92,80 @@
     }
 
     /* =====================================================================
-       OBERE STEUERUNGSLEISTE (8 RECHENMODI + STATUS)
+       OBERE STEUERUNGSLEISTE (8 MODI + STATUS + BUTTONS)
     ===================================================================== */
     .top-header {
-      width: 100%;
-      max-width: 900px;
       background: rgba(255, 255, 255, 0.9);
-      border: 2px solid rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      border: 2px solid rgba(255, 255, 255, 0.85);
       border-radius: 22px;
-      padding: 12px;
+      padding: 10px;
       margin-bottom: 14px;
-      box-shadow: 0 4px 14px rgba(63, 98, 18, 0.08);
+      box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    .mode-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      background: var(--bg-sage-soft);
-      padding: 6px;
-      border-radius: 16px;
+    @media (min-width: 640px) {
+      .top-header {
+        padding: 14px;
+        gap: 12px;
+      }
     }
 
-    @media (max-width: 560px) {
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      background: var(--bg-green-soft);
+      padding: 6px;
+      border-radius: 15px;
+    }
+
+    @media (min-width: 640px) {
       .mode-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
       }
     }
 
     .mode-btn {
+      appearance: none;
       border: 2px solid transparent;
       background: rgba(255, 255, 255, 0.65);
-      color: #334155;
-      font-weight: 700;
+      color: #3f6212;
+      font-family: var(--font-main);
+      font-weight: 800;
       font-size: 0.85rem;
       padding: 10px 6px;
-      border-radius: 12px;
+      border-radius: 11px;
       cursor: pointer;
-      transition: all 0.16s ease;
+      transition: transform 0.12s ease, background-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
       text-align: center;
       user-select: none;
     }
 
+    @media (min-width: 640px) {
+      .mode-btn {
+        font-size: 0.92rem;
+        padding: 10px 8px;
+      }
+    }
+
     .mode-btn:hover {
       background: #ffffff;
-      border-color: #c2d699;
+    }
+
+    .mode-btn:active {
+      transform: scale(0.97);
     }
 
     .mode-btn.active {
       background: var(--accent-green);
       color: #ffffff;
       border-color: var(--accent-green-dark);
-      box-shadow: 0 3px 8px rgba(92, 139, 40, 0.25);
+      box-shadow: 0 3px 10px rgba(92, 138, 40, 0.28);
     }
 
     .status-bar {
@@ -155,21 +183,22 @@
       gap: 8px;
     }
 
-    .pill-btn, .pill-badge {
+    .pill-btn, .pill-info {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       padding: 8px 13px;
       border-radius: 999px;
-      font-size: 0.88rem;
-      font-weight: 700;
+      font-size: 0.86rem;
+      font-weight: 800;
       border: 2px solid transparent;
-      user-select: none;
+      font-family: var(--font-main);
     }
 
     .pill-btn {
       cursor: pointer;
-      transition: transform 0.12s ease, background 0.15s ease;
+      transition: transform 0.12s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+      user-select: none;
     }
 
     .pill-btn:active {
@@ -188,231 +217,272 @@
       border-color: #bef264;
     }
 
-    .badge-hints {
+    .pill-hints {
       background: var(--amber-bg);
-      color: var(--amber-text);
-      border-color: #fcd34d;
+      color: #92400e;
+      border-color: var(--amber-border);
     }
 
-    .hint-progress-tag {
-      background: rgba(255, 255, 255, 0.75);
-      color: #78350f;
-      padding: 2px 7px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 800;
+    .pill-progress {
+      background: #f8fafc;
+      color: #475569;
+      border-color: #e2e8f0;
+      font-weight: 700;
+      font-size: 0.82rem;
     }
 
     .btn-scores {
-      background: #e0f2fe;
-      color: #075985;
-      border-color: #bae6fd;
+      background: #ffffff;
+      color: #1e293b;
+      border-color: var(--border-green);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
 
     .btn-scores:hover {
-      background: #bae6fd;
+      background: var(--bg-green-soft);
     }
 
     /* =====================================================================
        HAUPT-ARBEITSBLATT-KARTE
     ===================================================================== */
-    .worksheet-card {
-      width: 100%;
-      max-width: 900px;
-      background: #ffffff;
-      border-radius: 30px;
-      border: 3px solid #ffffff;
-      box-shadow: 0 10px 30px rgba(63, 98, 18, 0.12);
-      padding: 20px 18px 28px;
+    .worksheet {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-card);
+      padding: 18px 14px 26px;
       position: relative;
     }
 
     @media (min-width: 640px) {
-      .worksheet-card {
-        padding: 28px 34px 36px;
+      .worksheet {
+        padding: 28px 32px 34px;
       }
     }
 
-    /* Titelzeile mit Dino & Lupe */
+    /* Titelzeile mit Mathe-Dino + Zahlen-Jagd + Lupe */
     .title-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 18px;
-      flex-wrap: wrap;
+    }
+
+    @media (min-width: 640px) {
+      .title-row {
+        gap: 16px;
+        margin-bottom: 24px;
+      }
     }
 
     .dino-svg {
-      width: 62px;
-      height: 62px;
+      width: 58px;
+      height: 58px;
       flex-shrink: 0;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+      filter: drop-shadow(0 3px 5px rgba(63, 98, 18, 0.14));
     }
 
     .lupe-svg {
-      width: 50px;
-      height: 50px;
+      width: 44px;
+      height: 44px;
       flex-shrink: 0;
-      transform: rotate(-10deg);
-      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.08));
+      transform: rotate(-12deg);
+      filter: drop-shadow(0 3px 5px rgba(30, 41, 59, 0.12));
     }
 
-    .app-title {
+    @media (min-width: 640px) {
+      .dino-svg { width: 70px; height: 70px; }
+      .lupe-svg { width: 54px; height: 54px; }
+    }
+
+    .main-title {
       margin: 0;
       font-family: var(--font-display);
-      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      font-size: 2rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       color: #1e293b;
-      display: flex;
-      align-items: center;
+      line-height: 1.1;
     }
 
-    .app-title .accent {
+    @media (min-width: 640px) {
+      .main-title {
+        font-size: 2.85rem;
+      }
+    }
+
+    .main-title .accent {
       color: var(--accent-green-dark);
       font-style: italic;
     }
 
     /* =====================================================================
-       SCHRITT 1: AUFGABE & STELLENWERTTAFEL
+       SCHRITT 1: RECHENAUFGABE & STELLENWERTTAFEL
     ===================================================================== */
-    .step1-box {
-      background: var(--bg-sage-card);
-      border: 2px solid var(--border-soft);
-      border-radius: 22px;
-      padding: 18px 16px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
+    .section-box {
+      background: #fafdf5;
+      border: 2px solid #e2efc8;
+      border-radius: 20px;
+      padding: 16px 14px;
+      margin-bottom: 18px;
     }
 
-    .mode-badge-pill {
+    @media (min-width: 640px) {
+      .section-box {
+        padding: 22px 24px;
+      }
+    }
+
+    .mode-badge-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .mode-badge {
       display: inline-block;
-      background: #ffffff;
-      color: var(--accent-green-deep);
-      border: 1.5px solid var(--border-soft);
-      border-radius: 999px;
-      padding: 4px 14px;
+      background: var(--table-green);
+      color: #3f6212;
+      font-weight: 800;
       font-size: 0.82rem;
-      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.2px;
     }
 
     .task-display {
-      font-family: var(--font-display);
-      font-size: clamp(2.1rem, 7vw, 3.2rem);
-      font-weight: 800;
-      color: #1e293b;
-      background: #ffffff;
-      padding: 10px 26px;
-      border-radius: 18px;
-      border: 2px dashed #b9cf8b;
       text-align: center;
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 6px 0 18px;
       letter-spacing: 1px;
     }
 
-    .section-label {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #334155;
-      margin: 0 0 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    @media (min-width: 640px) {
+      .task-display {
+        font-size: 3.1rem;
+      }
+    }
+
+    .task-display .qmark {
+      color: var(--accent-green-dark);
     }
 
     /* Stellenwerttafel */
-    .place-table-wrap {
+    .pv-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 100%;
+      gap: 10px;
     }
 
-    .place-table {
-      border-collapse: separate;
-      border-spacing: 0;
-      border: 2.5px solid #334155;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #ffffff;
-    }
-
-    .place-table th {
-      background: var(--table-header);
-      color: #1e293b;
-      font-family: var(--font-display);
-      font-size: 1.35rem;
+    .section-subtitle {
       font-weight: 800;
-      padding: 8px 0;
-      width: 74px;
-      border-bottom: 2px solid #334155;
-      border-right: 2px solid #334155;
+      font-size: 0.95rem;
+      color: #475569;
+      margin: 0;
       text-align: center;
     }
 
-    .place-table th:last-child,
-    .place-table td:last-child {
+    .pv-table {
+      display: inline-flex;
+      border: 2.5px solid #334155;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pv-col {
+      display: flex;
+      flex-direction: column;
+      width: 74px;
+      border-right: 2px solid #cbd5e1;
+    }
+
+    @media (min-width: 640px) {
+      .pv-col {
+        width: 92px;
+      }
+    }
+
+    .pv-col:last-child {
       border-right: none;
     }
 
-    .place-table td {
-      padding: 8px;
-      border-right: 2px solid #334155;
-      text-align: center;
-      background: #ffffff;
-    }
-
-    .digit-input {
-      width: 56px;
-      height: 58px;
+    .pv-head {
+      background: var(--table-green);
+      color: #1e293b;
       font-family: var(--font-display);
-      font-size: 1.9rem;
       font-weight: 800;
+      font-size: 1.35rem;
       text-align: center;
-      border: 2.5px solid #cbd5e1;
-      border-radius: 12px;
-      background: #f8fafc;
-      color: #0f172a;
+      padding: 8px 0;
+      border-bottom: 2px solid #334155;
+    }
+
+    .pv-head.col-t { color: #7c3aed; }
+    .pv-head.col-h { color: #0369a1; }
+    .pv-head.col-z { color: #15803d; }
+    .pv-head.col-e { color: #b45309; }
+
+    .pv-input {
+      width: 100%;
+      height: 66px;
+      border: none;
       outline: none;
-      transition: all 0.15s ease;
-    }
-
-    .digit-input:focus {
-      border-color: var(--accent-green);
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f172a;
       background: #ffffff;
-      box-shadow: 0 0 0 4px rgba(124, 179, 66, 0.22);
+      transition: background-color 0.15s ease;
     }
 
-    .digit-input:disabled {
-      opacity: 0.92;
-      cursor: default;
+    @media (min-width: 640px) {
+      .pv-input {
+        height: 76px;
+        font-size: 2.35rem;
+      }
     }
 
-    /* Buttons & Aktionen Schritt 1 */
+    .pv-input:focus {
+      background: #f0fdf4;
+    }
+
+    .pv-input:disabled {
+      background: #f8fafc;
+      color: #334155;
+      opacity: 1;
+    }
+
+    /* Buttons Schritt 1 */
     .action-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      width: 100%;
-      margin-top: 4px;
+      margin-top: 18px;
     }
 
     .btn-primary {
+      appearance: none;
+      border: none;
       background: linear-gradient(180deg, #8bc34a 0%, #689f38 100%);
       color: #ffffff;
-      border: none;
-      border-bottom: 4px solid #4b7722;
-      border-radius: 16px;
-      padding: 13px 26px;
       font-family: var(--font-display);
-      font-size: 1.08rem;
-      font-weight: 800;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 16px;
       cursor: pointer;
-      transition: transform 0.1s ease, filter 0.15s ease;
-      box-shadow: 0 4px 10px rgba(104, 159, 56, 0.25);
+      box-shadow: 0 5px 0 #4b7722, 0 8px 16px rgba(75, 119, 34, 0.25);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.15s ease;
+      user-select: none;
     }
 
     .btn-primary:hover {
@@ -420,206 +490,264 @@
     }
 
     .btn-primary:active {
-      transform: translateY(2px);
-      border-bottom-width: 2px;
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #4b7722, 0 4px 8px rgba(75, 119, 34, 0.2);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
     }
 
     .btn-hint {
-      background: linear-gradient(180deg, #fde68a 0%, #fbbf24 100%);
-      color: #78350f;
-      border: none;
-      border-bottom: 4px solid #d97706;
-      border-radius: 16px;
-      padding: 13px 20px;
+      appearance: none;
+      border: 2px solid #f59e0b;
+      background: linear-gradient(180deg, #fef3c7 0%, #fde68a 100%);
+      color: #92400e;
       font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 800;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 16px;
       cursor: pointer;
-      transition: transform 0.1s ease, opacity 0.15s ease;
+      box-shadow: 0 4px 0 #d97706;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.15s ease;
+      user-select: none;
     }
 
     .btn-hint:active:not(:disabled) {
       transform: translateY(2px);
-      border-bottom-width: 2px;
+      box-shadow: 0 2px 0 #d97706;
     }
 
     .btn-hint:disabled {
-      opacity: 0.5;
+      opacity: 0.45;
       cursor: not-allowed;
-      filter: grayscale(0.4);
+      box-shadow: none;
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: #64748b;
     }
 
-    .hint-cards-wrap {
-      width: 100%;
-      max-width: 440px;
+    /* Hilfe-Kärtchen */
+    .hint-cards-box {
+      margin-top: 16px;
       background: #fffbeb;
-      border: 2px solid #fcd34d;
+      border: 2px dashed #fbbf24;
       border-radius: 16px;
       padding: 12px;
       text-align: center;
     }
 
-    .hint-cards-title {
-      font-size: 0.86rem;
+    .hint-cards-label {
+      font-size: 0.88rem;
       font-weight: 800;
       color: #92400e;
-      margin: 0 0 8px;
+      margin: 0 0 10px;
     }
 
-    .hint-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
+    .hint-cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
-    .hint-choice-btn {
-      background: #ffffff;
-      border: 2.5px solid #f59e0b;
-      border-radius: 14px;
-      padding: 12px 6px;
+    .hint-card-btn {
+      min-width: 84px;
+      padding: 10px 18px;
       font-family: var(--font-display);
       font-size: 1.45rem;
       font-weight: 800;
+      background: #ffffff;
       color: #1e293b;
+      border: 2.5px solid #f59e0b;
+      border-radius: 14px;
       cursor: pointer;
-      transition: transform 0.12s ease, background 0.15s ease;
-      box-shadow: 0 3px 6px rgba(245, 158, 11, 0.15);
+      box-shadow: 0 4px 0 #f59e0b;
+      transition: transform 0.1s ease, background-color 0.15s ease;
     }
 
-    .hint-choice-btn:hover {
-      background: #fef3c7;
-      transform: translateY(-2px);
+    .hint-card-btn:hover {
+      background: #fef9c3;
     }
 
-    .hint-choice-btn:active {
-      transform: scale(0.96);
+    .hint-card-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #f59e0b;
     }
 
     .feedback-msg {
-      min-height: 22px;
-      font-size: 0.95rem;
-      font-weight: 800;
+      min-height: 24px;
+      margin: 12px 0 0;
       text-align: center;
-      margin: 2px 0 0;
+      font-weight: 800;
+      font-size: 0.96rem;
     }
 
-    .text-ok { color: var(--ok-text); }
-    .text-err { color: var(--err-text); }
+    .msg-ok { color: var(--success); }
+    .msg-err { color: var(--danger); }
 
     /* =====================================================================
        SCHRITT 2: FOLGEAUFGABEN
     ===================================================================== */
-    .step2-section {
+    .step2-wrap {
       margin-top: 22px;
-      padding-top: 20px;
+      padding-top: 22px;
       border-top: 3px dashed #d5e5b5;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
       animation: fadeSlideIn 0.35s ease;
     }
 
     @keyframes fadeSlideIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     .step2-banner {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      flex-wrap: wrap;
-      background: #f0fdf4;
-      border: 2px solid #bbf7d0;
+      background: var(--bg-green-soft);
+      border: 2px solid var(--border-green);
       border-radius: 16px;
       padding: 10px 16px;
-      font-weight: 800;
-      color: #166534;
-      font-size: 1rem;
+      margin-bottom: 18px;
+      text-align: center;
     }
 
-    .target-badge {
+    .step2-banner-text {
+      font-weight: 800;
+      font-size: 1rem;
+      color: #3f6212;
+    }
+
+    .target-pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: var(--accent-green);
-      color: #ffffff;
+      background: #ffffff;
+      color: var(--accent-green-dark);
+      border: 2.5px solid var(--accent-green);
       font-family: var(--font-display);
-      font-size: 1.45rem;
-      padding: 3px 14px;
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(92, 139, 40, 0.25);
+      font-size: 1.55rem;
+      font-weight: 800;
+      padding: 2px 16px;
+      border-radius: 999px;
+      min-width: 64px;
     }
 
-    .subcard-grid {
+    .grid-two {
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
+      margin-bottom: 16px;
     }
 
     @media (min-width: 720px) {
-      .subcard-grid {
-        grid-template-columns: 1fr 1.55fr;
+      .grid-two {
+        grid-template-columns: 5fr 7fr;
       }
     }
 
     .subcard {
-      background: #fafcf5;
-      border: 2px solid #dce8c3;
-      border-radius: 20px;
-      padding: 15px 16px;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 15px 14px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
     }
 
-    .subcard-header {
+    @media (min-width: 640px) {
+      .subcard {
+        padding: 18px 20px;
+      }
+    }
+
+    .subcard-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 10px;
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
     .subcard-title {
       margin: 0;
-      font-size: 1rem;
+      font-size: 1.02rem;
       font-weight: 800;
       color: #1e293b;
     }
 
     .fb-icon {
       font-size: 1.25rem;
+      min-width: 24px;
+      text-align: right;
     }
 
-    /* Gerade / Ungerade */
-    .parity-row {
+    /* 1. Gerade / Ungerade */
+    .parity-options {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
 
     .parity-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       padding: 14px 10px;
       border-radius: 14px;
       border: 2.5px solid #cbd5e1;
-      background: #ffffff;
-      color: #334155;
-      font-size: 1.02rem;
+      background: #f8fafc;
+      font-family: var(--font-main);
+      font-size: 1rem;
       font-weight: 800;
+      color: #334155;
       cursor: pointer;
       transition: all 0.15s ease;
+      user-select: none;
     }
 
     .parity-btn:hover {
-      border-color: var(--accent-green);
+      background: #f1f5f9;
+    }
+
+    .parity-radio {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2.5px solid #94a3b8;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: #ffffff;
     }
 
     .parity-btn.selected {
-      background: #e9f5d3;
-      border-color: var(--accent-green-dark);
-      color: var(--accent-green-deep);
-      box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.2);
+      border-color: var(--accent-green);
+      background: var(--bg-green-soft);
+      color: #3f6212;
+      box-shadow: 0 3px 8px rgba(124, 179, 66, 0.18);
     }
 
-    /* Zahlzerlegung (ziffernweise + feste Zielzahl) */
+    .parity-btn.selected .parity-radio {
+      border-color: var(--accent-green-dark);
+    }
+
+    .parity-btn.selected .parity-radio::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-green-dark);
+    }
+
+    /* 2. Zahlzerlegung */
     .decomp-row {
       display: flex;
       flex-wrap: wrap;
@@ -628,7 +756,7 @@
       gap: 6px;
     }
 
-    .decomp-part {
+    .decomp-unit {
       display: inline-flex;
       align-items: center;
       gap: 4px;
@@ -636,102 +764,105 @@
 
     .decomp-input {
       width: 48px;
-      height: 50px;
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 800;
+      height: 52px;
       text-align: center;
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
       border: 2.5px solid #cbd5e1;
       border-radius: 12px;
-      background: #ffffff;
-      color: #0f172a;
       outline: none;
+      color: #0f172a;
+      background: #ffffff;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
     }
 
     .decomp-input:focus {
       border-color: var(--accent-green);
-      box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.2);
+      background: #f7fee7;
     }
 
-    .decomp-unit {
+    .decomp-letter {
       font-family: var(--font-display);
-      font-size: 1.05rem;
       font-weight: 800;
-      color: #4a6b1d;
+      font-size: 1.1rem;
+      color: #475569;
     }
 
     .decomp-op {
       font-family: var(--font-display);
-      font-size: 1.3rem;
       font-weight: 800;
+      font-size: 1.3rem;
       color: #64748b;
-      margin: 0 2px;
+      padding: 0 2px;
     }
 
-    .decomp-total-box {
-      min-width: 68px;
-      height: 50px;
+    .decomp-total {
+      min-width: 66px;
+      height: 52px;
       padding: 0 12px;
-      border-radius: 12px;
-      border: 2.5px solid #b7d17a;
-      background: #eef6dc;
-      color: #3f6212;
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 800;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 800;
+      border-radius: 12px;
+      border: 2.5px solid var(--border-green);
+      background: var(--bg-green-soft);
+      color: #3f6212;
     }
 
-    /* Vorgänger / Nachfolger & Nachbarzahlen */
-    .neighbor-scroll {
+    /* 3. Nachbarzahlen-Tabelle */
+    .nb-scroll {
       width: 100%;
       overflow-x: auto;
       padding-bottom: 4px;
     }
 
-    .neighbor-table {
+    .nb-table {
       width: 100%;
-      min-width: 540px;
+      min-width: 490px;
       border-collapse: separate;
       border-spacing: 0;
-      border: 2.5px solid #334155;
+      border: 2px solid #334155;
       border-radius: 14px;
       overflow: hidden;
-      background: #ffffff;
     }
 
-    .neighbor-table th {
-      background: var(--table-header);
+    .nb-table th {
+      background: var(--table-green);
       color: #1e293b;
       font-family: var(--font-display);
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 800;
-      padding: 8px 4px;
+      padding: 9px 4px;
+      border-right: 1.5px solid #94a3b8;
       border-bottom: 2px solid #334155;
-      border-right: 2px solid #334155;
-      text-align: center;
       width: 14.28%;
     }
 
-    .neighbor-table th.center-col {
-      background: #bdd684;
-    }
-
-    .neighbor-table th:last-child,
-    .neighbor-table td:last-child {
+    .nb-table th:last-child {
       border-right: none;
     }
 
-    .neighbor-table td {
-      padding: 7px 5px;
-      border-right: 2px solid #334155;
-      text-align: center;
-      background: #ffffff;
+    .nb-table th.center-col {
+      background: #c2db8a;
     }
 
-    .neighbor-table td.center-col {
+    .nb-table td {
+      background: #ffffff;
+      border-right: 1.5px solid #cbd5e1;
+      padding: 4px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .nb-table td:last-child {
+      border-right: none;
+    }
+
+    .nb-table td.center-cell {
       background: #f4f9e8;
       font-family: var(--font-display);
       font-size: 1.45rem;
@@ -741,264 +872,221 @@
 
     .nb-input {
       width: 100%;
-      max-width: 78px;
-      height: 46px;
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 800;
-      text-align: center;
-      border: 2px solid #cbd5e1;
+      height: 50px;
+      border: 2px solid transparent;
       border-radius: 10px;
-      background: #f8fafc;
-      color: #0f172a;
       outline: none;
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      background: #f8fafc;
+      transition: all 0.15s ease;
     }
 
     .nb-input:focus {
       border-color: var(--accent-green);
       background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.2);
     }
 
     .nb-legend {
+      margin: 8px 0 0;
       font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 8px;
+      color: #64748b;
       text-align: center;
+      font-weight: 700;
     }
 
-    /* Interaktiver Touch-Zahlenstrahl */
-    .numberline-card {
-      padding: 16px 14px 18px;
-    }
-
-    .nl-hint-text {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin: 0 0 12px;
+    /* 4. Zahlenstrahl + Feinjustierung */
+    .nl-card {
+      margin-top: 16px;
     }
 
     .nl-interactive-area {
       position: relative;
-      width: 100%;
-      padding: 44px 16px 32px;
+      padding: 46px 14px 10px;
       user-select: none;
       touch-action: none;
       cursor: pointer;
     }
 
-    .nl-track {
+    @media (min-width: 640px) {
+      .nl-interactive-area {
+        padding: 48px 22px 12px;
+      }
+    }
+
+    .nl-track-wrap {
       position: relative;
+      height: 62px;
       width: 100%;
-      height: 4px;
-      background: #475569;
-      border-radius: 4px;
     }
 
-    .nl-ticks {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+    .nl-svg {
+      width: 100%;
+      height: 62px;
+      display: block;
+      overflow: visible;
     }
 
-    .nl-tick {
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: #475569;
-      border-radius: 2px;
-    }
-
-    .nl-tick.major {
-      width: 2.5px;
-      height: 24px;
-      background: #1e293b;
-    }
-
-    .nl-tick.medium {
-      width: 2px;
-      height: 16px;
-      background: #64748b;
-    }
-
-    .nl-tick.minor {
-      width: 1.2px;
-      height: 10px;
-      background: #94a3b8;
-    }
-
-    .nl-label {
-      position: absolute;
-      top: 18px;
-      transform: translateX(-50%);
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: #334155;
-      pointer-events: none;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 520px) {
-      .nl-label {
-        font-size: 0.65rem;
-      }
-      .nl-label.odd-label {
-        display: none;
-      }
-    }
-
-    /* Marker auf dem Zahlenstrahl */
+    /* Marker & Sprechblase */
     .nl-marker {
       position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0%;
+      transform: translateX(-50%);
       pointer-events: none;
-      z-index: 4;
+      z-index: 5;
+      transition: left 0.05s linear;
     }
 
-    .nl-marker-dot {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: #f59e0b;
-      border: 3px solid #ffffff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
-    }
-
-    .nl-marker-bubble {
+    .nl-bubble {
       position: absolute;
       bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
-      background: #f59e0b;
+      background: #1e293b;
       color: #ffffff;
       font-family: var(--font-display);
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       font-weight: 800;
-      padding: 3px 9px;
+      padding: 4px 11px;
       border-radius: 10px;
       white-space: nowrap;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
     }
 
-    .nl-marker-bubble::after {
-      content: "";
+    .nl-bubble::after {
+      content: '';
       position: absolute;
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
-      border: 5px solid transparent;
-      border-top-color: #f59e0b;
+      border-width: 6px 6px 0 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
     }
 
-    .nl-marker.ok .nl-marker-dot,
-    .nl-marker.ok .nl-marker-bubble {
-      background: #16a34a;
-    }
-    .nl-marker.ok .nl-marker-bubble::after {
-      border-top-color: #16a34a;
+    .nl-pin {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #f59e0b;
+      border: 3.5px solid #ffffff;
+      box-shadow: 0 0 0 2.5px #d97706, 0 4px 8px rgba(0,0,0,0.2);
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
-    .nl-marker.err .nl-marker-dot,
-    .nl-marker.err .nl-marker-bubble {
+    .nl-marker.correct .nl-bubble {
+      background: #15803d;
+    }
+    .nl-marker.correct .nl-bubble::after {
+      border-color: #15803d transparent transparent transparent;
+    }
+    .nl-marker.correct .nl-pin {
+      background: #22c55e;
+      box-shadow: 0 0 0 2.5px #15803d, 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .nl-marker.wrong .nl-bubble {
       background: #dc2626;
     }
-    .nl-marker.err .nl-marker-bubble::after {
-      border-top-color: #dc2626;
+    .nl-marker.wrong .nl-bubble::after {
+      border-color: #dc2626 transparent transparent transparent;
+    }
+    .nl-marker.wrong .nl-pin {
+      background: #ef4444;
+      box-shadow: 0 0 0 2.5px #b91c1c, 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    /* Ziel-Indikator nach erfolgreichem Abschluss */
-    .nl-target-pin {
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #15803d;
-      border: 2px solid #ffffff;
-      pointer-events: none;
-      z-index: 3;
-    }
-
-    /* Prüf- & Weiter-Bereich unten */
-    .bottom-actions {
+    /* Feinjustierungs-Leiste unter dem Zahlenstrahl */
+    .nl-controls {
+      margin-top: 12px;
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 12px;
-      margin-top: 6px;
-    }
-
-    .btn-check-all {
-      background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
-      color: #ffffff;
-      border: none;
-      border-bottom: 4px solid #0369a1;
-      border-radius: 18px;
-      padding: 15px 34px;
-      font-family: var(--font-display);
-      font-size: 1.18rem;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 5px 14px rgba(2, 132, 199, 0.25);
-      transition: transform 0.1s ease;
-    }
-
-    .btn-check-all:active {
-      transform: translateY(2px);
-      border-bottom-width: 2px;
-    }
-
-    .btn-next-task {
-      background: linear-gradient(180deg, #8bc34a 0%, #558b2f 100%);
-      color: #ffffff;
-      border: none;
-      border-bottom: 4px solid #33691e;
-      border-radius: 18px;
-      padding: 16px 36px;
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 6px 16px rgba(85, 139, 47, 0.3);
-      animation: popIn 0.35s ease;
-    }
-
-    @keyframes popIn {
-      0% { transform: scale(0.82); opacity: 0; }
-      70% { transform: scale(1.05); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .reward-toast {
-      background: #fef3c7;
-      border: 2px solid #f59e0b;
-      color: #92400e;
-      padding: 10px 18px;
+      justify-content: center;
+      gap: 8px;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
       border-radius: 14px;
-      font-weight: 800;
-      font-size: 0.98rem;
-      text-align: center;
-      animation: popIn 0.35s ease;
+      padding: 10px 12px;
     }
 
-    /* =====================================================================
-       FEEDBACK-ZUSTÄNDE & WACKEL-ANIMATION
-    ===================================================================== */
+    .nl-nudge-btn {
+      appearance: none;
+      border: 2px solid #cbd5e1;
+      background: #ffffff;
+      color: #1e293b;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      min-width: 56px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 3px 0 #cbd5e1;
+      transition: transform 0.08s ease, background-color 0.12s ease, border-color 0.12s ease;
+      user-select: none;
+    }
+
+    .nl-nudge-btn:hover {
+      background: var(--bg-green-soft);
+      border-color: var(--accent-green);
+    }
+
+    .nl-nudge-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 #cbd5e1;
+    }
+
+    .nl-nudge-btn.fine {
+      background: #fffbeb;
+      border-color: #fcd34d;
+      color: #92400e;
+      box-shadow: 0 3px 0 #f59e0b;
+    }
+
+    .nl-nudge-btn.fine:hover {
+      background: #fef3c7;
+    }
+
+    .nl-current-chip {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #334155;
+      background: #ffffff;
+      border: 2px solid var(--border-green);
+      border-radius: 12px;
+      padding: 8px 14px;
+      min-width: 112px;
+      text-align: center;
+    }
+
+    .nl-current-chip span {
+      color: var(--accent-green-dark);
+      font-size: 1.2rem;
+    }
+
+    /* Validierungs-Zustände & Wackel-Animation */
     .input-correct {
-      border-color: var(--ok-border) !important;
-      background-color: var(--ok-bg) !important;
-      color: var(--ok-text) !important;
+      background-color: var(--success-bg) !important;
+      border-color: var(--success-border) !important;
+      color: var(--success) !important;
     }
 
     .input-wrong {
-      border-color: var(--err-border) !important;
-      background-color: var(--err-bg) !important;
-      color: var(--err-text) !important;
+      background-color: var(--danger-bg) !important;
+      border-color: var(--danger-border) !important;
+      color: var(--danger) !important;
     }
 
-    @keyframes shakeAnim {
+    @keyframes shake {
       0%, 100% { transform: translateX(0); }
       20% { transform: translateX(-6px); }
       40% { transform: translateX(6px); }
@@ -1007,11 +1095,59 @@
     }
 
     .shake {
-      animation: shakeAnim 0.36s ease;
+      animation: shake 0.36s ease;
+    }
+
+    .sub-fb {
+      margin: 8px 0 0;
+      min-height: 20px;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    /* Abschluss-Bereich Schritt 2 */
+    .step2-footer {
+      margin-top: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-next {
+      appearance: none;
+      border: none;
+      background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      padding: 15px 34px;
+      border-radius: 18px;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #0369a1, 0 10px 20px rgba(2, 132, 199, 0.28);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .btn-next:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #0369a1;
+    }
+
+    .reward-toast {
+      background: #fef9c3;
+      border: 2px solid #facc15;
+      color: #854d0e;
+      font-weight: 800;
+      font-size: 0.98rem;
+      padding: 10px 18px;
+      border-radius: 14px;
+      text-align: center;
+      animation: fadeSlideIn 0.3s ease;
     }
 
     /* =====================================================================
-       PUNKTELISTE-MODAL (MIT 100er / 1000er DINO-BADGES)
+       PUNKTELISTE-MODAL
     ===================================================================== */
     .modal-backdrop {
       position: fixed;
@@ -1021,149 +1157,129 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 14px;
-      z-index: 1000;
+      padding: 16px;
+      z-index: 100;
     }
 
-    .modal-box {
+    .modal-card {
       width: 100%;
-      max-width: 500px;
+      max-width: 520px;
       max-height: 86vh;
       background: #ffffff;
-      border-radius: 26px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.28);
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      animation: popIn 0.22s ease;
+      animation: fadeSlideIn 0.22s ease;
     }
 
     .modal-header {
-      background: var(--bg-sage-soft);
+      background: var(--bg-green-soft);
+      border-bottom: 2px solid #d9eab3;
       padding: 16px 20px;
-      border-bottom: 2px solid #dce8c3;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 10px;
     }
 
     .modal-title {
       margin: 0;
       font-family: var(--font-display);
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       color: #1e293b;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .modal-close {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
+      appearance: none;
       border: none;
       background: #ffffff;
-      color: #334155;
-      font-size: 1.3rem;
+      color: #475569;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.25rem;
       font-weight: 800;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
     .modal-body {
-      padding: 16px 18px 20px;
+      padding: 16px 20px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
 
-    /* Gesamtstatistik-Kasten */
-    .score-summary-card {
-      background: var(--bg-sage-card);
-      border: 2px solid var(--border-soft);
-      border-radius: 18px;
-      padding: 14px 16px;
+    .legend-row {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .score-summary-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .score-total-label {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--text-muted);
-    }
-
-    .score-total-value-wrap {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .score-total-big {
-      font-family: var(--font-display);
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: var(--accent-green-deep);
-    }
-
-    /* Dino-Legende */
-    .dino-legend {
-      display: flex;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 10px;
-      padding-top: 8px;
-      border-top: 1.5px dashed #cfe0ac;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-muted);
-    }
-
-    /* Kleine Badges für 100er & 1000er Raum */
-    .range-badges {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
-
-    .rbadge {
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      font-size: 0.76rem;
+      font-size: 0.84rem;
       font-weight: 800;
-      padding: 2px 7px;
+    }
+
+    .badge-r100 {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--r100-bg);
+      color: var(--r100-text);
+      border: 1.5px solid var(--r100-border);
+      padding: 3px 9px;
       border-radius: 999px;
-      line-height: 1.25;
+      font-size: 0.8rem;
+      font-weight: 800;
       white-space: nowrap;
     }
 
-    .rbadge-100 {
-      background: var(--badge100-bg);
-      color: var(--badge100-text);
-      border: 1px solid var(--badge100-border);
+    .badge-r1000 {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--r1000-bg);
+      color: var(--r1000-text);
+      border: 1.5px solid var(--r1000-border);
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
-    .rbadge-1000 {
-      background: var(--badge1000-bg);
-      color: var(--badge1000-text);
-      border: 1px solid var(--badge1000-border);
+    .summary-box {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
     }
 
-    /* Datumsliste */
+    .summary-total {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .summary-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
     .score-list {
       list-style: none;
       margin: 0;
@@ -1175,385 +1291,429 @@
 
     .score-item {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
       gap: 8px;
-      background: #f8fafc;
+      padding: 11px 14px;
+      background: #ffffff;
       border: 1.5px solid #e2e8f0;
       border-radius: 14px;
-      padding: 11px 14px;
     }
 
-    .score-date-wrap {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-weight: 700;
+    .score-date {
+      font-weight: 800;
       color: #334155;
       font-size: 0.94rem;
     }
 
-    .today-tag {
-      background: var(--accent-green);
-      color: #ffffff;
-      font-size: 0.7rem;
-      font-weight: 800;
-      padding: 2px 7px;
-      border-radius: 999px;
-    }
-
-    .score-right-wrap {
+    .score-counts {
       display: flex;
-      align-items: center;
-      gap: 8px;
       flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
     }
 
-    .score-count-bold {
+    .score-main-count {
       font-family: var(--font-display);
-      font-size: 1.05rem;
       font-weight: 800;
-      color: #1e293b;
+      font-size: 1rem;
+      color: #0f172a;
+      margin-right: 2px;
     }
 
     .empty-scores {
       text-align: center;
-      padding: 24px 12px;
-      color: var(--text-muted);
+      color: #64748b;
+      padding: 20px 10px;
       font-weight: 700;
     }
 
-    /* Konfetti-Canvas */
+    .modal-footer {
+      border-top: 1.5px solid #e2e8f0;
+      padding: 12px 20px;
+      background: #f8fafc;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .btn-reset-link {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: #94a3b8;
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: pointer;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+
+    .btn-reset-link:hover {
+      color: var(--danger);
+      background: var(--danger-bg);
+    }
+
+    .reset-confirm-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--danger);
+    }
+
+    .btn-danger-sm {
+      border: none;
+      background: var(--danger);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-cancel-sm {
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      color: #334155;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 5px 11px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Konfetti Canvas */
     #confetti-canvas {
       position: fixed;
       inset: 0;
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: 900;
+      z-index: 200;
     }
   </style>
 </head>
 <body>
-
   <!-- Konfetti-Ebene -->
   <canvas id="confetti-canvas"></canvas>
 
-  <!-- ===================================================================
-       OBERE STEUERUNGSLEISTE: 8 RECHENMODI + TON / HILFEN / PUNKTELISTE
-  =================================================================== -->
-  <header class="top-header">
-    <!-- 2 Reihen à 4 Buttons (100er-Raum oben, 1000er-Raum unten) -->
-    <div class="mode-grid" role="group" aria-label="Rechenmodus wählen">
-      <!-- Reihe 1: 100er-Raum -->
-      <button id="btn-mode-mul100" class="mode-btn" onclick="switchMode('mul100')">× bis 100</button>
-      <button id="btn-mode-div100" class="mode-btn" onclick="switchMode('div100')">÷ bis 100</button>
-      <button id="btn-mode-addsub100" class="mode-btn" onclick="switchMode('addsub100')">+ / − bis 100</button>
-      <button id="btn-mode-mix100" class="mode-btn" onclick="switchMode('mix100')">🎲 Mix bis 100</button>
-      <!-- Reihe 2: 1000er-Raum -->
-      <button id="btn-mode-mul1000" class="mode-btn" onclick="switchMode('mul1000')">× bis 1000</button>
-      <button id="btn-mode-div1000" class="mode-btn" onclick="switchMode('div1000')">÷ bis 1000</button>
-      <button id="btn-mode-addsub1000" class="mode-btn" onclick="switchMode('addsub1000')">+ / − bis 1000</button>
-      <button id="btn-mode-mix1000" class="mode-btn" onclick="switchMode('mix1000')">🎲 Mix bis 1000</button>
-    </div>
+  <div class="container">
+    <!-- ===================================================================
+         OBERE STEUERUNGSLEISTE
+    =================================================================== -->
+    <header class="top-header">
+      <!-- 8 Rechenmodi (2 Reihen à 4 Buttons) -->
+      <div class="mode-grid" role="group" aria-label="Rechenmodus wählen">
+        <!-- Reihe 1: bis 100 -->
+        <button id="btn-mode-mul100" class="mode-btn" onclick="switchMode('mul100')">× bis 100</button>
+        <button id="btn-mode-div100" class="mode-btn" onclick="switchMode('div100')">÷ bis 100</button>
+        <button id="btn-mode-addsub100" class="mode-btn" onclick="switchMode('addsub100')">+ / − bis 100</button>
+        <button id="btn-mode-mix100" class="mode-btn" onclick="switchMode('mix100')">🎲 Mix bis 100</button>
+        <!-- Reihe 2: bis 1000 -->
+        <button id="btn-mode-mul1000" class="mode-btn" onclick="switchMode('mul1000')">× bis 1000</button>
+        <button id="btn-mode-div1000" class="mode-btn" onclick="switchMode('div1000')">÷ bis 1000</button>
+        <button id="btn-mode-addsub1000" class="mode-btn" onclick="switchMode('addsub1000')">+ / − bis 1000</button>
+        <button id="btn-mode-mix1000" class="mode-btn" onclick="switchMode('mix1000')">🎲 Mix bis 1000</button>
+      </div>
 
-    <!-- Steuerung: Ton, Hilfen, Punkteliste -->
-    <div class="status-bar">
-      <div class="status-group">
-        <button id="btn-sound-toggle" class="pill-btn btn-sound on" onclick="toggleSound()">
-          🔊 Ton an
-        </button>
-        <div class="pill-badge badge-hints" title="Alle 8 gelösten Blätter gibt es +1 Hilfe!">
-          <span>💡 Hilfen: <strong id="hint-count-header">0</strong></span>
-          <span class="hint-progress-tag" id="hint-progress-header">0/8</span>
+      <!-- Ton, Hilfen & Punkteliste -->
+      <div class="status-bar">
+        <div class="status-group">
+          <button id="btn-sound" class="pill-btn btn-sound on" onclick="toggleSound()" aria-pressed="true">
+            🔊 Ton an
+          </button>
+          <div class="pill-info pill-hints" id="hints-counter">
+            💡 Hilfen: 0
+          </div>
+          <div class="pill-info pill-progress" id="hints-progress">
+            Noch 8/8 bis zur nächsten Hilfe
+          </div>
         </div>
-      </div>
-
-      <button class="pill-btn btn-scores" onclick="openScoreModal()">
-        📅 Punkteliste
-      </button>
-    </div>
-  </header>
-
-  <!-- ===================================================================
-       HAUPT-ARBEITSBLATT
-  =================================================================== -->
-  <main class="worksheet-card">
-
-    <!-- Titel mit freundlichem Mathe-Dino & Lupe -->
-    <div class="title-row">
-      <svg id="math-dino-svg" class="dino-svg" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Mathe-Dino">
-        <circle cx="64" cy="64" r="60" fill="#eef6dc" stroke="#c6da94" stroke-width="4"/>
-        <!-- Rückenzacken -->
-        <path d="M36 46L30 37L41 39M45 36L41 26L52 31M57 31L56 21L65 28" fill="#8ab848" stroke="#4d7c0f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Dino-Körper & Kopf -->
-        <path d="M42 100C38 85 38 62 49 49C57 39 71 34 85 37C98 39 106 48 106 59C106 69 98 76 87 77L80 78C81 85 82 93 81 100H42Z" fill="#7cc242" stroke="#3f6212" stroke-width="4" stroke-linejoin="round"/>
-        <!-- Heller Bauch -->
-        <path d="M46 100C48 88 54 81 64 81C72 81 77 87 78 100H46Z" fill="#dcfce7"/>
-        <!-- Wangenröte -->
-        <ellipse cx="94" cy="65" rx="4.5" ry="2.8" fill="#fca5a5" opacity="0.85"/>
-        <!-- Mathe-Brille -->
-        <circle cx="72" cy="54" r="9" fill="#ffffff" stroke="#1e293b" stroke-width="3.2"/>
-        <circle cx="91" cy="55" r="9" fill="#ffffff" stroke="#1e293b" stroke-width="3.2"/>
-        <line x1="81" y1="54" x2="82" y2="55" stroke="#1e293b" stroke-width="3.2"/>
-        <line x1="63" y1="53" x2="55" y2="51" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
-        <!-- Augen -->
-        <circle cx="73.5" cy="54" r="3.4" fill="#1e293b"/>
-        <circle cx="92.5" cy="55" r="3.4" fill="#1e293b"/>
-        <circle cx="74.8" cy="52.6" r="1.2" fill="#ffffff"/>
-        <circle cx="93.8" cy="53.6" r="1.2" fill="#ffffff"/>
-        <!-- Lächeln -->
-        <path d="M77 68C82 72 89 71 94 67" stroke="#3f6212" stroke-width="3.2" stroke-linecap="round"/>
-        <!-- Kleine +×÷-Tafel -->
-        <rect x="16" y="74" width="40" height="27" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="3.2"/>
-        <text x="36" y="92" text-anchor="middle" font-family="sans-serif" font-size="13.5" font-weight="800" fill="#fef08a">+×÷</text>
-      </svg>
-
-      <h1 class="app-title">
-        <span>Zahlen-</span><span class="accent">Jagd</span>
-      </h1>
-
-      <svg class="lupe-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="27" cy="27" r="18" fill="#e0f2fe" stroke="#475569" stroke-width="5"/>
-        <path d="M18 20C20 16 24 14 29 14" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
-        <line x1="41" y1="41" x2="56" y2="56" stroke="#475569" stroke-width="7" stroke-linecap="round"/>
-        <line x1="41" y1="41" x2="56" y2="56" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
-      </svg>
-    </div>
-
-    <!-- =================================================================
-         SCHRITT 1: RECHENAUFGABE & STELLENWERTTAFEL
-    ================================================================= -->
-    <section class="step1-box" aria-label="Rechenaufgabe">
-      <div class="mode-badge-pill" id="mode-badge-text">Kleines 1×1 (bis 100)</div>
-
-      <div class="task-display" id="task-text">7 × 8 = ?</div>
-
-      <div class="place-table-wrap">
-        <p class="section-label">Stellenwerttafel</p>
-        <table class="place-table" aria-label="Stellenwerttafel">
-          <thead>
-            <tr>
-              <th id="th-t" class="hidden">T</th>
-              <th>H</th>
-              <th>Z</th>
-              <th>E</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="td-t" class="hidden">
-                <input id="in-t" class="digit-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Tausender" />
-              </td>
-              <td>
-                <input id="in-h" class="digit-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Hunderter" />
-              </td>
-              <td>
-                <input id="in-z" class="digit-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zehner" />
-              </td>
-              <td>
-                <input id="in-e" class="digit-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Einer" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Hilfe-Kärtchen (erscheinen beim Einlösen einer Hilfe) -->
-      <div id="hint-cards-wrap" class="hint-cards-wrap hidden">
-        <p class="hint-cards-title">💡 Tippe auf das richtige Ergebnis:</p>
-        <div id="hint-cards-grid" class="hint-cards-grid"></div>
-      </div>
-
-      <!-- Prüf- & Hilfe-Buttons -->
-      <div class="action-row">
-        <button id="btn-check-step1" class="btn-primary" onclick="checkStep1()">
-          Ergebnis prüfen ✓
-        </button>
-        <button id="btn-use-hint" class="btn-hint" onclick="useHint()">
-          💡 Hilfe nutzen (<span id="hint-count-btn">0</span>)
+        <button class="pill-btn btn-scores" onclick="openScoreModal()">
+          📅 Punkteliste
         </button>
       </div>
+    </header>
 
-      <p id="step1-feedback" class="feedback-msg"></p>
-    </section>
+    <!-- ===================================================================
+         ARBEITSBLATT-KARTE
+    =================================================================== -->
+    <main class="worksheet">
+      <!-- Titel mit Mathe-Dino und Lupe -->
+      <div class="title-row">
+        <svg id="math-dino-svg" class="dino-svg" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Mathe-Dino">
+          <circle cx="64" cy="64" r="60" fill="#eef6dc" stroke="#c6da94" stroke-width="4" />
+          <!-- Rückenzacken -->
+          <path d="M36 46L30 37L41 39M45 36L41 26L52 31M57 31L56 21L65 28" fill="#8ab848" stroke="#4d7c0f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Körper & Kopf -->
+          <path d="M42 100C38 85 38 62 49 49C57 39 71 34 85 37C98 39 106 48 106 59C106 69 98 76 87 77L80 78C81 85 82 93 81 100H42Z" fill="#7cc242" stroke="#3f6212" stroke-width="4" stroke-linejoin="round" />
+          <!-- Bauch -->
+          <path d="M46 100C48 88 54 81 64 81C72 81 77 87 78 100H46Z" fill="#dcfce7" />
+          <!-- Wangenröte -->
+          <ellipse cx="94" cy="65" rx="4.5" ry="2.8" fill="#fca5a5" opacity="0.85" />
+          <!-- Mathe-Brille -->
+          <circle cx="72" cy="54" r="9" fill="#ffffff" stroke="#1e293b" stroke-width="3.2" />
+          <circle cx="91" cy="55" r="9" fill="#ffffff" stroke="#1e293b" stroke-width="3.2" />
+          <line x1="81" y1="54" x2="82" y2="55" stroke="#1e293b" stroke-width="3.2" />
+          <line x1="63" y1="53" x2="55" y2="51" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+          <!-- Augen -->
+          <circle cx="73.5" cy="54" r="3.4" fill="#1e293b" />
+          <circle cx="92.5" cy="55" r="3.4" fill="#1e293b" />
+          <circle cx="74.8" cy="52.6" r="1.2" fill="#ffffff" />
+          <circle cx="93.8" cy="53.6" r="1.2" fill="#ffffff" />
+          <!-- Lächeln -->
+          <path d="M77 68C82 72 89 71 94 67" stroke="#3f6212" stroke-width="3.2" stroke-linecap="round" />
+          <!-- Rechentafel -->
+          <rect x="17" y="74" width="38" height="27" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="3.2" />
+          <text x="36" y="92" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fef08a">+×÷</text>
+        </svg>
 
-    <!-- =================================================================
-         SCHRITT 2: FOLGEAUFGABEN ZUR ERGEBNISZAHL
-    ================================================================= -->
-    <section id="step2-section" class="step2-section hidden" aria-label="Folgeaufgaben">
-      <div class="step2-banner">
-        <span>Super gerechnet! Jetzt untersuchen wir die Zahl</span>
-        <span class="target-badge" id="target-number-badge">56</span>
+        <h1 class="main-title">Zahlen-<span class="accent">Jagd</span></h1>
+
+        <svg class="lupe-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="27" cy="27" r="18" fill="#e0f2fe" stroke="#475569" stroke-width="5" />
+          <path d="M18 22C20 17 25 14 31 15" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" />
+          <line x1="40" y1="40" x2="56" y2="56" stroke="#334155" stroke-width="8" stroke-linecap="round" />
+          <line x1="40" y1="40" x2="56" y2="56" stroke="#64748b" stroke-width="4" stroke-linecap="round" />
+        </svg>
       </div>
 
-      <!-- Zeile 1: Gerade/Ungerade & Zahlzerlegung -->
-      <div class="subcard-grid">
-        <!-- Gerade / Ungerade -->
-        <div class="subcard">
-          <div class="subcard-header">
-            <h2 class="subcard-title">Die Zahl ist:</h2>
-            <span id="fb-parity-icon" class="fb-icon"></span>
-          </div>
-          <div class="parity-row">
-            <button id="btn-even" class="parity-btn" onclick="selectParity('even')">gerade</button>
-            <button id="btn-odd" class="parity-btn" onclick="selectParity('odd')">ungerade</button>
-          </div>
-          <p id="fb-parity-msg" class="feedback-msg" style="text-align:left; font-size:0.84rem; margin-top:8px;"></p>
+      <!-- =================================================================
+           SCHRITT 1: RECHENAUFGABE & STELLENWERTTAFEL
+      ================================================================= -->
+      <section class="section-box" aria-label="Rechenaufgabe">
+        <div class="mode-badge-wrap">
+          <span id="mode-badge" class="mode-badge">Kleines 1×1 (bis 100)</span>
         </div>
 
-        <!-- Zahlzerlegung (ziffernweise, Zielzahl fest angezeigt) -->
-        <div class="subcard">
-          <div class="subcard-header">
-            <h2 class="subcard-title">Zahlzerlegung</h2>
-            <span id="fb-decomp-icon" class="fb-icon"></span>
-          </div>
-          <div class="decomp-row">
-            <span id="decomp-t-wrap" class="decomp-part hidden">
-              <input id="decomp-t" class="decomp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zerlegung Tausender" />
-              <span class="decomp-unit">T</span>
-              <span class="decomp-op">+</span>
-            </span>
+        <div id="task-display" class="task-display">7 × 8 = <span class="qmark">?</span></div>
 
-            <span class="decomp-part">
-              <input id="decomp-h" class="decomp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zerlegung Hunderter" />
-              <span class="decomp-unit">H</span>
-            </span>
-            <span class="decomp-op">+</span>
-
-            <span class="decomp-part">
-              <input id="decomp-z" class="decomp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zerlegung Zehner" />
-              <span class="decomp-unit">Z</span>
-            </span>
-            <span class="decomp-op">+</span>
-
-            <span class="decomp-part">
-              <input id="decomp-e" class="decomp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zerlegung Einer" />
-              <span class="decomp-unit">E</span>
-            </span>
-
-            <span class="decomp-op">=</span>
-            <div id="decomp-total-display" class="decomp-total-box" aria-label="Gesuchte Zahl">56</div>
-          </div>
-          <p id="fb-decomp-msg" class="feedback-msg" style="text-align:left; font-size:0.84rem; margin-top:8px;"></p>
-        </div>
-      </div>
-
-      <!-- Zeile 2: Vorgänger / Nachfolger & Nachbarzahlen -->
-      <div class="subcard">
-        <div class="subcard-header">
-          <h2 class="subcard-title">Vorgänger / Nachfolger & Nachbarzahlen</h2>
-          <span id="fb-nb-icon" class="fb-icon"></span>
-        </div>
-
-        <div class="neighbor-scroll">
-          <table class="neighbor-table" aria-label="Nachbarzahlen">
-            <thead>
-              <tr>
-                <th>NH</th>
-                <th>NZ</th>
-                <th>V</th>
-                <th class="center-col">Z</th>
-                <th>N</th>
-                <th>NZ</th>
-                <th>NH</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><input id="nb-nh-l" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Linker Nachbarhunderter" /></td>
-                <td><input id="nb-nz-l" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Linker Nachbarzehner" /></td>
-                <td><input id="nb-v" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Vorgänger" /></td>
-                <td id="nb-center" class="center-col">56</td>
-                <td><input id="nb-n" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Nachfolger" /></td>
-                <td><input id="nb-nz-r" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Rechter Nachbarzehner" /></td>
-                <td><input id="nb-nh-r" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Rechter Nachbarhunderter" /></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="nb-legend">
-          <strong>NH</strong> = Nachbarhunderter · <strong>NZ</strong> = Nachbarzehner · <strong>V</strong> = Vorgänger · <strong>Z</strong> = Zahl · <strong>N</strong> = Nachfolger
-        </div>
-        <p id="fb-nb-msg" class="feedback-msg" style="text-align:left; font-size:0.84rem; margin-top:6px;"></p>
-      </div>
-
-      <!-- Zeile 3: Interaktiver Touch-Zahlenstrahl -->
-      <div class="subcard numberline-card">
-        <div class="subcard-header">
-          <h2 class="subcard-title">Zahlenstrahl</h2>
-          <span id="fb-nl-icon" class="fb-icon"></span>
-        </div>
-        <p class="nl-hint-text">Tippe auf den Zahlenstrahl oder ziehe den Punkt an die richtige Stelle!</p>
-
-        <div id="nl-area" class="nl-interactive-area" aria-label="Interaktiver Zahlenstrahl">
-          <div id="nl-track" class="nl-track">
-            <div id="nl-ticks" class="nl-ticks"></div>
-            <div id="nl-target-pin" class="nl-target-pin hidden"></div>
-            <div id="nl-marker" class="nl-marker hidden">
-              <div id="nl-marker-bubble" class="nl-marker-bubble">0</div>
-              <div class="nl-marker-dot"></div>
+        <div class="pv-wrapper">
+          <p class="section-subtitle">Stellenwerttafel – Trage dein Ergebnis ein:</p>
+          <div class="pv-table">
+            <div id="pv-col-t" class="pv-col hidden">
+              <div class="pv-head col-t">T</div>
+              <input id="pv-t" class="pv-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Tausender" />
+            </div>
+            <div class="pv-col">
+              <div class="pv-head col-h">H</div>
+              <input id="pv-h" class="pv-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Hunderter" />
+            </div>
+            <div class="pv-col">
+              <div class="pv-head col-z">Z</div>
+              <input id="pv-z" class="pv-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zehner" />
+            </div>
+            <div class="pv-col">
+              <div class="pv-head col-e">E</div>
+              <input id="pv-e" class="pv-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Einer" />
             </div>
           </div>
         </div>
-        <p id="fb-nl-msg" class="feedback-msg" style="text-align:left; font-size:0.84rem; margin-top:4px;"></p>
-      </div>
 
-      <!-- Unten: Alles prüfen / Nächste Aufgabe -->
-      <div class="bottom-actions">
-        <div id="reward-toast" class="reward-toast hidden"></div>
-        <button id="btn-check-all" class="btn-check-all" onclick="checkStep2()">
-          Alles prüfen ✓
-        </button>
-        <button id="btn-next-task" class="btn-next-task hidden" onclick="startNewTask()">
-          Nächste Aufgabe ➔
-        </button>
-        <p id="step2-feedback" class="feedback-msg"></p>
-      </div>
-    </section>
-  </main>
+        <div class="action-row">
+          <button id="btn-check-step1" class="btn-primary" onclick="checkStep1()">Prüfen ✓</button>
+          <button id="btn-use-hint" class="btn-hint" onclick="useHint()">💡 Hilfe nutzen</button>
+        </div>
 
-  <!-- ===================================================================
-       MODAL: PUNKTELISTE (NACH DATUM SORTIERT, MIT 100er & 1000er BADGES)
-  =================================================================== -->
-  <div id="score-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="score-modal-title" onclick="backdropClose(event)">
-    <div class="modal-box">
+        <!-- Hilfe-Kärtchen (erscheinen nach Klick auf Hilfe nutzen) -->
+        <div id="hint-cards-box" class="hint-cards-box hidden">
+          <p class="hint-cards-label">Tippe auf die richtige Lösung – sie wird automatisch eingetragen:</p>
+          <div id="hint-cards-row" class="hint-cards-row"></div>
+        </div>
+
+        <p id="step1-feedback" class="feedback-msg"></p>
+      </section>
+
+      <!-- =================================================================
+           SCHRITT 2: FOLGEAUFGABEN ZUR ERGEBNISZAHL
+      ================================================================= -->
+      <section id="step2-section" class="step2-wrap hidden" aria-label="Folgeaufgaben">
+        <div class="step2-banner">
+          <span class="step2-banner-text">Super gerechnet! Jetzt untersuchen wir die Zahl</span>
+          <span id="target-number-badge" class="target-pill">56</span>
+        </div>
+
+        <!-- Reihe 1: Gerade/Ungerade + Zahlzerlegung -->
+        <div class="grid-two">
+          <!-- 1. Gerade / Ungerade -->
+          <div class="subcard">
+            <div class="subcard-head">
+              <h2 class="subcard-title">Die Zahl ist:</h2>
+              <span id="fb-parity-icon" class="fb-icon"></span>
+            </div>
+            <div class="parity-options">
+              <button id="btn-parity-even" type="button" class="parity-btn" onclick="selectParity('even')">
+                <span class="parity-radio"></span>
+                <span>gerade</span>
+              </button>
+              <button id="btn-parity-odd" type="button" class="parity-btn" onclick="selectParity('odd')">
+                <span class="parity-radio"></span>
+                <span>ungerade</span>
+              </button>
+            </div>
+            <p id="fb-parity-msg" class="sub-fb"></p>
+          </div>
+
+          <!-- 2. Zahlzerlegung (ziffernweise, feste Zielzahl) -->
+          <div class="subcard">
+            <div class="subcard-head">
+              <h2 class="subcard-title">Zahlzerlegung (Ziffern):</h2>
+              <span id="fb-decomp-icon" class="fb-icon"></span>
+            </div>
+            <div class="decomp-row">
+              <span id="decomp-t-wrap" class="decomp-unit hidden">
+                <input id="decomp-t" class="decomp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zerlegung Tausender" />
+                <span class="decomp-letter">T</span>
+                <span class="decomp-op">+</span>
+              </span>
+              <span class="decomp-unit">
+                <input id="decomp-h" class="decomp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zerlegung Hunderter" />
+                <span class="decomp-letter">H</span>
+              </span>
+              <span class="decomp-op">+</span>
+              <span class="decomp-unit">
+                <input id="decomp-z" class="decomp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zerlegung Zehner" />
+                <span class="decomp-letter">Z</span>
+              </span>
+              <span class="decomp-op">+</span>
+              <span class="decomp-unit">
+                <input id="decomp-e" class="decomp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Zerlegung Einer" />
+                <span class="decomp-letter">E</span>
+              </span>
+              <span class="decomp-op">=</span>
+              <div id="decomp-total-display" class="decomp-total" aria-label="Gesuchte Zahl">56</div>
+            </div>
+            <p id="fb-decomp-msg" class="sub-fb"></p>
+          </div>
+        </div>
+
+        <!-- 3. Vorgänger / Nachfolger & Nachbarzahlen -->
+        <div class="subcard">
+          <div class="subcard-head">
+            <h2 class="subcard-title">Vorgänger / Nachfolger &amp; Nachbarzahlen:</h2>
+            <span id="fb-nb-icon" class="fb-icon"></span>
+          </div>
+          <div class="nb-scroll">
+            <table class="nb-table">
+              <thead>
+                <tr>
+                  <th>NH</th>
+                  <th>NZ</th>
+                  <th>V</th>
+                  <th class="center-col">Z</th>
+                  <th>N</th>
+                  <th>NZ</th>
+                  <th>NH</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input id="nb-nh-prev" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Kleinerer Nachbarhunderter" /></td>
+                  <td><input id="nb-nz-prev" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Kleinerer Nachbarzehner" /></td>
+                  <td><input id="nb-v" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Vorgänger" /></td>
+                  <td id="nb-center" class="center-cell">56</td>
+                  <td><input id="nb-n" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Nachfolger" /></td>
+                  <td><input id="nb-nz-next" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Größerer Nachbarzehner" /></td>
+                  <td><input id="nb-nh-next" class="nb-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="Größerer Nachbarhunderter" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="nb-legend">NH = Nachbarhunderter · NZ = Nachbarzehner · V = Vorgänger · Z = Zahl · N = Nachfolger</p>
+          <p id="fb-nb-msg" class="sub-fb"></p>
+        </div>
+
+        <!-- 4. Interaktiver Zahlenstrahl mit Feinjustierung -->
+        <div class="subcard nl-card">
+          <div class="subcard-head">
+            <h2 class="subcard-title">Zahlenstrahl – Tippe auf die gesuchte Zahl:</h2>
+            <span id="fb-nl-icon" class="fb-icon"></span>
+          </div>
+
+          <div id="nl-interactive" class="nl-interactive-area" aria-label="Zahlenstrahl">
+            <div id="nl-track-wrap" class="nl-track-wrap">
+              <svg id="nl-svg" class="nl-svg" viewBox="0 0 1000 62" preserveAspectRatio="none"></svg>
+              <!-- Marker mit Zahlen-Sprechblase -->
+              <div id="nl-marker" class="nl-marker hidden">
+                <div id="nl-bubble" class="nl-bubble">0</div>
+                <div class="nl-pin"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kindgerechte Feinjustierungs-Buttons -->
+          <div class="nl-controls" aria-label="Feinjustierung Zahlenstrahl">
+            <button id="nl-btn-big-minus" type="button" class="nl-nudge-btn" onclick="nudgeNumberLine(-10)">−10</button>
+            <button id="nl-btn-small-minus" type="button" class="nl-nudge-btn fine" onclick="nudgeNumberLine(-1)">−1</button>
+            <div class="nl-current-chip">Zahl: <span id="nl-current-val">—</span></div>
+            <button id="nl-btn-small-plus" type="button" class="nl-nudge-btn fine" onclick="nudgeNumberLine(1)">+1</button>
+            <button id="nl-btn-big-plus" type="button" class="nl-nudge-btn" onclick="nudgeNumberLine(10)">+10</button>
+          </div>
+
+          <p id="fb-nl-msg" class="sub-fb" style="text-align:center;"></p>
+        </div>
+
+        <!-- Prüf- & Weiter-Buttons -->
+        <div class="step2-footer">
+          <button id="btn-check-step2" class="btn-primary" onclick="checkStep2()">Alles prüfen ✓</button>
+          <p id="step2-feedback" class="feedback-msg"></p>
+          <div id="reward-toast" class="reward-toast hidden"></div>
+          <button id="btn-next-task" class="btn-next hidden" onclick="startNewTask()">Nächste Aufgabe ➜</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- =====================================================================
+       PUNKTELISTE-MODAL
+  ===================================================================== -->
+  <div id="score-modal" class="modal-backdrop hidden" onclick="handleModalBackdropClick(event)">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="score-modal-title">
       <div class="modal-header">
         <h2 id="score-modal-title" class="modal-title">📅 Deine Punkteliste</h2>
         <button class="modal-close" onclick="closeScoreModal()" aria-label="Schließen">✕</button>
       </div>
       <div class="modal-body">
-        <!-- Gesamtstatistik + Dino-Legende -->
-        <div class="score-summary-card">
-          <div class="score-summary-top">
-            <span class="score-total-label">Insgesamt gelöst:</span>
-            <div class="score-total-value-wrap">
-              <span id="score-total-all" class="score-total-big">0 Blätter</span>
-              <span id="score-total-badges" class="range-badges"></span>
-            </div>
-          </div>
-          <div class="dino-legend">
-            <span class="rbadge rbadge-100">🥚 bis 100</span>
-            <span class="rbadge rbadge-1000">🦖 bis 1000</span>
-          </div>
+        <!-- Dino-Legende -->
+        <div class="legend-row">
+          <span class="badge-r100">🥚 bis 100</span>
+          <span class="badge-r1000">🦖 bis 1000</span>
         </div>
 
-        <!-- Datumsliste -->
+        <!-- Gesamtstatistik -->
+        <div class="summary-box">
+          <div id="score-summary-total" class="summary-total">0 Blätter geschafft</div>
+          <div id="score-summary-badges" class="summary-badges"></div>
+        </div>
+
+        <!-- Tagesliste -->
         <ul id="score-list" class="score-list"></ul>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-reset-init" class="btn-reset-link" onclick="showResetConfirm()">🗑 Liste zurücksetzen</button>
+        <div id="reset-confirm-bar" class="reset-confirm-bar hidden">
+          <span>Wirklich alles löschen?</span>
+          <button class="btn-danger-sm" onclick="confirmResetScores()">Ja, löschen</button>
+          <button class="btn-cancel-sm" onclick="hideResetConfirm()">Abbrechen</button>
+        </div>
+        <button class="pill-btn btn-scores" onclick="closeScoreModal()">Schließen</button>
       </div>
     </div>
   </div>
 
-  <!-- ===================================================================
-       JAVASCRIPT: LOGIK, SOUNDS, ZAHLENSTRAHL, PUNKTELISTE & ICON
-  =================================================================== -->
   <script>
     /* =====================================================================
-       1. KONFIGURATION & ZUSTAND
+       KONFIGURATION & ZUSTAND
     ===================================================================== */
-    const STORAGE_KEY = 'zahlenJagdProgress_v2';
-    const LEGACY_KEYS = ['zahlDesTagesProgress_v1', 'zahlDesTages_v1', 'zahlenJagd_v1'];
+    const STORAGE_KEY = 'zahlenjagd_progress_v1';
+    const SOUND_KEY = 'zahlenjagd_sound_enabled';
 
     const MODE_CONFIG = {
       mul100:     { label: '× bis 100',       badge: 'Kleines 1×1 (bis 100)',         maxRange: 100 },
@@ -1569,80 +1729,239 @@
     let progress = {
       totalSolved: 0,
       hintsAvailable: 0,
-      soundEnabled: true,
-      // byDate: { "YYYY-MM-DD": { total: number, r100: number, r1000: number } }
-      byDate: {}
+      daily: {} // Format: { 'YYYY-MM-DD': { total: X, r100: Y, r1000: Z } } (abwärtskompatibel mit reiner Zahl)
     };
 
     let appState = {
       mode: 'mul100',
       maxRange: 100,
-      task: null,            // { op, a, b, target, text }
+      op: 'mul',
+      a: 7,
+      b: 8,
+      target: 56,
+      text: '7 × 8',
       lastProblemKey: '',
       step1Solved: false,
       step2Solved: false,
       hintUsedThisTask: false,
-      selectedParity: null,  // 'even' | 'odd' | null
-      nlValue: null,         // gewählter Wert am Zahlenstrahl
-      nlDragging: false
+      selectedParity: null, // 'even' | 'odd' | null
+      nlValue: null,        // null solange noch kein Marker gesetzt wurde, sonst 0..maxRange
+      nlDragging: false,
+      soundEnabled: true
     };
 
     /* =====================================================================
-       2. SPEICHERN & LADEN (ABWÄRTSKOMPATIBEL)
+       WEB AUDIO API SOUNDS (100% eigenständig & Android-kompatibel)
     ===================================================================== */
-    function normalizeDateEntry(raw) {
-      if (typeof raw === 'number' && !isNaN(raw)) {
-        return { total: raw, r100: 0, r1000: 0 };
+    let audioCtx = null;
+
+    function getAudioCtx() {
+      if (!appState.soundEnabled) return null;
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return null;
+        if (!audioCtx) {
+          audioCtx = new AudioContextClass();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        return audioCtx;
+      } catch (_) {
+        return null;
       }
-      if (raw && typeof raw === 'object') {
-        const total = Number(raw.total) || 0;
-        const r100 = Number(raw.r100) || 0;
-        const r1000 = Number(raw.r1000) || 0;
-        return { total, r100, r1000 };
-      }
-      return { total: 0, r100: 0, r1000: 0 };
     }
 
+    // Leiser Klick/Plopp für Buttons
+    function playPopSound() {
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+      try {
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(520, now);
+        osc.frequency.exponentialRampToValueAtTime(760, now + 0.06);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.07);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.075);
+      } catch (_) {}
+    }
+
+    // Sanftes, freundliches „Womp-womp / Boing“ bei Fehlern
+    function playErrorSound() {
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+      try {
+        const now = ctx.currentTime;
+
+        const playWomp = (start, fStart, fEnd, dur) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(fStart, start);
+          osc.frequency.exponentialRampToValueAtTime(fEnd, start + dur);
+          gain.gain.setValueAtTime(0.001, start);
+          gain.gain.linearRampToValueAtTime(0.18, start + 0.025);
+          gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(start);
+          osc.stop(start + dur + 0.02);
+        };
+
+        playWomp(now, 330, 265, 0.17);
+        playWomp(now + 0.18, 260, 185, 0.28);
+      } catch (_) {}
+    }
+
+    // Fröhliches aufsteigendes Pling nach Schritt 1
+    function playStep1SuccessSound() {
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+      try {
+        const now = ctx.currentTime;
+        const notes = [523.25, 659.25, 783.99]; // C5, E5, G5
+        notes.forEach((freq, i) => {
+          const t = now + i * 0.085;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, t);
+          gain.gain.setValueAtTime(0.001, t);
+          gain.gain.linearRampToValueAtTime(0.16, t + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + 0.24);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(t);
+          osc.stop(t + 0.26);
+        });
+      } catch (_) {}
+    }
+
+    // Verspielte Party-Tröten-Fanfare + Glitzer-Pling bei komplett gelöstem Blatt
+    function playFanfareSound() {
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+      try {
+        const now = ctx.currentTime;
+
+        const playHornNote = (start, freq, dur, vol) => {
+          const osc = ctx.createOscillator();
+          const lfo = ctx.createOscillator();
+          const lfoGain = ctx.createGain();
+          const filter = ctx.createBiquadFilter();
+          const gain = ctx.createGain();
+
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(freq, start);
+
+          // Leichtes Tröten-Vibrato
+          lfo.type = 'sine';
+          lfo.frequency.setValueAtTime(7.5, start);
+          lfoGain.gain.setValueAtTime(freq * 0.015, start);
+          lfo.connect(lfoGain);
+          lfoGain.connect(osc.frequency);
+
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(1600, start);
+          filter.frequency.linearRampToValueAtTime(2200, start + dur * 0.4);
+
+          gain.gain.setValueAtTime(0.001, start);
+          gain.gain.linearRampToValueAtTime(vol, start + 0.03);
+          gain.gain.setValueAtTime(vol * 0.85, start + dur * 0.72);
+          gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
+
+          osc.connect(filter);
+          filter.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start(start);
+          lfo.start(start);
+          osc.stop(start + dur + 0.03);
+          lfo.stop(start + dur + 0.03);
+        };
+
+        // Fanfaren-Melodie: C5 - E5 - G5 - C6!
+        playHornNote(now + 0.00, 523.25, 0.13, 0.12);
+        playHornNote(now + 0.13, 659.25, 0.13, 0.12);
+        playHornNote(now + 0.26, 783.99, 0.15, 0.13);
+        playHornNote(now + 0.42, 1046.50, 0.48, 0.15);
+
+        // Glitzer-Pling obendrauf
+        [1318.5, 1567.98, 2093.0].forEach((freq, idx) => {
+          const t = now + 0.56 + idx * 0.07;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, t);
+          gain.gain.setValueAtTime(0.001, t);
+          gain.gain.linearRampToValueAtTime(0.09, t + 0.015);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + 0.24);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(t);
+          osc.stop(t + 0.26);
+        });
+      } catch (_) {}
+    }
+
+    function toggleSound() {
+      appState.soundEnabled = !appState.soundEnabled;
+      try {
+        localStorage.setItem(SOUND_KEY, appState.soundEnabled ? '1' : '0');
+      } catch (_) {}
+      updateSoundButton();
+      if (appState.soundEnabled) playPopSound();
+    }
+
+    function updateSoundButton() {
+      const btn = document.getElementById('btn-sound');
+      if (appState.soundEnabled) {
+        btn.textContent = '🔊 Ton an';
+        btn.classList.add('on');
+        btn.setAttribute('aria-pressed', 'true');
+      } else {
+        btn.textContent = '🔇 Ton aus';
+        btn.classList.remove('on');
+        btn.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    /* =====================================================================
+       SPEICHERN & LADEN (localStorage, abwärtskompatibel)
+    ===================================================================== */
     function loadProgress() {
       try {
-        let rawStr = localStorage.getItem(STORAGE_KEY);
-        if (!rawStr) {
-          for (const k of LEGACY_KEYS) {
-            const legacy = localStorage.getItem(k);
-            if (legacy) {
-              rawStr = legacy;
-              break;
-            }
-          }
-        }
-        if (rawStr) {
-          const parsed = JSON.parse(rawStr);
-          if (parsed && typeof parsed === 'object') {
-            progress.totalSolved = Number(parsed.totalSolved) || 0;
-            progress.hintsAvailable = Number(parsed.hintsAvailable) || 0;
-            progress.soundEnabled = parsed.soundEnabled !== false;
-            progress.byDate = {};
-            const rawDates = parsed.byDate || parsed.dailyScores || parsed.scoresByDate || {};
-            Object.keys(rawDates).forEach(dateKey => {
-              const norm = normalizeDateEntry(rawDates[dateKey]);
-              if (norm.total > 0) {
-                progress.byDate[dateKey] = norm;
-              }
-            });
-          }
-        }
-      } catch (e) {
-        // Fallback falls localStorage blockiert ist
+        const savedSound = localStorage.getItem(SOUND_KEY);
+        appState.soundEnabled = savedSound === null ? true : savedSound === '1';
+      } catch (_) {
+        appState.soundEnabled = true;
       }
-      updateHeaderUI();
+      updateSoundButton();
+
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          progress.totalSolved = Number(parsed.totalSolved) || 0;
+          progress.hintsAvailable = Number(parsed.hintsAvailable) || 0;
+          progress.daily = parsed.daily && typeof parsed.daily === 'object' ? parsed.daily : {};
+        }
+      } catch (_) {
+        progress = { totalSolved: 0, hintsAvailable: 0, daily: {} };
+      }
+      updateHeaderStats();
     }
 
     function saveProgress() {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-      } catch (e) {
-        // Ignorieren falls Speicher voll/blockiert
-      }
+      } catch (_) {}
     }
 
     function getTodayKey() {
@@ -1653,272 +1972,147 @@
       return `${y}-${m}-${d}`;
     }
 
-    /* =====================================================================
-       3. KINDGERECHTE WEB-AUDIO-SOUNDS (ANDROID-OPTIMIERT)
-    ===================================================================== */
-    let audioCtx = null;
-
-    function getAudioCtx() {
-      if (!progress.soundEnabled) return null;
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContextClass) return null;
-      if (!audioCtx) {
-        audioCtx = new AudioContextClass();
+    // Normalisiert einen Tageseintrag (unterstützt alte reine Zahlen und neue Objekte)
+    function normalizeDailyEntry(entry) {
+      if (typeof entry === 'number') {
+        return { total: entry, r100: 0, r1000: 0, legacy: true };
       }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume().catch(() => {});
+      if (entry && typeof entry === 'object') {
+        const total = Number(entry.total) || 0;
+        const r100 = Number(entry.r100) || 0;
+        const r1000 = Number(entry.r1000) || 0;
+        return { total, r100, r1000, legacy: (r100 + r1000 === 0 && total > 0) };
       }
-      return audioCtx;
+      return { total: 0, r100: 0, r1000: 0, legacy: false };
     }
 
-    // Sanftes, freundliches "Womp-womp / Boing" bei Fehlern
-    function playErrorSound() {
-      const ctx = getAudioCtx();
-      if (!ctx) return;
-      const now = ctx.currentTime;
+    function recordSolvedSheet() {
+      const today = getTodayKey();
+      const current = normalizeDailyEntry(progress.daily[today]);
+      const nextEntry = {
+        total: current.total + 1,
+        r100: current.r100 + (appState.maxRange === 100 ? 1 : 0),
+        r1000: current.r1000 + (appState.maxRange === 1000 ? 1 : 0)
+      };
+      progress.daily[today] = nextEntry;
+      progress.totalSolved += 1;
 
-      const notes = [
-        { start: 0,    dur: 0.16, fStart: 290, fEnd: 230 },
-        { start: 0.17, dur: 0.24, fStart: 225, fEnd: 165 }
-      ];
+      let earnedHint = false;
+      if (progress.totalSolved % 8 === 0) {
+        progress.hintsAvailable += 1;
+        earnedHint = true;
+      }
 
-      notes.forEach(n => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(n.fStart, now + n.start);
-        osc.frequency.exponentialRampToValueAtTime(n.fEnd, now + n.start + n.dur);
-
-        gain.gain.setValueAtTime(0.001, now + n.start);
-        gain.gain.linearRampToValueAtTime(0.18, now + n.start + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + n.start + n.dur);
-
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start(now + n.start);
-        osc.stop(now + n.start + n.dur + 0.02);
-      });
-    }
-
-    // Fröhliches aufsteigendes Pling nach richtigem Schritt 1
-    function playStep1SuccessSound() {
-      const ctx = getAudioCtx();
-      if (!ctx) return;
-      const now = ctx.currentTime;
-      const freqs = [523.25, 659.25, 783.99]; // C5, E5, G5
-
-      freqs.forEach((f, idx) => {
-        const t = now + idx * 0.085;
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(f, t);
-
-        gain.gain.setValueAtTime(0.001, t);
-        gain.gain.linearRampToValueAtTime(0.2, t + 0.015);
-        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
-
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start(t);
-        osc.stop(t + 0.3);
-      });
-    }
-
-    // Verspielte Party-Tröten-Fanfare mit Vibrato & Glitzer-Pling nach komplett gelöstem Blatt
-    function playPartyFanfareSound() {
-      const ctx = getAudioCtx();
-      if (!ctx) return;
-      const now = ctx.currentTime;
-
-      // Tröten-Melodie: C5 - E5 - G5 - C6 (mit kleinem Vibrato auf dem letzten Ton)
-      const hornNotes = [
-        { t: 0.00, dur: 0.12, f: 523.25, vib: false },
-        { t: 0.13, dur: 0.12, f: 659.25, vib: false },
-        { t: 0.26, dur: 0.14, f: 783.99, vib: false },
-        { t: 0.42, dur: 0.48, f: 1046.5, vib: true  }
-      ];
-
-      hornNotes.forEach(n => {
-        const osc = ctx.createOscillator();
-        const filter = ctx.createBiquadFilter();
-        const gain = ctx.createGain();
-
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(n.f, now + n.t);
-
-        // Warmes Tröten-Filter
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(2100, now + n.t);
-        filter.Q.setValueAtTime(2.5, now + n.t);
-
-        if (n.vib) {
-          const lfo = ctx.createOscillator();
-          const lfoGain = ctx.createGain();
-          lfo.frequency.setValueAtTime(7, now + n.t);
-          lfoGain.gain.setValueAtTime(14, now + n.t);
-          lfo.connect(lfoGain);
-          lfoGain.connect(osc.frequency);
-          lfo.start(now + n.t);
-          lfo.stop(now + n.t + n.dur);
-        }
-
-        gain.gain.setValueAtTime(0.001, now + n.t);
-        gain.gain.linearRampToValueAtTime(0.14, now + n.t + 0.025);
-        gain.gain.setValueAtTime(0.13, now + n.t + n.dur * 0.72);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + n.t + n.dur);
-
-        osc.connect(filter);
-        filter.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start(now + n.t);
-        osc.stop(now + n.t + n.dur + 0.03);
-      });
-
-      // Glitzer-Pling obendrauf
-      const sparkles = [1318.5, 1567.98, 2093.0];
-      sparkles.forEach((f, i) => {
-        const t = now + 0.54 + i * 0.075;
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(f, t);
-
-        gain.gain.setValueAtTime(0.001, t);
-        gain.gain.linearRampToValueAtTime(0.12, t + 0.01);
-        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
-
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start(t);
-        osc.stop(t + 0.27);
-      });
-    }
-
-    function toggleSound() {
-      progress.soundEnabled = !progress.soundEnabled;
       saveProgress();
-      updateHeaderUI();
-      if (progress.soundEnabled) {
-        playStep1SuccessSound();
-      }
+      updateHeaderStats();
+      return earnedHint;
     }
 
-    /* =====================================================================
-       4. HEADER-UI & MODUS-UMSCHALTUNG
-    ===================================================================== */
-    function updateHeaderUI() {
-      // Aktiver Modus-Button
-      Object.keys(MODE_CONFIG).forEach(m => {
-        const btn = document.getElementById('btn-mode-' + m);
-        if (btn) btn.classList.toggle('active', m === appState.mode);
-      });
+    function updateHeaderStats() {
+      document.getElementById('hints-counter').textContent = `💡 Hilfen: ${progress.hintsAvailable}`;
+      const remaining = 8 - (progress.totalSolved % 8);
+      document.getElementById('hints-progress').textContent = `Noch ${remaining}/8 bis zur nächsten Hilfe`;
+      updateHintButtonState();
+    }
 
-      // Ton-Button
-      const soundBtn = document.getElementById('btn-sound-toggle');
-      if (progress.soundEnabled) {
-        soundBtn.textContent = '🔊 Ton an';
-        soundBtn.classList.add('on');
+    function updateHintButtonState() {
+      const btn = document.getElementById('btn-use-hint');
+      const canUse = !appState.step1Solved && !appState.hintUsedThisTask && progress.hintsAvailable > 0;
+      btn.disabled = !canUse;
+      if (appState.hintUsedThisTask) {
+        btn.textContent = '💡 Hilfe aktiv';
       } else {
-        soundBtn.textContent = '🔇 Ton aus';
-        soundBtn.classList.remove('on');
+        btn.textContent = `💡 Hilfe nutzen (${progress.hintsAvailable})`;
       }
-
-      // Hilfen & Fortschritt bis zur nächsten Hilfe (0..7 / 8)
-      const mod8 = progress.totalSolved % 8;
-      document.getElementById('hint-count-header').textContent = progress.hintsAvailable;
-      document.getElementById('hint-progress-header').textContent = `${mod8}/8`;
-      document.getElementById('hint-count-btn').textContent = progress.hintsAvailable;
-
-      const hintBtn = document.getElementById('btn-use-hint');
-      hintBtn.disabled = progress.hintsAvailable <= 0 || appState.hintUsedThisTask || appState.step1Solved;
-    }
-
-    function switchMode(newMode) {
-      if (!MODE_CONFIG[newMode]) return;
-      appState.mode = newMode;
-      appState.maxRange = MODE_CONFIG[newMode].maxRange;
-      updateHeaderUI();
-      startNewTask();
     }
 
     /* =====================================================================
-       5. AUFGABEN-GENERATOR (ALLE 8 MODI)
+       HILFSFUNKTIONEN & AUFGABENGENERATOR (8 MODI)
     ===================================================================== */
     function randInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    function buildSingleTask(type) {
-      if (type === 'mul100') {
+    function sanitizeDigit(val) {
+      return String(val || '').replace(/[^0-9]/g, '').slice(0, 1);
+    }
+
+    function sanitizeNumber(val) {
+      return String(val || '').replace(/[^0-9]/g, '');
+    }
+
+    function triggerShake(el) {
+      if (!el) return;
+      el.classList.remove('shake');
+      void el.offsetWidth; // Reflow erzwingen
+      el.classList.add('shake');
+    }
+
+    function buildSingleTask(taskType) {
+      if (taskType === 'mul100') {
         const a = randInt(1, 10);
         const b = randInt(1, 10);
         return { op: 'mul', a, b, target: a * b, text: `${a} × ${b}` };
       }
 
-      if (type === 'mul1000') {
-        // Zehner-1×1 mit kleinem 1×1 bis 10×100 (Ergebnis max 1000)
+      if (taskType === 'mul1000') {
+        // Zehner-1×1 mit Ergebnis <= 1000
         const a = randInt(1, 10);
         const b = randInt(1, 10);
-        if (Math.random() < 0.5) {
-          const factorB = b * 10;
-          return { op: 'mul', a, b: factorB, target: a * factorB, text: `${a} × ${factorB}` };
-        } else {
-          const factorA = a * 10;
-          return { op: 'mul', a: factorA, b, target: factorA * b, text: `${factorA} × ${b}` };
-        }
+        const scaleFirst = Math.random() < 0.5;
+        const left = scaleFirst ? a * 10 : a;
+        const right = scaleFirst ? b : b * 10;
+        return { op: 'mul', a: left, b: right, target: left * right, text: `${left} × ${right}` };
       }
 
-      if (type === 'div100') {
+      if (taskType === 'div100') {
         const divisor = randInt(1, 10);
         const quotient = randInt(1, 10);
         const dividend = divisor * quotient;
         return { op: 'div', a: dividend, b: divisor, target: quotient, text: `${dividend} ÷ ${divisor}` };
       }
 
-      if (type === 'div1000') {
-        // z. B. 420 ÷ 7 = 60 oder 420 ÷ 70 = 6 (und gelegentlich 1000 ÷ 10 = 100)
+      if (taskType === 'div1000') {
+        // Zwei Varianten: z. B. 420 ÷ 7 = 60 oder 420 ÷ 70 = 6
         const baseA = randInt(1, 10);
         const baseB = randInt(1, 10);
         const dividend = baseA * baseB * 10;
         if (Math.random() < 0.65) {
-          // Ergebnis ist Zehnerzahl (10..100)
+          // 420 ÷ 7 = 60
           return { op: 'div', a: dividend, b: baseA, target: baseB * 10, text: `${dividend} ÷ ${baseA}` };
         } else {
-          // Teiler ist Zehnerzahl (10..100), Ergebnis 1..10
+          // 420 ÷ 70 = 6
           return { op: 'div', a: dividend, b: baseA * 10, target: baseB, text: `${dividend} ÷ ${baseA * 10}` };
         }
       }
 
-      if (type === 'add100') {
+      if (taskType === 'add100') {
         const target = randInt(2, 100);
         const a = randInt(1, target - 1);
         const b = target - a;
         return { op: 'add', a, b, target, text: `${a} + ${b}` };
       }
 
-      if (type === 'sub100') {
+      if (taskType === 'sub100') {
         const a = randInt(2, 100);
         const b = randInt(1, a - 1);
-        return { op: 'sub', a, b, target: a - b, text: `${a} − ${b}` };
+        const target = a - b;
+        return { op: 'sub', a, b, target, text: `${a} − ${b}` };
       }
 
-      if (type === 'add1000') {
+      if (taskType === 'add1000') {
         const style = Math.random();
         let a, b, target;
         if (style < 0.45) {
-          // Glatte Zehnerzahlen (z. B. 240 + 130)
           target = randInt(2, 100) * 10;
           a = randInt(1, target / 10 - 1) * 10;
           b = target - a;
         } else if (style < 0.75) {
-          // Zahl + glatter Zehner/Hunderter (z. B. 345 + 200)
           const step = Math.random() < 0.5 ? randInt(1, 5) * 100 : randInt(1, 9) * 10;
           a = randInt(10, 1000 - step);
           b = step;
           target = a + b;
         } else {
-          // Freie Aufgaben bis 1000
           target = randInt(20, 1000);
           a = randInt(10, target - 10);
           b = target - a;
@@ -1948,87 +2142,113 @@
 
     function generateTask() {
       let generated;
-      let tries = 0;
+      let attempts = 0;
 
       do {
-        let tType = appState.mode;
+        let effectiveType = appState.mode;
         if (appState.mode === 'addsub100') {
-          tType = Math.random() < 0.5 ? 'add100' : 'sub100';
+          effectiveType = Math.random() < 0.5 ? 'add100' : 'sub100';
         } else if (appState.mode === 'addsub1000') {
-          tType = Math.random() < 0.5 ? 'add1000' : 'sub1000';
+          effectiveType = Math.random() < 0.5 ? 'add1000' : 'sub1000';
         } else if (appState.mode === 'mix100') {
-          const list = ['mul100', 'div100', 'add100', 'sub100'];
-          tType = list[randInt(0, list.length - 1)];
+          const mix = ['mul100', 'div100', 'add100', 'sub100'];
+          effectiveType = mix[randInt(0, mix.length - 1)];
         } else if (appState.mode === 'mix1000') {
-          const list = ['mul1000', 'div1000', 'add1000', 'sub1000'];
-          tType = list[randInt(0, list.length - 1)];
+          const mix = ['mul1000', 'div1000', 'add1000', 'sub1000'];
+          effectiveType = mix[randInt(0, mix.length - 1)];
         }
-        generated = buildSingleTask(tType);
-        tries++;
-      } while (generated.text === appState.lastProblemKey && tries < 12);
+        generated = buildSingleTask(effectiveType);
+        attempts++;
+      } while (generated.text === appState.lastProblemKey && attempts < 12);
 
+      appState.op = generated.op;
+      appState.a = generated.a;
+      appState.b = generated.b;
+      appState.target = generated.target;
+      appState.text = generated.text;
       appState.lastProblemKey = generated.text;
-      return generated;
+    }
+
+    function switchMode(newMode) {
+      if (!MODE_CONFIG[newMode]) return;
+      appState.mode = newMode;
+      appState.maxRange = MODE_CONFIG[newMode].maxRange;
+      playPopSound();
+      updateModeButtons();
+      startNewTask();
+    }
+
+    function updateModeButtons() {
+      Object.keys(MODE_CONFIG).forEach(key => {
+        const btn = document.getElementById(`btn-mode-${key}`);
+        if (btn) btn.classList.toggle('active', key === appState.mode);
+      });
+      document.getElementById('mode-badge').textContent = MODE_CONFIG[appState.mode].badge;
     }
 
     /* =====================================================================
-       6. NEUE AUFGABE STARTEN & UI ZURÜCKSETZEN
+       NEUE AUFGABE STARTEN & UI ZURÜCKSETZEN
     ===================================================================== */
     function startNewTask() {
       appState.maxRange = MODE_CONFIG[appState.mode].maxRange;
-      appState.task = generateTask();
+      generateTask();
+
       appState.step1Solved = false;
       appState.step2Solved = false;
       appState.hintUsedThisTask = false;
       appState.selectedParity = null;
       appState.nlValue = null;
 
-      const target = appState.task.target;
-      const needsT = target === 1000;
+      // Schritt 1 anzeigen & zurücksetzen
+      document.getElementById('task-display').innerHTML = `${appState.text} = <span class="qmark">?</span>`;
+      const showT = appState.target === 1000;
+      document.getElementById('pv-col-t').classList.toggle('hidden', !showT);
 
-      // Schritt 1 UI
-      document.getElementById('mode-badge-text').textContent = MODE_CONFIG[appState.mode].badge;
-      document.getElementById('task-text').textContent = `${appState.task.text} = ?`;
-
-      document.getElementById('th-t').classList.toggle('hidden', !needsT);
-      document.getElementById('td-t').classList.toggle('hidden', !needsT);
-
-      ['in-t', 'in-h', 'in-z', 'in-e'].forEach(id => {
+      ['pv-t', 'pv-h', 'pv-z', 'pv-e'].forEach(id => {
         const el = document.getElementById(id);
         el.value = '';
         el.disabled = false;
         el.classList.remove('input-correct', 'input-wrong', 'shake');
       });
 
-      document.getElementById('hint-cards-wrap').classList.add('hidden');
-      document.getElementById('hint-cards-grid').innerHTML = '';
-      document.getElementById('btn-check-step1').classList.remove('hidden');
+      document.getElementById('btn-check-step1').disabled = false;
       document.getElementById('step1-feedback').textContent = '';
       document.getElementById('step1-feedback').className = 'feedback-msg';
+      document.getElementById('hint-cards-box').classList.add('hidden');
+      document.getElementById('hint-cards-row').innerHTML = '';
+      updateHintButtonState();
 
       // Schritt 2 verstecken & zurücksetzen
       document.getElementById('step2-section').classList.add('hidden');
-      document.getElementById('decomp-t-wrap').classList.toggle('hidden', !needsT);
+      document.getElementById('btn-check-step2').classList.remove('hidden');
+      document.getElementById('btn-check-step2').disabled = false;
+      document.getElementById('btn-next-task').classList.add('hidden');
+      document.getElementById('step2-feedback').textContent = '';
+      document.getElementById('reward-toast').classList.add('hidden');
 
-      ['btn-even', 'btn-odd'].forEach(id => {
+      // Gerade / Ungerade zurücksetzen
+      ['btn-parity-even', 'btn-parity-odd'].forEach(id => {
         const el = document.getElementById(id);
-        el.disabled = false;
         el.classList.remove('selected', 'input-correct', 'input-wrong', 'shake');
+        el.disabled = false;
       });
       document.getElementById('fb-parity-icon').textContent = '';
       document.getElementById('fb-parity-msg').textContent = '';
 
+      // Zahlzerlegung zurücksetzen
+      document.getElementById('decomp-t-wrap').classList.toggle('hidden', !showT);
       ['decomp-t', 'decomp-h', 'decomp-z', 'decomp-e'].forEach(id => {
         const el = document.getElementById(id);
         el.value = '';
         el.disabled = false;
         el.classList.remove('input-correct', 'input-wrong', 'shake');
       });
-      document.getElementById('decomp-total-display').textContent = target;
+      document.getElementById('decomp-total-display').textContent = appState.target;
       document.getElementById('fb-decomp-icon').textContent = '';
       document.getElementById('fb-decomp-msg').textContent = '';
 
-      ['nb-nh-l', 'nb-nz-l', 'nb-v', 'nb-n', 'nb-nz-r', 'nb-nh-r'].forEach(id => {
+      // Nachbarzahlen zurücksetzen
+      ['nb-nh-prev', 'nb-nz-prev', 'nb-v', 'nb-n', 'nb-nz-next', 'nb-nh-next'].forEach(id => {
         const el = document.getElementById(id);
         el.value = '';
         el.disabled = false;
@@ -2037,50 +2257,47 @@
       document.getElementById('fb-nb-icon').textContent = '';
       document.getElementById('fb-nb-msg').textContent = '';
 
-      // Zahlenstrahl neu aufbauen
-      buildNumberLine(appState.maxRange);
-      document.getElementById('nl-marker').classList.add('hidden');
-      document.getElementById('nl-marker').classList.remove('ok', 'err');
-      document.getElementById('nl-target-pin').classList.add('hidden');
+      // Zahlenstrahl zurücksetzen & neu zeichnen
+      renderNumberLineScale();
+      updateNudgeButtonsForRange();
+      const marker = document.getElementById('nl-marker');
+      marker.classList.add('hidden');
+      marker.classList.remove('correct', 'wrong');
+      document.getElementById('nl-current-val').textContent = '—';
       document.getElementById('fb-nl-icon').textContent = '';
       document.getElementById('fb-nl-msg').textContent = '';
 
-      document.getElementById('reward-toast').classList.add('hidden');
-      document.getElementById('btn-check-all').classList.remove('hidden');
-      document.getElementById('btn-next-task').classList.add('hidden');
-      document.getElementById('step2-feedback').textContent = '';
-
-      updateHeaderUI();
+      // Sanft nach oben scrollen
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     /* =====================================================================
-       7. HILFE-SYSTEM (3 KÄRTCHEN: 1 RICHTIG, 2 PLAUSIBEL FALSCH)
+       BELOHNUNGSSYSTEM: HILFE-KÄRTCHEN (1 RICHTIG, 2 PLAUSIBEL FALSCH)
     ===================================================================== */
-    function generateHintChoices(task) {
-      const correct = task.target;
+    function generateHintChoices() {
+      const correct = appState.target;
       const maxR = appState.maxRange;
       const candidates = [];
 
-      if (task.op === 'mul') {
+      if (appState.op === 'mul') {
         const step = maxR === 1000 ? 10 : 1;
         candidates.push(
-          correct + task.a,
-          correct - task.a,
-          correct + task.b,
-          correct - task.b,
-          correct + 10 * step,
-          correct - 10 * step,
+          correct + appState.a,
+          correct - appState.a,
+          correct + appState.b,
+          correct - appState.b,
           correct + step,
-          correct - step
+          correct - step,
+          correct + 10,
+          correct - 10
         );
-      } else if (task.op === 'div') {
+      } else if (appState.op === 'div') {
         const step = correct >= 10 && correct % 10 === 0 && maxR === 1000 ? 10 : 1;
         candidates.push(
           correct + step,
           correct - step,
-          correct + 2 * step,
-          correct - 2 * step,
+          correct + step * 2,
+          correct - step * 2,
           correct + 1,
           correct - 1
         );
@@ -2092,227 +2309,260 @@
         }
       }
 
-      const wrongs = [];
-      // Mischen der Kandidaten
-      const shuffled = candidates.sort(() => Math.random() - 0.5);
-      for (const c of shuffled) {
-        if (c > 0 && c <= maxR && c !== correct && !wrongs.includes(c)) {
-          wrongs.push(c);
-          if (wrongs.length === 2) break;
+      const distractors = [];
+      for (const c of candidates) {
+        if (c > 0 && c <= maxR && c !== correct && !distractors.includes(c)) {
+          distractors.push(c);
         }
       }
 
-      // Falls noch nicht 2 falsche gefunden wurden, auffüllen
-      let offset = 1;
-      while (wrongs.length < 2) {
-        const c1 = correct + offset;
-        const c2 = correct - offset;
-        if (c1 <= maxR && c1 !== correct && !wrongs.includes(c1)) wrongs.push(c1);
-        else if (c2 > 0 && c2 !== correct && !wrongs.includes(c2)) wrongs.push(c2);
-        offset++;
+      // Zufällig mischen und 2 falsche wählen
+      distractors.sort(() => Math.random() - 0.5);
+      while (distractors.length < 2) {
+        const fallback = randInt(1, maxR);
+        if (fallback !== correct && !distractors.includes(fallback)) {
+          distractors.push(fallback);
+        }
       }
 
-      return [correct, wrongs[0], wrongs[1]].sort(() => Math.random() - 0.5);
+      const choices = [correct, distractors[0], distractors[1]];
+      choices.sort(() => Math.random() - 0.5);
+      return choices;
     }
 
     function useHint() {
-      if (progress.hintsAvailable <= 0 || appState.hintUsedThisTask || appState.step1Solved) return;
+      if (appState.step1Solved || appState.hintUsedThisTask || progress.hintsAvailable <= 0) return;
 
       progress.hintsAvailable -= 1;
       appState.hintUsedThisTask = true;
       saveProgress();
-      updateHeaderUI();
+      updateHeaderStats();
+      playPopSound();
 
-      const choices = generateHintChoices(appState.task);
-      const grid = document.getElementById('hint-cards-grid');
-      grid.innerHTML = '';
+      const choices = generateHintChoices();
+      const row = document.getElementById('hint-cards-row');
+      row.innerHTML = '';
 
       choices.forEach(num => {
         const btn = document.createElement('button');
-        btn.className = 'hint-choice-btn';
+        btn.type = 'button';
+        btn.className = 'hint-card-btn';
         btn.textContent = num;
-        btn.onclick = () => fillPlaceTableFromHint(num);
-        grid.appendChild(btn);
+        btn.onclick = () => fillPlaceValueWithNumber(num);
+        row.appendChild(btn);
       });
 
-      document.getElementById('hint-cards-wrap').classList.remove('hidden');
+      document.getElementById('hint-cards-box').classList.remove('hidden');
     }
 
-    function fillPlaceTableFromHint(num) {
+    function fillPlaceValueWithNumber(num) {
       if (appState.step1Solved) return;
+      playPopSound();
       const t = Math.floor(num / 1000);
       const h = Math.floor((num % 1000) / 100);
       const z = Math.floor((num % 100) / 10);
       const e = num % 10;
 
-      document.getElementById('in-t').value = t > 0 ? String(t) : '';
-      document.getElementById('in-h').value = (t > 0 || h > 0) ? String(h) : '';
-      document.getElementById('in-z').value = (t > 0 || h > 0 || z > 0) ? String(z) : '';
-      document.getElementById('in-e').value = String(e);
+      document.getElementById('pv-t').value = t > 0 ? String(t) : '';
+      document.getElementById('pv-h').value = num >= 100 ? String(h) : '';
+      document.getElementById('pv-z').value = num >= 10 ? String(z) : '';
+      document.getElementById('pv-e').value = String(e);
 
-      ['in-t', 'in-h', 'in-z', 'in-e'].forEach(id => {
+      ['pv-t', 'pv-h', 'pv-z', 'pv-e'].forEach(id => {
         document.getElementById(id).classList.remove('input-wrong', 'input-correct');
       });
     }
 
     /* =====================================================================
-       8. PRÜFUNG SCHRITT 1 (STELLENWERTTAFEL)
+       SCHRITT 1 PRÜFEN
     ===================================================================== */
-    function sanitizeDigit(val) {
-      return String(val || '').replace(/[^0-9]/g, '').slice(0, 1);
-    }
-
-    function sanitizeInt(val) {
-      const cleaned = String(val || '').replace(/[^0-9]/g, '');
-      return cleaned === '' ? null : parseInt(cleaned, 10);
-    }
-
-    function triggerShake(el) {
-      el.classList.remove('shake');
-      void el.offsetWidth; // Reflow für Neustart der Animation
-      el.classList.add('shake');
-    }
-
     function checkStep1() {
       if (appState.step1Solved) return;
 
-      const target = appState.task.target;
+      const target = appState.target;
       const expT = Math.floor(target / 1000);
       const expH = Math.floor((target % 1000) / 100);
       const expZ = Math.floor((target % 100) / 10);
       const expE = target % 10;
 
-      const rawT = sanitizeDigit(document.getElementById('in-t').value);
-      const rawH = sanitizeDigit(document.getElementById('in-h').value);
-      const rawZ = sanitizeDigit(document.getElementById('in-z').value);
-      const rawE = sanitizeDigit(document.getElementById('in-e').value);
+      const rawT = sanitizeDigit(document.getElementById('pv-t').value);
+      const rawH = sanitizeDigit(document.getElementById('pv-h').value);
+      const rawZ = sanitizeDigit(document.getElementById('pv-z').value);
+      const rawE = sanitizeDigit(document.getElementById('pv-e').value);
 
-      // Führende Nullen oder leere führende Felder flexibel akzeptieren
+      // Führende 0-Stellen dürfen leer ODER "0" sein
       const okT = target !== 1000 || rawT === String(expT);
       const okH = target >= 100 ? (rawH === String(expH)) : (rawH === '' || rawH === '0');
-      const okZ = target >= 10  ? (rawZ === String(expZ)) : (rawZ === '' || rawZ === '0');
+      const okZ = target >= 10 ? (rawZ === String(expZ)) : (rawZ === '' || rawZ === '0');
       const okE = rawE === String(expE);
 
-      const mark = (id, ok) => {
+      const markPV = (id, ok) => {
         const el = document.getElementById(id);
         el.classList.remove('input-correct', 'input-wrong');
         el.classList.add(ok ? 'input-correct' : 'input-wrong');
         if (!ok) triggerShake(el);
       };
 
-      if (target === 1000) mark('in-t', okT);
-      mark('in-h', okH);
-      mark('in-z', okZ);
-      mark('in-e', okE);
+      if (target === 1000) markPV('pv-t', okT);
+      markPV('pv-h', okH);
+      markPV('pv-z', okZ);
+      markPV('pv-e', okE);
 
       const fb = document.getElementById('step1-feedback');
 
       if (okT && okH && okZ && okE) {
         appState.step1Solved = true;
-        fb.textContent = '🎉 Richtig! Super gemacht!';
-        fb.className = 'feedback-msg text-ok';
-        playStep1SuccessSound();
-
-        ['in-t', 'in-h', 'in-z', 'in-e'].forEach(id => {
+        ['pv-t', 'pv-h', 'pv-z', 'pv-e'].forEach(id => {
           document.getElementById(id).disabled = true;
         });
-        document.getElementById('btn-check-step1').classList.add('hidden');
-        document.getElementById('hint-cards-wrap').classList.add('hidden');
-        updateHeaderUI();
+        document.getElementById('btn-check-step1').disabled = true;
+        document.getElementById('hint-cards-box').classList.add('hidden');
+        updateHintButtonState();
 
-        // Schritt 2 öffnen
+        document.getElementById('task-display').innerHTML = `${appState.text} = <span class="qmark">${target}</span>`;
+        fb.textContent = '🎉 Richtig! Jetzt kommen die Fragen zu deiner Zahl.';
+        fb.className = 'feedback-msg msg-ok';
+
+        playStep1SuccessSound();
         revealStep2();
       } else {
-        fb.textContent = 'Noch nicht ganz – schau dir die roten Kästchen noch einmal an!';
-        fb.className = 'feedback-msg text-err';
+        fb.textContent = 'Hmm, da stimmt noch etwas nicht. Schau genau auf H, Z und E!';
+        fb.className = 'feedback-msg msg-err';
         playErrorSound();
       }
     }
 
     function revealStep2() {
-      const target = appState.task.target;
+      const target = appState.target;
       document.getElementById('target-number-badge').textContent = target;
       document.getElementById('nb-center').textContent = target;
       document.getElementById('decomp-total-display').textContent = target;
 
-      const s2 = document.getElementById('step2-section');
-      s2.classList.remove('hidden');
+      const step2 = document.getElementById('step2-section');
+      step2.classList.remove('hidden');
       setTimeout(() => {
-        s2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        step2.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 120);
     }
 
     /* =====================================================================
-       9. INTERAKTIONEN SCHRITT 2: GERADE/UNGERADE & ZAHLENSTRAHL
+       SCHRITT 2 INTERAKTIONEN (PARITÄT & ZAHLENSTRAHL)
     ===================================================================== */
-    function selectParity(val) {
+    function selectParity(choice) {
       if (appState.step2Solved) return;
-      appState.selectedParity = val;
-      document.getElementById('btn-even').classList.toggle('selected', val === 'even');
-      document.getElementById('btn-odd').classList.toggle('selected', val === 'odd');
-      document.getElementById('btn-even').classList.remove('input-wrong', 'input-correct');
-      document.getElementById('btn-odd').classList.remove('input-wrong', 'input-correct');
+      appState.selectedParity = choice;
+      playPopSound();
+      const evenBtn = document.getElementById('btn-parity-even');
+      const oddBtn = document.getElementById('btn-parity-odd');
+      evenBtn.classList.toggle('selected', choice === 'even');
+      oddBtn.classList.toggle('selected', choice === 'odd');
+      evenBtn.classList.remove('input-correct', 'input-wrong');
+      oddBtn.classList.remove('input-correct', 'input-wrong');
     }
 
-    function buildNumberLine(maxRange) {
-      const ticksWrap = document.getElementById('nl-ticks');
-      ticksWrap.innerHTML = '';
+    /* ---- ZAHLENSTRAHL (MIT EXAKTER 1ER-SCHRITTWEITE & FEINJUSTIERUNG) ---- */
+    function renderNumberLineScale() {
+      const svg = document.getElementById('nl-svg');
+      const maxR = appState.maxRange;
+      const majorStep = maxR === 1000 ? 100 : 10;
+      const midStep = maxR === 1000 ? 50 : 5;
+      const minorStep = maxR === 1000 ? 10 : 1;
 
-      const totalSteps = 100; // 100 kleine Striche (bei 100er: 1er-Schritte; bei 1000er: 10er-Schritte)
-      for (let i = 0; i <= totalSteps; i++) {
-        const pct = (i / totalSteps) * 100;
-        const tick = document.createElement('div');
-        tick.style.left = pct + '%';
+      let markup = '';
+      // Hauptlinie
+      markup += `<line x1="0" y1="24" x2="1000" y2="24" stroke="#334155" stroke-width="3" stroke-linecap="round" />`;
 
-        if (i % 10 === 0) {
-          tick.className = 'nl-tick major';
-          const label = document.createElement('div');
-          const numVal = (i / totalSteps) * maxRange;
-          label.className = 'nl-label' + ((i / 10) % 2 === 1 ? ' odd-label' : '');
-          label.style.left = pct + '%';
-          label.textContent = numVal;
-          ticksWrap.appendChild(label);
-        } else if (i % 5 === 0) {
-          tick.className = 'nl-tick medium';
+      for (let v = 0; v <= maxR; v += minorStep) {
+        const x = (v / maxR) * 1000;
+        if (v % majorStep === 0) {
+          markup += `<line x1="${x}" y1="8" x2="${x}" y2="38" stroke="#1e293b" stroke-width="2.6" />`;
+          // Label-Ausrichtung an den Rändern leicht nach innen ziehen, damit nichts abgeschnitten wird
+          let anchor = 'middle';
+          let labelX = x;
+          if (v === 0) { anchor = 'start'; labelX = 0; }
+          if (v === maxR) { anchor = 'end'; labelX = 1000; }
+          markup += `<text x="${labelX}" y="57" text-anchor="${anchor}" font-family="sans-serif" font-size="14" font-weight="800" fill="#334155">${v}</text>`;
+        } else if (v % midStep === 0) {
+          markup += `<line x1="${x}" y1="13" x2="${x}" y2="33" stroke="#64748b" stroke-width="1.8" />`;
         } else {
-          tick.className = 'nl-tick minor';
+          markup += `<line x1="${x}" y1="18" x2="${x}" y2="29" stroke="#94a3b8" stroke-width="1.2" />`;
         }
-        ticksWrap.appendChild(tick);
+      }
+
+      svg.innerHTML = markup;
+    }
+
+    function updateNudgeButtonsForRange() {
+      const big = appState.maxRange === 1000 ? 10 : 5;
+      const btnBigMinus = document.getElementById('nl-btn-big-minus');
+      const btnBigPlus = document.getElementById('nl-btn-big-plus');
+      btnBigMinus.textContent = `−${big}`;
+      btnBigPlus.textContent = `+${big}`;
+      btnBigMinus.onclick = () => nudgeNumberLine(-big);
+      btnBigPlus.onclick = () => nudgeNumberLine(big);
+    }
+
+    function setNumberLineValue(val) {
+      if (appState.step2Solved) return;
+      const clamped = Math.max(0, Math.min(appState.maxRange, Math.round(val)));
+      appState.nlValue = clamped;
+
+      const pct = (clamped / appState.maxRange) * 100;
+      const marker = document.getElementById('nl-marker');
+      const bubble = document.getElementById('nl-bubble');
+
+      marker.classList.remove('hidden', 'correct', 'wrong');
+      marker.style.left = `${pct}%`;
+      bubble.textContent = clamped;
+
+      // Sprechblase an den äußersten Rändern sanft im sichtbaren Bereich halten
+      if (pct < 6) {
+        bubble.style.transform = 'translateX(-20%)';
+      } else if (pct > 94) {
+        bubble.style.transform = 'translateX(-80%)';
+      } else {
+        bubble.style.transform = 'translateX(-50%)';
+      }
+
+      document.getElementById('nl-current-val').textContent = clamped;
+    }
+
+    function nudgeNumberLine(delta) {
+      if (appState.step2Solved) return;
+      playPopSound();
+      if (appState.nlValue === null) {
+        // Wenn der Marker noch nicht gesetzt war, sichtbar in der Mitte starten + Schritt anwenden
+        const startVal = Math.round(appState.maxRange / 2);
+        setNumberLineValue(startVal + delta);
+      } else {
+        setNumberLineValue(appState.nlValue + delta);
       }
     }
 
-    function updateNumberLineFromClientX(clientX) {
-      if (appState.step2Solved) return;
-      const track = document.getElementById('nl-track');
+    function updateNumberLineFromPointer(clientX) {
+      const track = document.getElementById('nl-track-wrap');
       const rect = track.getBoundingClientRect();
       if (rect.width <= 0) return;
-
-      let ratio = (clientX - rect.left) / rect.width;
-      ratio = Math.max(0, Math.min(1, ratio));
-
-      const rawVal = Math.round(ratio * appState.maxRange);
-      appState.nlValue = rawVal;
-
-      const marker = document.getElementById('nl-marker');
-      const bubble = document.getElementById('nl-marker-bubble');
-      marker.classList.remove('hidden', 'ok', 'err');
-      marker.style.left = (rawVal / appState.maxRange * 100) + '%';
-      bubble.textContent = rawVal;
+      const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+      // Schrittweite 1 (ganze Zahl, KEIN grobes 10er-Snapping!)
+      const exactInt = Math.round(ratio * appState.maxRange);
+      setNumberLineValue(exactInt);
     }
 
     function setupNumberLineEvents() {
-      const area = document.getElementById('nl-area');
+      const area = document.getElementById('nl-interactive');
 
       area.addEventListener('pointerdown', (e) => {
         if (appState.step2Solved) return;
         appState.nlDragging = true;
         try { area.setPointerCapture(e.pointerId); } catch (_) {}
-        updateNumberLineFromClientX(e.clientX);
+        updateNumberLineFromPointer(e.clientX);
+        playPopSound();
       });
 
       area.addEventListener('pointermove', (e) => {
         if (!appState.nlDragging || appState.step2Solved) return;
-        updateNumberLineFromClientX(e.clientX);
+        updateNumberLineFromPointer(e.clientX);
       });
 
       const stopDrag = (e) => {
@@ -2326,78 +2576,61 @@
     }
 
     /* =====================================================================
-       10. PRÜFUNG SCHRITT 2 (ALLE FOLGEAUFGABEN)
+       SCHRITT 2 PRÜFEN (ALLE 4 FOLGEAUFGABEN)
     ===================================================================== */
-    function getExpectedNeighbors(n) {
-      // Deutsche Grundschulregeln:
-      // Vorgänger / Nachfolger
-      const v = n - 1;
-      const next = n + 1;
-
-      // Nachbarzehner: bei glatten Zehnern ±10, sonst ab-/aufrunden
-      const nzLeft = (n % 10 === 0) ? Math.max(0, n - 10) : Math.floor(n / 10) * 10;
-      const nzRight = (n % 10 === 0) ? n + 10 : Math.ceil(n / 10) * 10;
-
-      // Nachbarhunderter: bei glatten Hundertern ±100, sonst ab-/aufrunden
-      const nhLeft = (n % 100 === 0) ? Math.max(0, n - 100) : Math.floor(n / 100) * 100;
-      const nhRight = (n % 100 === 0) ? n + 100 : Math.ceil(n / 100) * 100;
-
-      return { nhLeft, nzLeft, v, next, nzRight, nhRight };
-    }
-
     function checkStep2() {
       if (appState.step2Solved) return;
 
-      const target = appState.task.target;
+      const target = appState.target;
       let allCorrect = true;
 
-      // --- A) Gerade / Ungerade ---
-      const expectedParity = (target % 2 === 0) ? 'even' : 'odd';
-      const btnEven = document.getElementById('btn-even');
-      const btnOdd = document.getElementById('btn-odd');
+      /* --- 1. Gerade / Ungerade --- */
+      const expectedParity = target % 2 === 0 ? 'even' : 'odd';
+      const evenBtn = document.getElementById('btn-parity-even');
+      const oddBtn = document.getElementById('btn-parity-odd');
+      evenBtn.classList.remove('input-correct', 'input-wrong');
+      oddBtn.classList.remove('input-correct', 'input-wrong');
+
       const parityIcon = document.getElementById('fb-parity-icon');
       const parityMsg = document.getElementById('fb-parity-msg');
 
-      btnEven.classList.remove('input-correct', 'input-wrong');
-      btnOdd.classList.remove('input-correct', 'input-wrong');
-
       if (appState.selectedParity === expectedParity) {
+        const chosenBtn = expectedParity === 'even' ? evenBtn : oddBtn;
+        chosenBtn.classList.add('input-correct');
         parityIcon.textContent = '✅';
         parityMsg.textContent = 'Richtig erkannt!';
-        parityMsg.className = 'feedback-msg text-ok';
-        (expectedParity === 'even' ? btnEven : btnOdd).classList.add('input-correct');
+        parityMsg.className = 'sub-fb msg-ok';
       } else {
         allCorrect = false;
         parityIcon.textContent = '❌';
-        parityMsg.textContent = appState.selectedParity
-          ? 'Schau auf die Einer-Ziffer: 0, 2, 4, 6, 8 sind gerade.'
-          : 'Bitte wähle „gerade“ oder „ungerade“ aus.';
-        parityMsg.className = 'feedback-msg text-err';
-        if (appState.selectedParity) {
-          const wrongBtn = appState.selectedParity === 'even' ? btnEven : btnOdd;
-          wrongBtn.classList.add('input-wrong');
-          triggerShake(wrongBtn);
+        if (appState.selectedParity === null) {
+          parityMsg.textContent = 'Bitte wähle „gerade“ oder „ungerade“.';
+          triggerShake(evenBtn);
+          triggerShake(oddBtn);
         } else {
-          triggerShake(btnEven);
-          triggerShake(btnOdd);
+          const chosenBtn = appState.selectedParity === 'even' ? evenBtn : oddBtn;
+          chosenBtn.classList.add('input-wrong');
+          triggerShake(chosenBtn);
+          parityMsg.textContent = 'Tipp: Schau auf die letzte Ziffer (0, 2, 4, 6, 8 = gerade).';
         }
+        parityMsg.className = 'sub-fb msg-err';
       }
 
-      // --- B) Zahlzerlegung (ziffernweise, Zielzahl fest angezeigt) ---
+      /* --- 2. Zahlzerlegung (ziffernweise, feste Zielzahl) --- */
       const expT = Math.floor(target / 1000);
       const expH = Math.floor((target % 1000) / 100);
       const expZ = Math.floor((target % 100) / 10);
       const expE = target % 10;
 
-      const rawDT = sanitizeDigit(document.getElementById('decomp-t').value);
-      const rawDH = sanitizeDigit(document.getElementById('decomp-h').value);
-      const rawDZ = sanitizeDigit(document.getElementById('decomp-z').value);
-      const rawDE = sanitizeDigit(document.getElementById('decomp-e').value);
+      const rawDecompT = sanitizeDigit(document.getElementById('decomp-t').value);
+      const rawDecompH = sanitizeDigit(document.getElementById('decomp-h').value);
+      const rawDecompZ = sanitizeDigit(document.getElementById('decomp-z').value);
+      const rawDecompE = sanitizeDigit(document.getElementById('decomp-e').value);
 
-      const okDT = target !== 1000 || rawDT === String(expT);
-      const okDH = target >= 100 ? (rawDH === String(expH)) : (rawDH === '' || rawDH === '0');
-      const okDZ = target >= 10  ? (rawDZ === String(expZ)) : (rawDZ === '' || rawDZ === '0');
-      const okDE = rawDE === String(expE);
+      const okT = target !== 1000 || rawDecompT === String(expT);
+      const okH = target >= 100 ? (rawDecompH === String(expH)) : (rawDecompH === '' || rawDecompH === '0');
+      const okZ = target >= 10 ? (rawDecompZ === String(expZ)) : (rawDecompZ === '' || rawDecompZ === '0');
+      const okE = rawDecompE === String(expE);
 
       const markField = (id, ok) => {
         const el = document.getElementById(id);
@@ -2406,60 +2639,68 @@
         if (!ok) triggerShake(el);
       };
 
-      if (target === 1000) markField('decomp-t', okDT);
-      markField('decomp-h', okDH);
-      markField('decomp-z', okDZ);
-      markField('decomp-e', okDE);
+      if (target === 1000) markField('decomp-t', okT);
+      markField('decomp-h', okH);
+      markField('decomp-z', okZ);
+      markField('decomp-e', okE);
 
       const decompIcon = document.getElementById('fb-decomp-icon');
       const decompMsg = document.getElementById('fb-decomp-msg');
 
-      if (okDT && okDH && okDZ && okDE) {
+      if (okT && okH && okZ && okE) {
         decompIcon.textContent = '✅';
         decompMsg.textContent = 'Super zerlegt!';
-        decompMsg.className = 'feedback-msg text-ok';
+        decompMsg.className = 'sub-fb msg-ok';
       } else {
         allCorrect = false;
         decompIcon.textContent = '❌';
-        decompMsg.textContent = 'Trage nur die einzelnen Ziffern ein (z. B. 45 → 4 Z + 5 E).';
-        decompMsg.className = 'feedback-msg text-err';
+        decompMsg.textContent = 'Tipp: Trage nur die einzelnen Ziffern ein (z. B. 45 → 4 Z + 5 E).';
+        decompMsg.className = 'sub-fb msg-err';
       }
 
-      // --- C) Vorgänger / Nachfolger & Nachbarzahlen ---
-      const expNb = getExpectedNeighbors(target);
-      const nbChecks = [
-        { id: 'nb-nh-l', exp: expNb.nhLeft },
-        { id: 'nb-nz-l', exp: expNb.nzLeft },
-        { id: 'nb-v',    exp: expNb.v },
-        { id: 'nb-n',    exp: expNb.next },
-        { id: 'nb-nz-r', exp: expNb.nzRight },
-        { id: 'nb-nh-r', exp: expNb.nhRight }
-      ];
+      /* --- 3. Vorgänger / Nachfolger & Nachbarzahlen (Grundschulregeln) --- */
+      const expV = target > 0 ? target - 1 : 0;
+      const expN = target + 1;
+      const expNzPrev = target === 0 ? 0 : (target % 10 === 0 ? target - 10 : Math.floor(target / 10) * 10);
+      const expNzNext = target % 10 === 0 ? target + 10 : Math.ceil(target / 10) * 10;
+      const expNhPrev = target === 0 ? 0 : (target % 100 === 0 ? target - 100 : Math.floor(target / 100) * 100);
+      const expNhNext = target % 100 === 0 ? target + 100 : Math.ceil(target / 100) * 100;
 
-      let nbAllOk = true;
-      nbChecks.forEach(item => {
-        const val = sanitizeInt(document.getElementById(item.id).value);
-        const ok = (val === item.exp);
-        if (!ok) nbAllOk = false;
-        markField(item.id, ok);
-      });
+      const checkNb = (id, expected, allowEmptyForZero = false) => {
+        const raw = sanitizeNumber(document.getElementById(id).value);
+        if (raw === '' && !(allowEmptyForZero && expected === 0)) {
+          markField(id, false);
+          return false;
+        }
+        const num = raw === '' ? 0 : parseInt(raw, 10);
+        const ok = num === expected;
+        markField(id, ok);
+        return ok;
+      };
+
+      const nbOk1 = checkNb('nb-nh-prev', expNhPrev);
+      const nbOk2 = checkNb('nb-nz-prev', expNzPrev);
+      const nbOk3 = checkNb('nb-v', expV, true);
+      const nbOk4 = checkNb('nb-n', expN);
+      const nbOk5 = checkNb('nb-nz-next', expNzNext);
+      const nbOk6 = checkNb('nb-nh-next', expNhNext);
 
       const nbIcon = document.getElementById('fb-nb-icon');
       const nbMsg = document.getElementById('fb-nb-msg');
 
-      if (nbAllOk) {
+      if (nbOk1 && nbOk2 && nbOk3 && nbOk4 && nbOk5 && nbOk6) {
         nbIcon.textContent = '✅';
-        nbMsg.textContent = 'Alle Nachbarn gefunden!';
-        nbMsg.className = 'feedback-msg text-ok';
+        nbMsg.textContent = 'Alle Nachbarzahlen stimmen!';
+        nbMsg.className = 'sub-fb msg-ok';
       } else {
         allCorrect = false;
         nbIcon.textContent = '❌';
-        nbMsg.textContent = 'Einige Nachbarzahlen sind noch rot. (Tipp: Bei glatten Zehnern/Hundertern liegen die Nachbarn ±10 bzw. ±100 entfernt.)';
-        nbMsg.className = 'feedback-msg text-err';
+        nbMsg.textContent = 'Prüfe die rot markierten Nachbarzahlen noch einmal.';
+        nbMsg.className = 'sub-fb msg-err';
       }
 
-      // --- D) Zahlenstrahl ---
-      const tol = appState.maxRange === 1000 ? 20 : 2;
+      /* --- 4. Zahlenstrahl (Toleranz ±2 im 100er-Raum, ±20 im 1000er-Raum) --- */
+      const tolerance = appState.maxRange === 1000 ? 20 : 2;
       const nlIcon = document.getElementById('fb-nl-icon');
       const nlMsg = document.getElementById('fb-nl-msg');
       const marker = document.getElementById('nl-marker');
@@ -2467,161 +2708,144 @@
       if (appState.nlValue === null) {
         allCorrect = false;
         nlIcon.textContent = '❌';
-        nlMsg.textContent = 'Bitte tippe noch auf den Zahlenstrahl, um die Zahl zu markieren!';
-        nlMsg.className = 'feedback-msg text-err';
-        triggerShake(document.getElementById('nl-area'));
-      } else if (Math.abs(appState.nlValue - target) <= tol) {
+        nlMsg.textContent = 'Tippe auf den Zahlenstrahl oder nutze die +/− Knöpfe, um die Zahl zu markieren.';
+        nlMsg.className = 'sub-fb msg-err';
+        triggerShake(document.getElementById('nl-interactive'));
+      } else if (Math.abs(appState.nlValue - target) <= tolerance) {
+        marker.classList.remove('wrong');
+        marker.classList.add('correct');
         nlIcon.textContent = '✅';
-        nlMsg.textContent = `Toll getroffen! (${appState.nlValue}, genau: ${target})`;
-        nlMsg.className = 'feedback-msg text-ok';
-        marker.classList.remove('err');
-        marker.classList.add('ok');
+        nlMsg.textContent = appState.nlValue === target
+          ? `Volltreffer! Genau ${target}!`
+          : `Prima getroffen! (Deine Markierung: ${appState.nlValue}, gesucht: ${target})`;
+        nlMsg.className = 'sub-fb msg-ok';
       } else {
         allCorrect = false;
+        marker.classList.remove('correct');
+        marker.classList.add('wrong');
+        triggerShake(marker);
         nlIcon.textContent = '❌';
         nlMsg.textContent = appState.nlValue < target
-          ? `Dein Punkt (${appState.nlValue}) ist noch etwas zu weit links.`
-          : `Dein Punkt (${appState.nlValue}) ist noch etwas zu weit rechts.`;
-        nlMsg.className = 'feedback-msg text-err';
-        marker.classList.remove('ok');
-        marker.classList.add('err');
-        triggerShake(marker);
+          ? `Noch etwas weiter nach rechts! (Aktuell bei ${appState.nlValue})`
+          : `Noch etwas weiter nach links! (Aktuell bei ${appState.nlValue})`;
+        nlMsg.className = 'sub-fb msg-err';
       }
 
-      // --- Gesamtergebnis Schritt 2 ---
+      /* --- Gesamtergebnis --- */
       const step2Fb = document.getElementById('step2-feedback');
-
       if (allCorrect) {
-        handleSheetCompleted();
+        appState.step2Solved = true;
+        // Eingaben sperren
+        ['decomp-t', 'decomp-h', 'decomp-z', 'decomp-e', 'nb-nh-prev', 'nb-nz-prev', 'nb-v', 'nb-n', 'nb-nz-next', 'nb-nh-next'].forEach(id => {
+          document.getElementById(id).disabled = true;
+        });
+        document.getElementById('btn-parity-even').disabled = true;
+        document.getElementById('btn-parity-odd').disabled = true;
+
+        document.getElementById('btn-check-step2').classList.add('hidden');
+        document.getElementById('btn-next-task').classList.remove('hidden');
+
+        step2Fb.textContent = '🌟 Fantastisch! Du hast das ganze Blatt richtig gelöst!';
+        step2Fb.className = 'feedback-msg msg-ok';
+
+        const earnedHint = recordSolvedSheet();
+        if (earnedHint) {
+          const toast = document.getElementById('reward-toast');
+          toast.textContent = '🎁 Belohnung freigeschaltet! Du hast 8 Blätter geschafft und +1 Hilfe erhalten!';
+          toast.classList.remove('hidden');
+        }
+
+        playFanfareSound();
+        launchConfetti();
       } else {
-        step2Fb.textContent = 'Fast geschafft! Verbessere einfach noch die roten Stellen.';
-        step2Fb.className = 'feedback-msg text-err';
+        step2Fb.textContent = 'Fast geschafft! Schau dir die rot markierten Stellen noch einmal an.';
+        step2Fb.className = 'feedback-msg msg-err';
         playErrorSound();
       }
     }
 
-    function handleSheetCompleted() {
-      appState.step2Solved = true;
+    /* =====================================================================
+       TASTATUR-KOMFORT (Auto-Tab & Enter)
+    ===================================================================== */
+    function setupKeyboardHelpers() {
+      const wireSingleDigitGroup = (ids, onEnter) => {
+        ids.forEach((id, idx) => {
+          const el = document.getElementById(id);
+          if (!el) return;
 
-      // Exakte Zielposition auf dem Zahlenstrahl als grünen Pin zeigen
-      const pin = document.getElementById('nl-target-pin');
-      pin.style.left = (appState.task.target / appState.maxRange * 100) + '%';
-      pin.classList.remove('hidden');
+          el.addEventListener('input', () => {
+            el.value = sanitizeDigit(el.value);
+            if (el.value.length === 1) {
+              // Nächstes sichtbares Feld fokussieren
+              for (let next = idx + 1; next < ids.length; next++) {
+                const nextEl = document.getElementById(ids[next]);
+                if (nextEl && !nextEl.closest('.hidden') && !nextEl.disabled) {
+                  nextEl.focus();
+                  break;
+                }
+              }
+            }
+          });
 
-      // Eingaben sperren
-      ['btn-even', 'btn-odd', 'decomp-t', 'decomp-h', 'decomp-z', 'decomp-e',
-       'nb-nh-l', 'nb-nz-l', 'nb-v', 'nb-n', 'nb-nz-r', 'nb-nh-r'].forEach(id => {
-        document.getElementById(id).disabled = true;
+          el.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' && el.value === '') {
+              for (let prev = idx - 1; prev >= 0; prev--) {
+                const prevEl = document.getElementById(ids[prev]);
+                if (prevEl && !prevEl.closest('.hidden') && !prevEl.disabled) {
+                  prevEl.focus();
+                  break;
+                }
+              }
+            } else if (e.key === 'Enter' && onEnter) {
+              e.preventDefault();
+              onEnter();
+            }
+          });
+        });
+      };
+
+      wireSingleDigitGroup(['pv-t', 'pv-h', 'pv-z', 'pv-e'], checkStep1);
+      wireSingleDigitGroup(['decomp-t', 'decomp-h', 'decomp-z', 'decomp-e'], checkStep2);
+
+      ['nb-nh-prev', 'nb-nz-prev', 'nb-v', 'nb-n', 'nb-nz-next', 'nb-nh-next'].forEach(id => {
+        const el = document.getElementById(id);
+        el.addEventListener('input', () => {
+          el.value = sanitizeNumber(el.value);
+        });
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            checkStep2();
+          }
+        });
       });
-
-      // Punkt speichern (inkl. 100er / 1000er Aufschlüsselung)
-      const todayKey = getTodayKey();
-      const entry = normalizeDateEntry(progress.byDate[todayKey]);
-      entry.total += 1;
-      if (appState.maxRange === 100) {
-        entry.r100 += 1;
-      } else {
-        entry.r1000 += 1;
-      }
-      progress.byDate[todayKey] = entry;
-      progress.totalSolved += 1;
-
-      // Belohnungssystem: Alle 8 Blätter +1 Hilfe
-      let earnedHint = false;
-      if (progress.totalSolved % 8 === 0) {
-        progress.hintsAvailable += 1;
-        earnedHint = true;
-      }
-
-      saveProgress();
-      updateHeaderUI();
-
-      // Erfolgs-UI, Fanfare & Konfetti
-      document.getElementById('btn-check-all').classList.add('hidden');
-      document.getElementById('btn-next-task').classList.remove('hidden');
-      const step2Fb = document.getElementById('step2-feedback');
-      step2Fb.textContent = '🌟 Fantastisch! Das ganze Blatt ist richtig gelöst!';
-      step2Fb.className = 'feedback-msg text-ok';
-
-      if (earnedHint) {
-        const toast = document.getElementById('reward-toast');
-        toast.textContent = '🎁 Belohnung! Du hast 8 Blätter geschafft und +1 Hilfe bekommen!';
-        toast.classList.remove('hidden');
-      }
-
-      playPartyFanfareSound();
-      launchConfetti();
     }
 
     /* =====================================================================
-       11. ERWEITERTE PUNKTELISTE (MIT 🥚 100er & 🦖 1000er BADGES)
+       PUNKTELISTE-MODAL (MIT DINO-AUFSCHLÜSSELUNG 100 / 1000)
     ===================================================================== */
-    function formatDateDE(isoDate) {
-      const parts = isoDate.split('-');
-      if (parts.length !== 3) return isoDate;
-      const d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
-      const weekdays = ['So.', 'Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.'];
-      return `${weekdays[d.getDay()]} ${parts[2]}.${parts[1]}.${parts[0]}`;
-    }
+    function formatDateLabel(dateKey) {
+      const todayKey = getTodayKey();
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yKey = `${yesterday.getFullYear()}-${String(yesterday.getMonth() + 1).padStart(2, '0')}-${String(yesterday.getDate()).padStart(2, '0')}`;
 
-    function createRangeBadgesHTML(r100, r1000) {
-      // Bei ganz alten Einträgen ohne gespeicherte Aufteilung (r100 + r1000 === 0) nichts anzeigen
-      if ((r100 + r1000) <= 0) return '';
-      return `
-        <span class="range-badges">
-          <span class="rbadge rbadge-100" title="Aufgaben bis 100">🥚 ${r100}</span>
-          <span class="rbadge rbadge-1000" title="Aufgaben bis 1000">🦖 ${r1000}</span>
-        </span>
-      `;
+      const parts = dateKey.split('-');
+      if (parts.length !== 3) return dateKey;
+      const dObj = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+      const dateStr = `${parts[2]}.${parts[1]}.${parts[0]}`;
+
+      if (dateKey === todayKey) return `Heute (${dateStr})`;
+      if (dateKey === yKey) return `Gestern (${dateStr})`;
+
+      const weekdays = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+      return `${weekdays[dObj.getDay()]}, ${dateStr}`;
     }
 
     function openScoreModal() {
-      const listEl = document.getElementById('score-list');
-      listEl.innerHTML = '';
-
-      const todayKey = getTodayKey();
-      const dateKeys = Object.keys(progress.byDate).sort((a, b) => b.localeCompare(a));
-
-      let sumTotal = 0;
-      let sum100 = 0;
-      let sum1000 = 0;
-
-      dateKeys.forEach(dk => {
-        const entry = normalizeDateEntry(progress.byDate[dk]);
-        if (entry.total <= 0) return;
-        sumTotal += entry.total;
-        sum100 += entry.r100;
-        sum1000 += entry.r1000;
-
-        const li = document.createElement('li');
-        li.className = 'score-item';
-
-        const todayBadge = dk === todayKey ? '<span class="today-tag">Heute</span>' : '';
-        const unitLabel = entry.total === 1 ? 'Blatt' : 'Blätter';
-        const badgesHtml = createRangeBadgesHTML(entry.r100, entry.r1000);
-
-        li.innerHTML = `
-          <div class="score-date-wrap">
-            <span>${formatDateDE(dk)}</span>
-            ${todayBadge}
-          </div>
-          <div class="score-right-wrap">
-            <span class="score-count-bold">${entry.total} ${unitLabel}</span>
-            ${badgesHtml}
-          </div>
-        `;
-        listEl.appendChild(li);
-      });
-
-      // Gesamtstatistik oben
-      const totalUnit = sumTotal === 1 ? 'Blatt' : 'Blätter';
-      document.getElementById('score-total-all').textContent = `${sumTotal} ${totalUnit}`;
-      document.getElementById('score-total-badges').innerHTML = createRangeBadgesHTML(sum100, sum1000);
-
-      if (dateKeys.length === 0 || sumTotal === 0) {
-        listEl.innerHTML = '<li class="empty-scores">Noch keine Blätter gelöst – starte deine erste Zahlen-Jagd! 🦖</li>';
-      }
-
+      playPopSound();
+      hideResetConfirm();
+      renderScoreModal();
       document.getElementById('score-modal').classList.remove('hidden');
     }
 
@@ -2629,89 +2853,126 @@
       document.getElementById('score-modal').classList.add('hidden');
     }
 
-    function backdropClose(e) {
+    function handleModalBackdropClick(e) {
       if (e.target.id === 'score-modal') closeScoreModal();
     }
 
-    /* =====================================================================
-       12. TASTATUR-KOMFORT (AUTO-FOKUS & ENTER)
-    ===================================================================== */
-    function setupKeyboardHelpers() {
-      const filterSingleDigit = (el) => {
-        el.addEventListener('input', () => {
-          el.value = sanitizeDigit(el.value);
-          el.classList.remove('input-wrong');
-        });
-      };
+    function renderScoreModal() {
+      const listEl = document.getElementById('score-list');
+      const keys = Object.keys(progress.daily).sort((a, b) => b.localeCompare(a));
 
-      const filterInt = (el) => {
-        el.addEventListener('input', () => {
-          el.value = el.value.replace(/[^0-9]/g, '');
-          el.classList.remove('input-wrong');
-        });
-      };
+      let sumTotal = 0;
+      let sum100 = 0;
+      let sum1000 = 0;
 
-      ['in-t', 'in-h', 'in-z', 'in-e', 'decomp-t', 'decomp-h', 'decomp-z', 'decomp-e'].forEach(id => {
-        const el = document.getElementById(id);
-        filterSingleDigit(el);
-      });
+      listEl.innerHTML = '';
 
-      ['nb-nh-l', 'nb-nz-l', 'nb-v', 'nb-n', 'nb-nz-r', 'nb-nh-r'].forEach(id => {
-        filterInt(document.getElementById(id));
-      });
+      if (keys.length === 0) {
+        listEl.innerHTML = `<li class="empty-scores">Noch keine Blätter gelöst – schnapp dir die erste Zahl! 🦖</li>`;
+      } else {
+        keys.forEach(dateKey => {
+          const entry = normalizeDailyEntry(progress.daily[dateKey]);
+          if (entry.total <= 0) return;
 
-      // Enter in Schritt 1 -> prüfen
-      ['in-t', 'in-h', 'in-z', 'in-e'].forEach(id => {
-        document.getElementById(id).addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') checkStep1();
-        });
-      });
-    }
+          sumTotal += entry.total;
+          sum100 += entry.r100;
+          sum1000 += entry.r1000;
 
-    /* =====================================================================
-       13. KONFETTI-ANIMATION (OHNE EXTERNE BIBLIOTHEKEN)
-    ===================================================================== */
-    let confettiParticles = [];
-    let confettiAnimId = null;
+          const li = document.createElement('li');
+          li.className = 'score-item';
 
-    function launchConfetti() {
-      const canvas = document.getElementById('confetti-canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+          const label = entry.total === 1 ? '1 Blatt' : `${entry.total} Blätter`;
+          let badgesHtml = '';
+          if (!entry.legacy) {
+            if (entry.r100 > 0) badgesHtml += `<span class="badge-r100">🥚 ${entry.r100}</span>`;
+            if (entry.r1000 > 0) badgesHtml += `<span class="badge-r1000">🦖 ${entry.r1000}</span>`;
+          }
 
-      const colors = ['#7cb342', '#fbbf24', '#38bdf8', '#f472b6', '#a78bfa', '#fb7185'];
-      confettiParticles = [];
-
-      for (let i = 0; i < 95; i++) {
-        confettiParticles.push({
-          x: Math.random() * canvas.width,
-          y: -20 - Math.random() * 140,
-          w: 7 + Math.random() * 7,
-          h: 5 + Math.random() * 6,
-          vx: (Math.random() - 0.5) * 4,
-          vy: 2.6 + Math.random() * 4.2,
-          rot: Math.random() * Math.PI * 2,
-          vrot: (Math.random() - 0.5) * 0.2,
-          color: colors[i % colors.length],
-          alpha: 1
+          li.innerHTML = `
+            <span class="score-date">${formatDateLabel(dateKey)}</span>
+            <span class="score-counts">
+              <span class="score-main-count">${label}</span>
+              ${badgesHtml}
+            </span>
+          `;
+          listEl.appendChild(li);
         });
       }
 
-      if (confettiAnimId) cancelAnimationFrame(confettiAnimId);
+      const displayTotal = Math.max(sumTotal, progress.totalSolved);
+      document.getElementById('score-summary-total').textContent =
+        displayTotal === 1 ? '1 Blatt insgesamt geschafft' : `${displayTotal} Blätter insgesamt geschafft`;
 
-      function step() {
+      const summaryBadges = document.getElementById('score-summary-badges');
+      if (sum100 > 0 || sum1000 > 0) {
+        summaryBadges.innerHTML = `
+          <span class="badge-r100">🥚 ${sum100}</span>
+          <span class="badge-r1000">🦖 ${sum1000}</span>
+        `;
+      } else {
+        summaryBadges.innerHTML = '';
+      }
+    }
+
+    function showResetConfirm() {
+      document.getElementById('btn-reset-init').classList.add('hidden');
+      document.getElementById('reset-confirm-bar').classList.remove('hidden');
+    }
+
+    function hideResetConfirm() {
+      document.getElementById('btn-reset-init').classList.remove('hidden');
+      document.getElementById('reset-confirm-bar').classList.add('hidden');
+    }
+
+    function confirmResetScores() {
+      progress = { totalSolved: 0, hintsAvailable: 0, daily: {} };
+      saveProgress();
+      updateHeaderStats();
+      hideResetConfirm();
+      renderScoreModal();
+    }
+
+    /* =====================================================================
+       KONFETTI-ANIMATION (eigenständig auf Canvas)
+    ===================================================================== */
+    function launchConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const colors = ['#8bc34a', '#f59e0b', '#38bdf8', '#f472b6', '#a78bfa', '#facc15'];
+      const particles = [];
+      for (let i = 0; i < 85; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: -20 - Math.random() * canvas.height * 0.4,
+          w: 7 + Math.random() * 6,
+          h: 5 + Math.random() * 5,
+          vx: (Math.random() - 0.5) * 4,
+          vy: 3 + Math.random() * 4.5,
+          rot: Math.random() * Math.PI * 2,
+          vrot: (Math.random() - 0.5) * 0.22,
+          color: colors[i % colors.length]
+        });
+      }
+
+      let frame = 0;
+      const animate = () => {
+        frame++;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        let alive = false;
-        confettiParticles.forEach(p => {
+        let active = false;
+
+        particles.forEach(p => {
           p.x += p.vx;
           p.y += p.vy;
+          p.vy += 0.06;
           p.rot += p.vrot;
-          if (p.y > canvas.height * 0.78) p.alpha -= 0.025;
-          if (p.alpha > 0 && p.y < canvas.height + 30) {
-            alive = true;
+          if (p.y < canvas.height + 30) {
+            active = true;
             ctx.save();
-            ctx.globalAlpha = Math.max(0, p.alpha);
             ctx.translate(p.x, p.y);
             ctx.rotate(p.rot);
             ctx.fillStyle = p.color;
@@ -2719,29 +2980,29 @@
             ctx.restore();
           }
         });
-        if (alive) {
-          confettiAnimId = requestAnimationFrame(step);
+
+        if (active && frame < 190) {
+          requestAnimationFrame(animate);
         } else {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          confettiAnimId = null;
         }
-      }
-      step();
+      };
+
+      requestAnimationFrame(animate);
     }
 
     /* =====================================================================
-       14. PNG-APP-ICON GENERATOR FÜR ANDROID / IOS STARTBILDSCHIRM
+       PNG-APP-ICON GENERATOR (für Android/iOS Startbildschirm)
     ===================================================================== */
     function generateTouchIconPNG() {
       try {
         const svgEl = document.getElementById('math-dino-svg');
-        const appleLink = document.getElementById('apple-touch-icon-link');
-        const iconLink = document.getElementById('favicon-link');
-        if (!svgEl) return;
+        const linkEl = document.getElementById('apple-touch-icon-link');
+        if (!svgEl || !linkEl) return;
 
         const svgData = new XMLSerializer().serializeToString(svgEl);
-        const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
+        const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(svgBlob);
         const img = new Image();
         img.onload = () => {
           const canvas = document.createElement('canvas');
@@ -2751,12 +3012,7 @@
           ctx.fillStyle = '#d5e5b5';
           ctx.fillRect(0, 0, 192, 192);
           ctx.drawImage(img, 8, 8, 176, 176);
-          const pngUrl = canvas.toDataURL('image/png');
-          if (appleLink) appleLink.href = pngUrl;
-          if (iconLink) {
-            iconLink.type = 'image/png';
-            iconLink.href = pngUrl;
-          }
+          linkEl.href = canvas.toDataURL('image/png');
           URL.revokeObjectURL(url);
         };
         img.src = url;
@@ -2764,10 +3020,11 @@
     }
 
     /* =====================================================================
-       15. APP-START
+       APP-START
     ===================================================================== */
     window.addEventListener('DOMContentLoaded', () => {
       loadProgress();
+      updateModeButtons();
       setupKeyboardHelpers();
       setupNumberLineEvents();
       generateTouchIconPNG();
